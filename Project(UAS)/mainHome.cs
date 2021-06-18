@@ -30,5 +30,12 @@ namespace Project_UAS_
             masterPelanggan form_Pelanggan = new masterPelanggan();
             form_Pelanggan.Show();
         }
+
+        private void btn_mSupplier_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            masterSupplier form_Supplier = new masterSupplier();
+            form_Supplier.Show();
+        }
     }
 }

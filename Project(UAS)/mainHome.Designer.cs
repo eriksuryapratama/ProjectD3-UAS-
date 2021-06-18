@@ -117,6 +117,7 @@ namespace Project_UAS_
             this.btn_mSupplier.TabIndex = 33;
             this.btn_mSupplier.Text = "Master Supplier";
             this.btn_mSupplier.UseVisualStyleBackColor = true;
+            this.btn_mSupplier.Click += new System.EventHandler(this.btn_mSupplier_Click);
             // 
             // btn_mModel
             // 

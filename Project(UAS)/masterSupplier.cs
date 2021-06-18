@@ -10,40 +10,35 @@ using System.Windows.Forms;
 
 namespace Project_UAS_
 {
-    public partial class masterPelanggan : Form
+    public partial class masterSupplier : Form
     {
-        public masterPelanggan()
+        public masterSupplier()
         {
             InitializeComponent();
         }
 
-        private void m_pelangganBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        private void m_supplierBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
             this.Validate();
-            this.m_pelangganBindingSource.EndEdit();
+            this.m_supplierBindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.uASDataSet);
 
         }
 
-        private void masterPelanggan_Load(object sender, EventArgs e)
+        private void masterSupplier_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'uASDataSet.m_kota' table. You can move, or remove it, as needed.
             this.m_kotaTableAdapter.Fill(this.uASDataSet.m_kota);
-            // TODO: This line of code loads data into the 'uASDataSet.m_pelanggan' table. You can move, or remove it, as needed.
-            this.m_pelangganTableAdapter.Fill(this.uASDataSet.m_pelanggan);
+            // TODO: This line of code loads data into the 'uASDataSet.m_supplier' table. You can move, or remove it, as needed.
+            this.m_supplierTableAdapter.Fill(this.uASDataSet.m_supplier);
 
         }
 
         private void btn_Browse_Click(object sender, EventArgs e)
         {
             this.Hide();
-            viewPelanggan formViewPelanggan = new viewPelanggan();
-            formViewPelanggan.ShowDialog();
-        }
-
-        private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
-        {
-
+            viewSupplier formViewSupplier = new viewSupplier();
+            formViewSupplier.ShowDialog();
         }
     }
 }

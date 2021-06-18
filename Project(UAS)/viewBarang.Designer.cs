@@ -35,6 +35,8 @@ namespace Project_UAS_
             this.m_barangBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.m_barangTableAdapter = new Project_UAS_.UASDataSetTableAdapters.m_barangTableAdapter();
             this.tableAdapterManager = new Project_UAS_.UASDataSetTableAdapters.TableAdapterManager();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_addData = new System.Windows.Forms.Button();
             this.dgv_masterBarang = new System.Windows.Forms.DataGridView();
             this.Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,14 +52,11 @@ namespace Project_UAS_
             this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.column_edited = new System.Windows.Forms.DataGridViewImageColumn();
             this.column_deleted = new System.Windows.Forms.DataGridViewImageColumn();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btn_addData = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.uASDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_barangBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_masterBarang)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_masterBarang)).BeginInit();
             this.SuspendLayout();
             // 
             // uASDataSet
@@ -101,6 +100,25 @@ namespace Project_UAS_
             this.tableAdapterManager.t_penawaran_headerTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = Project_UAS_.UASDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.btn_addData);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1127, 34);
+            this.panel1.TabIndex = 6;
+            // 
+            // btn_addData
+            // 
+            this.btn_addData.Location = new System.Drawing.Point(3, 4);
+            this.btn_addData.Name = "btn_addData";
+            this.btn_addData.Size = new System.Drawing.Size(128, 23);
+            this.btn_addData.TabIndex = 1;
+            this.btn_addData.Text = "Add Data";
+            this.btn_addData.UseVisualStyleBackColor = true;
+            this.btn_addData.Click += new System.EventHandler(this.btn_addData_Click);
+            // 
             // dgv_masterBarang
             // 
             this.dgv_masterBarang.AllowUserToAddRows = false;
@@ -121,9 +139,8 @@ namespace Project_UAS_
             this.Column11,
             this.Column12,
             this.Column13,
-            this.column_edited,
             this.column_deleted});
-            this.dgv_masterBarang.Location = new System.Drawing.Point(0, 32);
+            this.dgv_masterBarang.Location = new System.Drawing.Point(-1, 33);
             this.dgv_masterBarang.Name = "dgv_masterBarang";
             this.dgv_masterBarang.ReadOnly = true;
             this.dgv_masterBarang.RowHeadersVisible = false;
@@ -131,6 +148,7 @@ namespace Project_UAS_
             this.dgv_masterBarang.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_masterBarang.Size = new System.Drawing.Size(1128, 414);
             this.dgv_masterBarang.TabIndex = 7;
+            this.dgv_masterBarang.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_masterBarang_CellContentClick_1);
             // 
             // Column14
             // 
@@ -257,16 +275,6 @@ namespace Project_UAS_
             this.Column13.Name = "Column13";
             this.Column13.ReadOnly = true;
             // 
-            // column_edited
-            // 
-            this.column_edited.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.column_edited.HeaderText = "";
-            this.column_edited.Image = ((System.Drawing.Image)(resources.GetObject("column_edited.Image")));
-            this.column_edited.MinimumWidth = 8;
-            this.column_edited.Name = "column_edited";
-            this.column_edited.ReadOnly = true;
-            this.column_edited.Width = 8;
-            // 
             // column_deleted
             // 
             this.column_deleted.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
@@ -277,31 +285,12 @@ namespace Project_UAS_
             this.column_deleted.ReadOnly = true;
             this.column_deleted.Width = 8;
             // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.btn_addData);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1129, 34);
-            this.panel1.TabIndex = 6;
-            // 
-            // btn_addData
-            // 
-            this.btn_addData.Location = new System.Drawing.Point(3, 4);
-            this.btn_addData.Name = "btn_addData";
-            this.btn_addData.Size = new System.Drawing.Size(128, 23);
-            this.btn_addData.TabIndex = 1;
-            this.btn_addData.Text = "Add Data";
-            this.btn_addData.UseVisualStyleBackColor = true;
-            this.btn_addData.Click += new System.EventHandler(this.btn_addData_Click);
-            // 
             // viewBarang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1129, 450);
+            this.ClientSize = new System.Drawing.Size(1127, 450);
             this.Controls.Add(this.dgv_masterBarang);
             this.Controls.Add(this.panel1);
             this.Name = "viewBarang";
@@ -309,8 +298,8 @@ namespace Project_UAS_
             this.Load += new System.EventHandler(this.viewBarang_Load);
             ((System.ComponentModel.ISupportInitialize)(this.uASDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_barangBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_masterBarang)).EndInit();
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_masterBarang)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -321,6 +310,8 @@ namespace Project_UAS_
         private System.Windows.Forms.BindingSource m_barangBindingSource;
         private UASDataSetTableAdapters.m_barangTableAdapter m_barangTableAdapter;
         private UASDataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btn_addData;
         private System.Windows.Forms.DataGridView dgv_masterBarang;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column14;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
@@ -336,9 +327,6 @@ namespace Project_UAS_
         private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column12;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column13;
-        private System.Windows.Forms.DataGridViewImageColumn column_edited;
         private System.Windows.Forms.DataGridViewImageColumn column_deleted;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btn_addData;
     }
 }

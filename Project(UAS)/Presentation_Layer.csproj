@@ -58,11 +58,29 @@
     <Compile Include="mainHome.Designer.cs">
       <DependentUpon>mainHome.cs</DependentUpon>
     </Compile>
+    <Compile Include="masterMerk.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="masterMerk.Designer.cs">
+      <DependentUpon>masterMerk.cs</DependentUpon>
+    </Compile>
+    <Compile Include="masterModel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="masterModel.Designer.cs">
+      <DependentUpon>masterModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="masterPelanggan.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="masterPelanggan.Designer.cs">
       <DependentUpon>masterPelanggan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="masterSupplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="masterSupplier.Designer.cs">
+      <DependentUpon>masterSupplier.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -83,14 +101,29 @@
     <Compile Include="viewPelanggan.Designer.cs">
       <DependentUpon>viewPelanggan.cs</DependentUpon>
     </Compile>
+    <Compile Include="viewSupplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="viewSupplier.Designer.cs">
+      <DependentUpon>viewSupplier.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="mainBarang.resx">
       <DependentUpon>mainBarang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="mainHome.resx">
       <DependentUpon>mainHome.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="masterMerk.resx">
+      <DependentUpon>masterMerk.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="masterModel.resx">
+      <DependentUpon>masterModel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="masterPelanggan.resx">
       <DependentUpon>masterPelanggan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="masterSupplier.resx">
+      <DependentUpon>masterSupplier.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -106,6 +139,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="viewPelanggan.resx">
       <DependentUpon>viewPelanggan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="viewSupplier.resx">
+      <DependentUpon>viewSupplier.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -130,6 +166,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Business_Layer\Business_Layer.csproj">
+      <Project>{b7ee0d66-6f58-4948-90d6-09ac636b5bef}</Project>
+      <Name>Business_Layer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Data_Layer\Data_Layer.csproj">
+      <Project>{917d0701-c863-4859-96da-56af0d07be41}</Project>
+      <Name>Data_Layer</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
