@@ -37,5 +37,12 @@ namespace Project_UAS_
             masterSupplier form_Supplier = new masterSupplier();
             form_Supplier.Show();
         }
+
+        private void btn_mKota_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            masterKota form_Kota = new masterKota();
+            form_Kota.Show();
+        }
     }
 }

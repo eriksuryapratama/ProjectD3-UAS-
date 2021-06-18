@@ -87,6 +87,7 @@ namespace Project_UAS_
             this.btn_mKota.TabIndex = 36;
             this.btn_mKota.Text = "Master Kota";
             this.btn_mKota.UseVisualStyleBackColor = true;
+            this.btn_mKota.Click += new System.EventHandler(this.btn_mKota_Click);
             // 
             // label1
             // 

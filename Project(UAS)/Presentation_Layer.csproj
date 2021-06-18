@@ -58,6 +58,12 @@
     <Compile Include="mainHome.Designer.cs">
       <DependentUpon>mainHome.cs</DependentUpon>
     </Compile>
+    <Compile Include="masterKota.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="masterKota.Designer.cs">
+      <DependentUpon>masterKota.cs</DependentUpon>
+    </Compile>
     <Compile Include="masterMerk.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,6 +101,12 @@
     <Compile Include="viewBarang.Designer.cs">
       <DependentUpon>viewBarang.cs</DependentUpon>
     </Compile>
+    <Compile Include="viewMerk.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="viewMerk.Designer.cs">
+      <DependentUpon>viewMerk.cs</DependentUpon>
+    </Compile>
     <Compile Include="viewPelanggan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,6 +124,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="mainHome.resx">
       <DependentUpon>mainHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="masterKota.resx">
+      <DependentUpon>masterKota.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="masterMerk.resx">
       <DependentUpon>masterMerk.cs</DependentUpon>
@@ -136,6 +151,9 @@
     </Compile>
     <EmbeddedResource Include="viewBarang.resx">
       <DependentUpon>viewBarang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="viewMerk.resx">
+      <DependentUpon>viewMerk.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="viewPelanggan.resx">
       <DependentUpon>viewPelanggan.cs</DependentUpon>

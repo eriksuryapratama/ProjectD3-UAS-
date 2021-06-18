@@ -37,8 +37,8 @@ namespace Project_UAS_
             this.btn_Add = new System.Windows.Forms.Button();
             this.btn_Print = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.tb_code = new System.Windows.Forms.TextBox();
+            this.tb_merkDesc = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -81,7 +81,7 @@ namespace Project_UAS_
             // 
             // btn_Edit
             // 
-            this.btn_Edit.Location = new System.Drawing.Point(197, 321);
+            this.btn_Edit.Location = new System.Drawing.Point(346, 121);
             this.btn_Edit.Name = "btn_Edit";
             this.btn_Edit.Size = new System.Drawing.Size(75, 23);
             this.btn_Edit.TabIndex = 106;
@@ -90,12 +90,13 @@ namespace Project_UAS_
             // 
             // btn_Add
             // 
-            this.btn_Add.Location = new System.Drawing.Point(116, 321);
+            this.btn_Add.Location = new System.Drawing.Point(346, 92);
             this.btn_Add.Name = "btn_Add";
             this.btn_Add.Size = new System.Drawing.Size(75, 23);
             this.btn_Add.TabIndex = 105;
             this.btn_Add.Text = "Add";
             this.btn_Add.UseVisualStyleBackColor = true;
+            this.btn_Add.Click += new System.EventHandler(this.btn_Add_Click);
             // 
             // btn_Print
             // 
@@ -109,30 +110,30 @@ namespace Project_UAS_
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(132, 130);
+            this.label2.Location = new System.Drawing.Point(72, 102);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(59, 13);
             this.label2.TabIndex = 109;
             this.label2.Text = "Merk Code";
             // 
-            // textBox1
+            // tb_code
             // 
-            this.textBox1.Location = new System.Drawing.Point(197, 127);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 110;
+            this.tb_code.Location = new System.Drawing.Point(137, 99);
+            this.tb_code.Name = "tb_code";
+            this.tb_code.Size = new System.Drawing.Size(100, 20);
+            this.tb_code.TabIndex = 110;
             // 
-            // textBox2
+            // tb_merkDesc
             // 
-            this.textBox2.Location = new System.Drawing.Point(197, 169);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 112;
+            this.tb_merkDesc.Location = new System.Drawing.Point(137, 141);
+            this.tb_merkDesc.Name = "tb_merkDesc";
+            this.tb_merkDesc.Size = new System.Drawing.Size(100, 20);
+            this.tb_merkDesc.TabIndex = 112;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(132, 172);
+            this.label3.Location = new System.Drawing.Point(72, 144);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(60, 13);
             this.label3.TabIndex = 111;
@@ -144,9 +145,9 @@ namespace Project_UAS_
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(479, 450);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.tb_merkDesc);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tb_code);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btn_Clear);
             this.Controls.Add(this.btn_Exit);
@@ -157,6 +158,7 @@ namespace Project_UAS_
             this.Controls.Add(this.label1);
             this.Name = "masterMerk";
             this.Text = "masterMerk";
+            this.Load += new System.EventHandler(this.masterMerk_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -172,8 +174,8 @@ namespace Project_UAS_
         public System.Windows.Forms.Button btn_Add;
         public System.Windows.Forms.Button btn_Print;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox tb_code;
+        private System.Windows.Forms.TextBox tb_merkDesc;
         private System.Windows.Forms.Label label3;
     }
 }
