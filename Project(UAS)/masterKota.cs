@@ -137,5 +137,15 @@ namespace Project_UAS_
                 MessageBox.Show("Gagal Menghapus Kota");
             }
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            string keyword = tb_Search.Text;
+            SqlConnection con = new SqlConnection(db.GetConnection());
+            SqlDataAdapter sda = new SqlDataAdapter("SELECT * FROM m_kota WHERE NAMAKOTA LIKE '%"+keyword+"%'", con);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            dgv_Kota.DataSource = dt;
+        }
     }
 }
