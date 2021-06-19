@@ -32,16 +32,14 @@ namespace Project_UAS_
             this.btn_Edit = new System.Windows.Forms.Button();
             this.btn_Add = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.tb_kota = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btn_Delete = new System.Windows.Forms.Button();
             this.btn_Find = new System.Windows.Forms.Button();
             this.btn_Exit = new System.Windows.Forms.Button();
             this.btn_Print = new System.Windows.Forms.Button();
-            this.dgv_masterKota = new System.Windows.Forms.DataGridView();
-            this.Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_masterKota)).BeginInit();
+            this.dgv_Kota = new System.Windows.Forms.DataGridView();
+            this.tb_Kota = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Kota)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_Edit
@@ -74,14 +72,6 @@ namespace Project_UAS_
             this.label1.TabIndex = 109;
             this.label1.Text = "Input Master Kota";
             // 
-            // tb_kota
-            // 
-            this.tb_kota.Location = new System.Drawing.Point(92, 108);
-            this.tb_kota.Name = "tb_kota";
-            this.tb_kota.Size = new System.Drawing.Size(100, 20);
-            this.tb_kota.TabIndex = 112;
-            this.tb_kota.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_kota_KeyPress);
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -99,6 +89,7 @@ namespace Project_UAS_
             this.btn_Delete.TabIndex = 113;
             this.btn_Delete.Text = "Delete";
             this.btn_Delete.UseVisualStyleBackColor = true;
+            this.btn_Delete.Click += new System.EventHandler(this.btn_Delete_Click);
             // 
             // btn_Find
             // 
@@ -129,41 +120,24 @@ namespace Project_UAS_
             this.btn_Print.Text = "Print";
             this.btn_Print.UseVisualStyleBackColor = true;
             // 
-            // dgv_masterKota
+            // dgv_Kota
             // 
-            this.dgv_masterKota.AllowUserToAddRows = false;
-            this.dgv_masterKota.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dgv_masterKota.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_masterKota.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column14,
-            this.Column1});
-            this.dgv_masterKota.Location = new System.Drawing.Point(221, 108);
-            this.dgv_masterKota.Name = "dgv_masterKota";
-            this.dgv_masterKota.ReadOnly = true;
-            this.dgv_masterKota.RowHeadersVisible = false;
-            this.dgv_masterKota.RowHeadersWidth = 62;
-            this.dgv_masterKota.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_masterKota.Size = new System.Drawing.Size(137, 220);
-            this.dgv_masterKota.TabIndex = 118;
-            this.dgv_masterKota.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_masterKota_CellContentClick);
+            this.dgv_Kota.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv_Kota.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_Kota.Location = new System.Drawing.Point(208, 108);
+            this.dgv_Kota.Name = "dgv_Kota";
+            this.dgv_Kota.ReadOnly = true;
+            this.dgv_Kota.Size = new System.Drawing.Size(158, 220);
+            this.dgv_Kota.TabIndex = 118;
+            this.dgv_Kota.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Kota_CellContentClick);
+            this.dgv_Kota.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgv_Kota_RowHeaderMouseClick);
             // 
-            // Column14
+            // tb_Kota
             // 
-            this.Column14.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Column14.HeaderText = "#";
-            this.Column14.MinimumWidth = 8;
-            this.Column14.Name = "Column14";
-            this.Column14.ReadOnly = true;
-            this.Column14.Width = 39;
-            // 
-            // Column1
-            // 
-            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Column1.HeaderText = "NAMA KOTA";
-            this.Column1.MinimumWidth = 8;
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Width = 95;
+            this.tb_Kota.Location = new System.Drawing.Point(92, 108);
+            this.tb_Kota.Name = "tb_Kota";
+            this.tb_Kota.Size = new System.Drawing.Size(100, 20);
+            this.tb_Kota.TabIndex = 119;
             // 
             // masterKota
             // 
@@ -171,12 +145,12 @@ namespace Project_UAS_
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(396, 355);
-            this.Controls.Add(this.dgv_masterKota);
+            this.Controls.Add(this.tb_Kota);
+            this.Controls.Add(this.dgv_Kota);
             this.Controls.Add(this.btn_Find);
             this.Controls.Add(this.btn_Exit);
             this.Controls.Add(this.btn_Print);
             this.Controls.Add(this.btn_Delete);
-            this.Controls.Add(this.tb_kota);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_Edit);
@@ -184,7 +158,7 @@ namespace Project_UAS_
             this.Name = "masterKota";
             this.Text = "masterKota";
             this.Load += new System.EventHandler(this.masterKota_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_masterKota)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Kota)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -195,14 +169,12 @@ namespace Project_UAS_
         public System.Windows.Forms.Button btn_Edit;
         public System.Windows.Forms.Button btn_Add;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox tb_kota;
         private System.Windows.Forms.Label label2;
         public System.Windows.Forms.Button btn_Delete;
         public System.Windows.Forms.Button btn_Find;
         public System.Windows.Forms.Button btn_Exit;
         public System.Windows.Forms.Button btn_Print;
-        private System.Windows.Forms.DataGridView dgv_masterKota;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column14;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridView dgv_Kota;
+        private System.Windows.Forms.TextBox tb_Kota;
     }
 }

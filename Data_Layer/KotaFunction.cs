@@ -12,23 +12,134 @@ namespace Data_Layer
 {
     public class KotaFunction
     {
-        SqlConnection con = new SqlConnection(@"Data Source =.\SQLExpress;Initial Catalog = UAS; User ID = sa; Password=surabaya123321");
-        public void add(Variables_Kota obj)
+        ConnectionDB db = new ConnectionDB();
+        public string namaKota { get; set; }
+        
+        //SELECT
+        public DataTable Select()
         {
-            con.Open();
-            SqlCommand cmd = new SqlCommand("INSERT INTO m_kota (NAMAKOTA) values (@namakota)", con);
-            cmd.Parameters.AddWithValue("@namakota", obj.namaKota);
-            cmd.ExecuteNonQuery();
-            con.Close();
+            SqlConnection con = new SqlConnection(db.GetConnection());
+            DataTable dt = new DataTable();
+            try
+            {
+                String sql = "SELECT * FROM m_kota";
+                SqlCommand cmd = new SqlCommand(sql, con);
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                con.Open();
+                adapter.Fill(dt);
+            }
+            catch(Exception ex)
+            {
+
+            }
+            finally
+            {
+                con.Close();
+            }
+            return dt;
         }
 
-        public void editt(Variables_Kota obj)
+        //INSERT
+        public bool Insert (KotaFunction c)
         {
-            con.Open();
-            SqlCommand cmd = new SqlCommand("UPDATE m_kota SET NAMAKOTA = @namakota", con);
-            cmd.Parameters.AddWithValue("@namakota", obj.namaKota);
-            cmd.ExecuteNonQuery();
-            con.Close();
+            bool isSuccess = false;
+            SqlConnection con = new SqlConnection(db.GetConnection());
+            try
+            {
+                string sql = "INSERT INTO m_kota (NAMAKOTA) values (@namakota)";
+                SqlCommand cmd = new SqlCommand(sql, con);
+                cmd.Parameters.AddWithValue("@namakota", c.namaKota);
+
+                con.Open();
+                int rows = cmd.ExecuteNonQuery();
+                if(rows > 0)
+                {
+                    isSuccess = true;
+                }
+                else
+                {
+                    isSuccess = false;
+                }
+            }
+            catch(Exception ex)
+            {
+
+            }
+            finally
+            {
+                con.Close();
+            }
+            return isSuccess;
+        }
+
+        //UPDATE
+        public bool Update(KotaFunction c)
+        {
+            bool isSuccess = false;
+            SqlConnection con = new SqlConnection(db.GetConnection());
+            try
+            {
+                string sql = "UPDATE m_kota SET NAMAKOTA = @namakota";
+
+                SqlCommand cmd = new SqlCommand(sql, con);
+                cmd.Parameters.AddWithValue("@namakota", c.namaKota);
+
+                con.Open();
+
+                int rows = cmd.ExecuteNonQuery();
+                if (rows > 0)
+                {
+                    isSuccess = true;
+                }
+                else
+                {
+                    isSuccess = false;
+                }
+            }
+            catch
+            {
+
+            }
+            finally
+            {
+                con.Close();
+            }
+            return isSuccess;
+        }
+
+        //DELETE
+        public bool Delete(KotaFunction c)
+        {
+            bool isSuccess = false;
+            SqlConnection con = new SqlConnection(db.GetConnection());
+            try
+            {
+                string sql = "DELETE FROM m_kota WHERE NAMAKOTA = @namakota";
+
+                SqlCommand cmd = new SqlCommand(sql, con);
+                cmd.Parameters.AddWithValue("@namakota", c.namaKota);
+
+                con.Open();
+
+                int rows = cmd.ExecuteNonQuery();
+                if (rows > 0)
+                {
+                    isSuccess = true;
+                }
+                else
+                {
+                    isSuccess = false;
+                }
+            }
+            catch
+            {
+
+            }
+            finally
+            {
+                con.Close();
+            }
+            return isSuccess;
         }
     }
 }

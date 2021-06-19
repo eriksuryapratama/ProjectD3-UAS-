@@ -24,68 +24,52 @@ namespace Project_UAS_
         public masterKota()
         {
             InitializeComponent();
-            con = new SqlConnection(db.GetConnection());
-            LoadRecords();
-
         }
+
+        KotaFunction c = new KotaFunction();
 
         private void clear()
         {
-            tb_kota.Clear();
-        }
-
-        public void LoadRecords()
-        {
-            dgv_masterKota.Rows.Clear();
-            int i = 0;
-            con.Open();
-            cmd = new SqlCommand("SELECT * FROM m_kota", con);
-            dr = cmd.ExecuteReader();
-            while (dr.Read())
-            {
-                i++;
-                dgv_masterKota.Rows.Add(i, dr["NAMAKOTA"].ToString());
-            }
-            dr.Close();
-            con.Close();
+            tb_Kota.Clear();
         }
 
         private void btn_Add_Click(object sender, EventArgs e)
         {
-            try
+            c.namaKota = tb_Kota.Text;
+            if(tb_Kota.Text == "")
             {
-                Variables_Kota obj = new Variables_Kota();
-
-                if (tb_kota.Text == obj.namaKota)
+                MessageBox.Show("Tidak ada kota yang ditambahkan !");
+            }
+            else
+            {
+                bool success = c.Insert(c);
+                if (success = true)
                 {
-                    MessageBox.Show("KOTA TELAH TERSEDIA", "MESSAGE", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    return;
+                    MessageBox.Show("Kota Baru telah ditambahkan");
+                    clear();
                 }
-                
-                obj.namaKota = tb_kota.Text;
+                else
+                {
+                    MessageBox.Show("Gagal Menambah Kota");
+                }
 
-                KotaFunction kf = new KotaFunction();
-                kf.add(obj);
-
-                MessageBox.Show("Data Kota Berhasil Disimpan", "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                LoadRecords();
-                clear();
+                DataTable dt = c.Select();
+                dgv_Kota.DataSource = dt;
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-        }
-
-        private void dgv_masterKota_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            string colName = dgv_masterKota.Columns[e.ColumnIndex].Name;
-            tb_kota.Text = dgv_masterKota.Rows[e.RowIndex].Cells[1].Value.ToString();
+           
         }
 
         private void masterKota_Load(object sender, EventArgs e)
         {
+            try
+            {
+                DataTable dt = c.Select();
+                dgv_Kota.DataSource = dt;
+            }
+            catch (Exception ex)
+            {
 
+            }
         }
 
         private void btn_Exit_Click(object sender, EventArgs e)
@@ -97,49 +81,61 @@ namespace Project_UAS_
 
         private void btn_Edit_Click(object sender, EventArgs e)
         {
-            try
+            c.namaKota = tb_Kota.Text;
+
+            bool success = c.Update(c);
+            if(success == true)
             {
-                Variables_Kota obj = new Variables_Kota();
+                MessageBox.Show("Kota berhasil Diupdate");
 
-                if (tb_kota.Text == obj.namaKota)
-                {
-                    MessageBox.Show("KOTA TELAH TERSEDIA", "MESSAGE", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    return;
-                }
-                obj.namaKota = tb_kota.Text;
-
-                KotaFunction kf = new KotaFunction();
-                kf.editt(obj);
-
-                MessageBox.Show("Data Kota Berhasil Diupdate", "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                LoadRecords();
-                clear();
+                DataTable dt = c.Select();
+                dgv_Kota.DataSource = dt;
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show(ex.Message, "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Kota gagal Diupdate");
             }
+
         }
 
         private void btn_Find_Click(object sender, EventArgs e)
         {
-            con.Open();
-            DataTable dt = new DataTable();
-            String query_kota = $"SELECT NAMAKOTA " +
-                                $"FROM m_kota " +
-                                $"WHERE NAMAKOTA = NAMAKOTA " +
-                                $"AND NAMAKOTA like '%{tb_kota.Text}%' ";
-            SqlCommand sql_kota = new SqlCommand(query_kota, con);
-            SqlDataAdapter adapter = new SqlDataAdapter(sql_kota);
-            adapter.Fill(dt);
-            dgv_masterKota.DataSource = dt;
-            dgv_masterKota.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            con.Close();
+
         }
 
         private void tb_kota_KeyPress(object sender, KeyPressEventArgs e)
         {
             
+        }
+
+        private void dgv_Kota_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int rowIndex = e.RowIndex;
+            tb_Kota.Text = dgv_Kota.Rows[rowIndex].Cells[0].Value.ToString();
+        }
+
+        private void dgv_Kota_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            int rowIndex = e.RowIndex;
+            tb_Kota.Text = dgv_Kota.Rows[rowIndex].Cells[0].Value.ToString();
+        }
+
+        private void btn_Delete_Click(object sender, EventArgs e)
+        {
+            c.namaKota = tb_Kota.Text;
+            bool success = c.Delete(c);
+            if(success == true)
+            {
+                MessageBox.Show("Kota Berhasil Dihapus");
+
+                DataTable dt = c.Select();
+                dgv_Kota.DataSource = dt;
+                clear();
+            }
+            else
+            {
+                MessageBox.Show("Gagal Menghapus Kota");
+            }
         }
     }
 }
