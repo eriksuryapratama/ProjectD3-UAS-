@@ -106,7 +106,7 @@ namespace Project_UAS_
             // bANKLabel
             // 
             bANKLabel.AutoSize = true;
-            bANKLabel.Location = new System.Drawing.Point(367, 136);
+            bANKLabel.Location = new System.Drawing.Point(409, 117);
             bANKLabel.Name = "bANKLabel";
             bANKLabel.Size = new System.Drawing.Size(39, 13);
             bANKLabel.TabIndex = 52;
@@ -115,7 +115,7 @@ namespace Project_UAS_
             // tELP_HPLabel
             // 
             tELP_HPLabel.AutoSize = true;
-            tELP_HPLabel.Location = new System.Drawing.Point(559, 136);
+            tELP_HPLabel.Location = new System.Drawing.Point(687, 136);
             tELP_HPLabel.Name = "tELP_HPLabel";
             tELP_HPLabel.Size = new System.Drawing.Size(55, 13);
             tELP_HPLabel.TabIndex = 53;
@@ -142,7 +142,7 @@ namespace Project_UAS_
             // nAMA_NPWPLabel
             // 
             nAMA_NPWPLabel.AutoSize = true;
-            nAMA_NPWPLabel.Location = new System.Drawing.Point(125, 246);
+            nAMA_NPWPLabel.Location = new System.Drawing.Point(161, 243);
             nAMA_NPWPLabel.Name = "nAMA_NPWPLabel";
             nAMA_NPWPLabel.Size = new System.Drawing.Size(77, 13);
             nAMA_NPWPLabel.TabIndex = 57;
@@ -151,7 +151,7 @@ namespace Project_UAS_
             // nPWPLabel
             // 
             nPWPLabel.AutoSize = true;
-            nPWPLabel.Location = new System.Drawing.Point(571, 246);
+            nPWPLabel.Location = new System.Drawing.Point(514, 243);
             nPWPLabel.Name = "nPWPLabel";
             nPWPLabel.Size = new System.Drawing.Size(43, 13);
             nPWPLabel.TabIndex = 58;
@@ -160,7 +160,7 @@ namespace Project_UAS_
             // aLAMAT_NPWLabel
             // 
             aLAMAT_NPWLabel.AutoSize = true;
-            aLAMAT_NPWLabel.Location = new System.Drawing.Point(120, 272);
+            aLAMAT_NPWLabel.Location = new System.Drawing.Point(156, 269);
             aLAMAT_NPWLabel.Name = "aLAMAT_NPWLabel";
             aLAMAT_NPWLabel.Size = new System.Drawing.Size(82, 13);
             aLAMAT_NPWLabel.TabIndex = 59;
@@ -169,7 +169,7 @@ namespace Project_UAS_
             // nOTELabel
             // 
             nOTELabel.AutoSize = true;
-            nOTELabel.Location = new System.Drawing.Point(162, 349);
+            nOTELabel.Location = new System.Drawing.Point(198, 321);
             nOTELabel.Name = "nOTELabel";
             nOTELabel.Size = new System.Drawing.Size(40, 13);
             nOTELabel.TabIndex = 60;
@@ -178,7 +178,7 @@ namespace Project_UAS_
             // eMAILLabel
             // 
             eMAILLabel.AutoSize = true;
-            eMAILLabel.Location = new System.Drawing.Point(160, 298);
+            eMAILLabel.Location = new System.Drawing.Point(196, 295);
             eMAILLabel.Name = "eMAILLabel";
             eMAILLabel.Size = new System.Drawing.Size(42, 13);
             eMAILLabel.TabIndex = 61;
@@ -187,7 +187,7 @@ namespace Project_UAS_
             // kOTALabel
             // 
             kOTALabel.AutoSize = true;
-            kOTALabel.Location = new System.Drawing.Point(575, 175);
+            kOTALabel.Location = new System.Drawing.Point(703, 171);
             kOTALabel.Name = "kOTALabel";
             kOTALabel.Size = new System.Drawing.Size(39, 13);
             kOTALabel.TabIndex = 62;
@@ -340,6 +340,7 @@ namespace Project_UAS_
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Position";
             this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -387,23 +388,23 @@ namespace Project_UAS_
             this.p_IDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.m_supplierBindingSource, "P_ID", true));
             this.p_IDTextBox.Location = new System.Drawing.Point(208, 133);
             this.p_IDTextBox.Name = "p_IDTextBox";
-            this.p_IDTextBox.Size = new System.Drawing.Size(100, 20);
+            this.p_IDTextBox.Size = new System.Drawing.Size(67, 20);
             this.p_IDTextBox.TabIndex = 52;
             // 
             // bANKTextBox
             // 
             this.bANKTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.m_supplierBindingSource, "BANK", true));
-            this.bANKTextBox.Location = new System.Drawing.Point(412, 133);
+            this.bANKTextBox.Location = new System.Drawing.Point(281, 133);
             this.bANKTextBox.Name = "bANKTextBox";
-            this.bANKTextBox.Size = new System.Drawing.Size(100, 20);
+            this.bANKTextBox.Size = new System.Drawing.Size(400, 20);
             this.bANKTextBox.TabIndex = 53;
             // 
             // tELP_HPTextBox
             // 
             this.tELP_HPTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.m_supplierBindingSource, "TELP_HP", true));
-            this.tELP_HPTextBox.Location = new System.Drawing.Point(620, 133);
+            this.tELP_HPTextBox.Location = new System.Drawing.Point(748, 133);
             this.tELP_HPTextBox.Name = "tELP_HPTextBox";
-            this.tELP_HPTextBox.Size = new System.Drawing.Size(100, 20);
+            this.tELP_HPTextBox.Size = new System.Drawing.Size(146, 20);
             this.tELP_HPTextBox.TabIndex = 54;
             // 
             // nAMATextBox
@@ -411,7 +412,7 @@ namespace Project_UAS_
             this.nAMATextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.m_supplierBindingSource, "NAMA", true));
             this.nAMATextBox.Location = new System.Drawing.Point(208, 172);
             this.nAMATextBox.Name = "nAMATextBox";
-            this.nAMATextBox.Size = new System.Drawing.Size(100, 20);
+            this.nAMATextBox.Size = new System.Drawing.Size(139, 20);
             this.nAMATextBox.TabIndex = 55;
             // 
             // aLAMATTextBox
@@ -419,47 +420,47 @@ namespace Project_UAS_
             this.aLAMATTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.m_supplierBindingSource, "ALAMAT", true));
             this.aLAMATTextBox.Location = new System.Drawing.Point(412, 172);
             this.aLAMATTextBox.Name = "aLAMATTextBox";
-            this.aLAMATTextBox.Size = new System.Drawing.Size(100, 20);
+            this.aLAMATTextBox.Size = new System.Drawing.Size(269, 20);
             this.aLAMATTextBox.TabIndex = 56;
             // 
             // nAMA_NPWPTextBox
             // 
             this.nAMA_NPWPTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.m_supplierBindingSource, "NAMA_NPWP", true));
-            this.nAMA_NPWPTextBox.Location = new System.Drawing.Point(208, 243);
+            this.nAMA_NPWPTextBox.Location = new System.Drawing.Point(244, 240);
             this.nAMA_NPWPTextBox.Name = "nAMA_NPWPTextBox";
-            this.nAMA_NPWPTextBox.Size = new System.Drawing.Size(100, 20);
+            this.nAMA_NPWPTextBox.Size = new System.Drawing.Size(232, 20);
             this.nAMA_NPWPTextBox.TabIndex = 58;
             // 
             // nPWPTextBox
             // 
             this.nPWPTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.m_supplierBindingSource, "NPWP", true));
-            this.nPWPTextBox.Location = new System.Drawing.Point(620, 243);
+            this.nPWPTextBox.Location = new System.Drawing.Point(563, 240);
             this.nPWPTextBox.Name = "nPWPTextBox";
-            this.nPWPTextBox.Size = new System.Drawing.Size(100, 20);
+            this.nPWPTextBox.Size = new System.Drawing.Size(129, 20);
             this.nPWPTextBox.TabIndex = 59;
             // 
             // aLAMAT_NPWTextBox
             // 
             this.aLAMAT_NPWTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.m_supplierBindingSource, "ALAMAT_NPW", true));
-            this.aLAMAT_NPWTextBox.Location = new System.Drawing.Point(208, 269);
+            this.aLAMAT_NPWTextBox.Location = new System.Drawing.Point(244, 266);
             this.aLAMAT_NPWTextBox.Name = "aLAMAT_NPWTextBox";
-            this.aLAMAT_NPWTextBox.Size = new System.Drawing.Size(100, 20);
+            this.aLAMAT_NPWTextBox.Size = new System.Drawing.Size(498, 20);
             this.aLAMAT_NPWTextBox.TabIndex = 60;
             // 
             // nOTETextBox
             // 
             this.nOTETextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.m_supplierBindingSource, "NOTE", true));
-            this.nOTETextBox.Location = new System.Drawing.Point(208, 346);
+            this.nOTETextBox.Location = new System.Drawing.Point(244, 318);
             this.nOTETextBox.Name = "nOTETextBox";
-            this.nOTETextBox.Size = new System.Drawing.Size(100, 20);
+            this.nOTETextBox.Size = new System.Drawing.Size(498, 20);
             this.nOTETextBox.TabIndex = 61;
             // 
             // eMAILTextBox
             // 
             this.eMAILTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.m_supplierBindingSource, "EMAIL", true));
-            this.eMAILTextBox.Location = new System.Drawing.Point(208, 295);
+            this.eMAILTextBox.Location = new System.Drawing.Point(244, 292);
             this.eMAILTextBox.Name = "eMAILTextBox";
-            this.eMAILTextBox.Size = new System.Drawing.Size(100, 20);
+            this.eMAILTextBox.Size = new System.Drawing.Size(498, 20);
             this.eMAILTextBox.TabIndex = 62;
             // 
             // kOTAComboBox
@@ -468,9 +469,9 @@ namespace Project_UAS_
             this.kOTAComboBox.DataSource = this.mkotaBindingSource;
             this.kOTAComboBox.DisplayMember = "NAMAKOTA";
             this.kOTAComboBox.FormattingEnabled = true;
-            this.kOTAComboBox.Location = new System.Drawing.Point(620, 172);
+            this.kOTAComboBox.Location = new System.Drawing.Point(748, 171);
             this.kOTAComboBox.Name = "kOTAComboBox";
-            this.kOTAComboBox.Size = new System.Drawing.Size(121, 21);
+            this.kOTAComboBox.Size = new System.Drawing.Size(146, 21);
             this.kOTAComboBox.TabIndex = 63;
             this.kOTAComboBox.ValueMember = "NAMAKOTA";
             // 
@@ -481,7 +482,7 @@ namespace Project_UAS_
             // 
             // btn_Print
             // 
-            this.btn_Print.Location = new System.Drawing.Point(732, 72);
+            this.btn_Print.Location = new System.Drawing.Point(667, 72);
             this.btn_Print.Name = "btn_Print";
             this.btn_Print.Size = new System.Drawing.Size(75, 23);
             this.btn_Print.TabIndex = 71;
@@ -490,7 +491,7 @@ namespace Project_UAS_
             // 
             // btn_Exit
             // 
-            this.btn_Exit.Location = new System.Drawing.Point(865, 72);
+            this.btn_Exit.Location = new System.Drawing.Point(757, 72);
             this.btn_Exit.Name = "btn_Exit";
             this.btn_Exit.Size = new System.Drawing.Size(75, 23);
             this.btn_Exit.TabIndex = 108;
