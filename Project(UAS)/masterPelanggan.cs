@@ -45,5 +45,25 @@ namespace Project_UAS_
         {
 
         }
+
+        private void nAMALabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void aLAMATLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void nAMA1Label_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void aLAMAT1Label_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
