@@ -30,57 +30,101 @@ namespace Project_UAS_
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Invoice));
-            System.Windows.Forms.Label nO_INVLabel;
-            System.Windows.Forms.Label nO_PNWLabel;
-            System.Windows.Forms.Label tGL_INVLabel;
             System.Windows.Forms.Label p_IDLabel;
             System.Windows.Forms.Label label2;
             System.Windows.Forms.Label label3;
             System.Windows.Forms.Label label4;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Invoice));
+            System.Windows.Forms.Label nO_INVLabel;
+            System.Windows.Forms.Label nO_PNWLabel;
+            System.Windows.Forms.Label tGL_INVLabel;
+            System.Windows.Forms.Label tGL_TERIMALabel;
             this.uASDataSet = new Project_UAS_.UASDataSet();
             this.t_invoiceppn_headerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.t_invoiceppn_headerTableAdapter = new Project_UAS_.UASDataSetTableAdapters.t_invoiceppn_headerTableAdapter();
             this.tableAdapterManager = new Project_UAS_.UASDataSetTableAdapters.TableAdapterManager();
             this.t_invoiceppn_headerBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.t_invoiceppn_headerBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
-            this.tb_invoice = new System.Windows.Forms.TextBox();
-            this.tb_penwrn = new System.Windows.Forms.TextBox();
-            this.tgl_in = new System.Windows.Forms.DateTimePicker();
-            this.tgl_terima = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.tb_email = new System.Windows.Forms.TextBox();
             this.tb_kota = new System.Windows.Forms.TextBox();
-            this.tb_customer = new System.Windows.Forms.TextBox();
             this.tb_nmperusahaan = new System.Windows.Forms.TextBox();
             this.tb_alamat = new System.Windows.Forms.TextBox();
             this.tb_namNpwp = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.tb_npwp = new System.Windows.Forms.TextBox();
             this.tb_note = new System.Windows.Forms.TextBox();
-            nO_INVLabel = new System.Windows.Forms.Label();
-            nO_PNWLabel = new System.Windows.Forms.Label();
-            tGL_INVLabel = new System.Windows.Forms.Label();
+            this.dgv_data = new System.Windows.Forms.DataGridView();
+            this.t_invoice_headerBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.t_invoice_headerTableAdapter = new Project_UAS_.UASDataSetTableAdapters.t_invoice_headerTableAdapter();
+            this.nO_INVTextBox = new System.Windows.Forms.TextBox();
+            this.nO_PNWTextBox = new System.Windows.Forms.TextBox();
+            this.tGL_INVDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.tGL_TERIMADateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.tb_customer = new System.Windows.Forms.TextBox();
             p_IDLabel = new System.Windows.Forms.Label();
             label2 = new System.Windows.Forms.Label();
             label3 = new System.Windows.Forms.Label();
             label4 = new System.Windows.Forms.Label();
+            nO_INVLabel = new System.Windows.Forms.Label();
+            nO_PNWLabel = new System.Windows.Forms.Label();
+            tGL_INVLabel = new System.Windows.Forms.Label();
+            tGL_TERIMALabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.uASDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.t_invoiceppn_headerBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.t_invoiceppn_headerBindingNavigator)).BeginInit();
             this.t_invoiceppn_headerBindingNavigator.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_data)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.t_invoice_headerBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // p_IDLabel
+            // 
+            p_IDLabel.AutoSize = true;
+            p_IDLabel.Location = new System.Drawing.Point(15, 95);
+            p_IDLabel.Name = "p_IDLabel";
+            p_IDLabel.Size = new System.Drawing.Size(104, 20);
+            p_IDLabel.TabIndex = 11;
+            p_IDLabel.Text = "CUSTOMER:";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new System.Drawing.Point(15, 158);
+            label2.Name = "label2";
+            label2.Size = new System.Drawing.Size(109, 20);
+            label2.TabIndex = 15;
+            label2.Text = "NAMA NPWP:";
+            label2.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new System.Drawing.Point(60, 216);
+            label3.Name = "label3";
+            label3.Size = new System.Drawing.Size(59, 20);
+            label3.TabIndex = 18;
+            label3.Text = "NPWP:";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new System.Drawing.Point(699, 216);
+            label4.Name = "label4";
+            label4.Size = new System.Drawing.Size(56, 20);
+            label4.TabIndex = 20;
+            label4.Text = "NOTE:";
             // 
             // uASDataSet
             // 
@@ -154,6 +198,31 @@ namespace Project_UAS_
             this.t_invoiceppn_headerBindingNavigator.TabIndex = 0;
             this.t_invoiceppn_headerBindingNavigator.Text = "bindingNavigator1";
             // 
+            // bindingNavigatorAddNewItem
+            // 
+            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(34, 28);
+            this.bindingNavigatorAddNewItem.Text = "Add new";
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(54, 28);
+            this.bindingNavigatorCountItem.Text = "of {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(34, 28);
+            this.bindingNavigatorDeleteItem.Text = "Delete";
+            // 
             // bindingNavigatorMoveFirstItem
             // 
             this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -187,16 +256,9 @@ namespace Project_UAS_
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Current position";
             // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(54, 28);
-            this.bindingNavigatorCountItem.Text = "of {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
-            // 
             // bindingNavigatorSeparator1
             // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
             this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 33);
             // 
             // bindingNavigatorMoveNextItem
@@ -219,26 +281,8 @@ namespace Project_UAS_
             // 
             // bindingNavigatorSeparator2
             // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 33);
-            // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(34, 28);
-            this.bindingNavigatorAddNewItem.Text = "Add new";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(34, 28);
-            this.bindingNavigatorDeleteItem.Text = "Delete";
             // 
             // t_invoiceppn_headerBindingNavigatorSaveItem
             // 
@@ -249,69 +293,10 @@ namespace Project_UAS_
             this.t_invoiceppn_headerBindingNavigatorSaveItem.Text = "Save Data";
             this.t_invoiceppn_headerBindingNavigatorSaveItem.Click += new System.EventHandler(this.t_invoiceppn_headerBindingNavigatorSaveItem_Click);
             // 
-            // nO_INVLabel
-            // 
-            nO_INVLabel.AutoSize = true;
-            nO_INVLabel.Location = new System.Drawing.Point(12, 41);
-            nO_INVLabel.Name = "nO_INVLabel";
-            nO_INVLabel.Size = new System.Drawing.Size(79, 20);
-            nO_INVLabel.TabIndex = 1;
-            nO_INVLabel.Text = "INVOICE:";
-            // 
-            // tb_invoice
-            // 
-            this.tb_invoice.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.t_invoiceppn_headerBindingSource, "NO_INV", true));
-            this.tb_invoice.Location = new System.Drawing.Point(97, 38);
-            this.tb_invoice.Name = "tb_invoice";
-            this.tb_invoice.Size = new System.Drawing.Size(100, 26);
-            this.tb_invoice.TabIndex = 2;
-            // 
-            // nO_PNWLabel
-            // 
-            nO_PNWLabel.AutoSize = true;
-            nO_PNWLabel.Location = new System.Drawing.Point(217, 41);
-            nO_PNWLabel.Name = "nO_PNWLabel";
-            nO_PNWLabel.Size = new System.Drawing.Size(57, 20);
-            nO_PNWLabel.TabIndex = 3;
-            nO_PNWLabel.Text = "Pnwrn:";
-            // 
-            // tb_penwrn
-            // 
-            this.tb_penwrn.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.t_invoiceppn_headerBindingSource, "NO_PNW", true));
-            this.tb_penwrn.Location = new System.Drawing.Point(299, 38);
-            this.tb_penwrn.Name = "tb_penwrn";
-            this.tb_penwrn.Size = new System.Drawing.Size(100, 26);
-            this.tb_penwrn.TabIndex = 4;
-            // 
-            // tGL_INVLabel
-            // 
-            tGL_INVLabel.AutoSize = true;
-            tGL_INVLabel.Location = new System.Drawing.Point(410, 39);
-            tGL_INVLabel.Name = "tGL_INVLabel";
-            tGL_INVLabel.Size = new System.Drawing.Size(49, 20);
-            tGL_INVLabel.TabIndex = 5;
-            tGL_INVLabel.Text = "TT In:";
-            // 
-            // tgl_in
-            // 
-            this.tgl_in.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.t_invoiceppn_headerBindingSource, "TGL_INV", true));
-            this.tgl_in.Location = new System.Drawing.Point(465, 36);
-            this.tgl_in.Name = "tgl_in";
-            this.tgl_in.Size = new System.Drawing.Size(200, 26);
-            this.tgl_in.TabIndex = 6;
-            // 
-            // tgl_terima
-            // 
-            this.tgl_terima.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.t_invoiceppn_headerBindingSource, "TGL_TERIMA", true));
-            this.tgl_terima.Location = new System.Drawing.Point(703, 35);
-            this.tgl_terima.Name = "tgl_terima";
-            this.tgl_terima.Size = new System.Drawing.Size(200, 26);
-            this.tgl_terima.TabIndex = 8;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(937, 41);
+            this.label1.Location = new System.Drawing.Point(1096, 38);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(62, 20);
             this.label1.TabIndex = 9;
@@ -319,34 +304,17 @@ namespace Project_UAS_
             // 
             // tb_email
             // 
-            this.tb_email.Location = new System.Drawing.Point(1005, 37);
+            this.tb_email.Location = new System.Drawing.Point(1164, 34);
             this.tb_email.Name = "tb_email";
             this.tb_email.Size = new System.Drawing.Size(166, 26);
             this.tb_email.TabIndex = 10;
             // 
             // tb_kota
             // 
-            this.tb_kota.Location = new System.Drawing.Point(1187, 38);
+            this.tb_kota.Location = new System.Drawing.Point(1346, 35);
             this.tb_kota.Name = "tb_kota";
             this.tb_kota.Size = new System.Drawing.Size(166, 26);
             this.tb_kota.TabIndex = 11;
-            // 
-            // p_IDLabel
-            // 
-            p_IDLabel.AutoSize = true;
-            p_IDLabel.Location = new System.Drawing.Point(15, 95);
-            p_IDLabel.Name = "p_IDLabel";
-            p_IDLabel.Size = new System.Drawing.Size(104, 20);
-            p_IDLabel.TabIndex = 11;
-            p_IDLabel.Text = "CUSTOMER:";
-            // 
-            // tb_customer
-            // 
-            this.tb_customer.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.t_invoiceppn_headerBindingSource, "P_ID", true));
-            this.tb_customer.Location = new System.Drawing.Point(125, 92);
-            this.tb_customer.Name = "tb_customer";
-            this.tb_customer.Size = new System.Drawing.Size(129, 26);
-            this.tb_customer.TabIndex = 12;
             // 
             // tb_nmperusahaan
             // 
@@ -362,16 +330,6 @@ namespace Project_UAS_
             this.tb_alamat.Size = new System.Drawing.Size(393, 26);
             this.tb_alamat.TabIndex = 14;
             // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new System.Drawing.Point(15, 158);
-            label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(109, 20);
-            label2.TabIndex = 15;
-            label2.Text = "NAMA NPWP:";
-            label2.Click += new System.EventHandler(this.label2_Click);
-            // 
             // tb_namNpwp
             // 
             this.tb_namNpwp.Location = new System.Drawing.Point(140, 151);
@@ -386,30 +344,12 @@ namespace Project_UAS_
             this.textBox6.Size = new System.Drawing.Size(468, 26);
             this.textBox6.TabIndex = 17;
             // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new System.Drawing.Point(60, 216);
-            label3.Name = "label3";
-            label3.Size = new System.Drawing.Size(59, 20);
-            label3.TabIndex = 18;
-            label3.Text = "NPWP:";
-            // 
             // tb_npwp
             // 
             this.tb_npwp.Location = new System.Drawing.Point(140, 210);
             this.tb_npwp.Name = "tb_npwp";
             this.tb_npwp.Size = new System.Drawing.Size(525, 26);
             this.tb_npwp.TabIndex = 19;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new System.Drawing.Point(699, 216);
-            label4.Name = "label4";
-            label4.Size = new System.Drawing.Size(56, 20);
-            label4.TabIndex = 20;
-            label4.Text = "NOTE:";
             // 
             // tb_note
             // 
@@ -418,11 +358,116 @@ namespace Project_UAS_
             this.tb_note.Size = new System.Drawing.Size(525, 26);
             this.tb_note.TabIndex = 21;
             // 
+            // dgv_data
+            // 
+            this.dgv_data.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_data.Location = new System.Drawing.Point(12, 278);
+            this.dgv_data.Name = "dgv_data";
+            this.dgv_data.RowHeadersWidth = 62;
+            this.dgv_data.RowTemplate.Height = 28;
+            this.dgv_data.Size = new System.Drawing.Size(1159, 246);
+            this.dgv_data.TabIndex = 22;
+            // 
+            // t_invoice_headerBindingSource
+            // 
+            this.t_invoice_headerBindingSource.DataMember = "t_invoice_header";
+            this.t_invoice_headerBindingSource.DataSource = this.uASDataSet;
+            // 
+            // t_invoice_headerTableAdapter
+            // 
+            this.t_invoice_headerTableAdapter.ClearBeforeFill = true;
+            // 
+            // nO_INVLabel
+            // 
+            nO_INVLabel.AutoSize = true;
+            nO_INVLabel.Location = new System.Drawing.Point(16, 42);
+            nO_INVLabel.Name = "nO_INVLabel";
+            nO_INVLabel.Size = new System.Drawing.Size(67, 20);
+            nO_INVLabel.TabIndex = 22;
+            nO_INVLabel.Text = "NO INV:";
+            // 
+            // nO_INVTextBox
+            // 
+            this.nO_INVTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.t_invoice_headerBindingSource, "NO_INV", true));
+            this.nO_INVTextBox.Location = new System.Drawing.Point(89, 39);
+            this.nO_INVTextBox.Name = "nO_INVTextBox";
+            this.nO_INVTextBox.Size = new System.Drawing.Size(100, 26);
+            this.nO_INVTextBox.TabIndex = 23;
+            // 
+            // nO_PNWLabel
+            // 
+            nO_PNWLabel.AutoSize = true;
+            nO_PNWLabel.Location = new System.Drawing.Point(213, 42);
+            nO_PNWLabel.Name = "nO_PNWLabel";
+            nO_PNWLabel.Size = new System.Drawing.Size(76, 20);
+            nO_PNWLabel.TabIndex = 23;
+            nO_PNWLabel.Text = "NO PNW:";
+            // 
+            // nO_PNWTextBox
+            // 
+            this.nO_PNWTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.t_invoice_headerBindingSource, "NO_PNW", true));
+            this.nO_PNWTextBox.Location = new System.Drawing.Point(295, 39);
+            this.nO_PNWTextBox.Name = "nO_PNWTextBox";
+            this.nO_PNWTextBox.Size = new System.Drawing.Size(100, 26);
+            this.nO_PNWTextBox.TabIndex = 24;
+            // 
+            // tGL_INVLabel
+            // 
+            tGL_INVLabel.AutoSize = true;
+            tGL_INVLabel.Location = new System.Drawing.Point(431, 40);
+            tGL_INVLabel.Name = "tGL_INVLabel";
+            tGL_INVLabel.Size = new System.Drawing.Size(75, 20);
+            tGL_INVLabel.TabIndex = 24;
+            tGL_INVLabel.Text = "TGL INV:";
+            // 
+            // tGL_INVDateTimePicker
+            // 
+            this.tGL_INVDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.t_invoice_headerBindingSource, "TGL_INV", true));
+            this.tGL_INVDateTimePicker.Location = new System.Drawing.Point(512, 36);
+            this.tGL_INVDateTimePicker.Name = "tGL_INVDateTimePicker";
+            this.tGL_INVDateTimePicker.Size = new System.Drawing.Size(200, 26);
+            this.tGL_INVDateTimePicker.TabIndex = 25;
+            // 
+            // tGL_TERIMALabel
+            // 
+            tGL_TERIMALabel.AutoSize = true;
+            tGL_TERIMALabel.Location = new System.Drawing.Point(743, 36);
+            tGL_TERIMALabel.Name = "tGL_TERIMALabel";
+            tGL_TERIMALabel.Size = new System.Drawing.Size(109, 20);
+            tGL_TERIMALabel.TabIndex = 25;
+            tGL_TERIMALabel.Text = "TGL TERIMA:";
+            // 
+            // tGL_TERIMADateTimePicker
+            // 
+            this.tGL_TERIMADateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.t_invoice_headerBindingSource, "TGL_TERIMA", true));
+            this.tGL_TERIMADateTimePicker.Location = new System.Drawing.Point(858, 32);
+            this.tGL_TERIMADateTimePicker.Name = "tGL_TERIMADateTimePicker";
+            this.tGL_TERIMADateTimePicker.Size = new System.Drawing.Size(200, 26);
+            this.tGL_TERIMADateTimePicker.TabIndex = 26;
+            // 
+            // tb_customer
+            // 
+            this.tb_customer.Location = new System.Drawing.Point(125, 92);
+            this.tb_customer.Name = "tb_customer";
+            this.tb_customer.Size = new System.Drawing.Size(150, 26);
+            this.tb_customer.TabIndex = 27;
+            this.tb_customer.Text = "1";
+            // 
             // Invoice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1552, 485);
+            this.ClientSize = new System.Drawing.Size(1552, 544);
+            this.Controls.Add(this.tb_customer);
+            this.Controls.Add(tGL_TERIMALabel);
+            this.Controls.Add(this.tGL_TERIMADateTimePicker);
+            this.Controls.Add(tGL_INVLabel);
+            this.Controls.Add(this.tGL_INVDateTimePicker);
+            this.Controls.Add(nO_PNWLabel);
+            this.Controls.Add(this.nO_PNWTextBox);
+            this.Controls.Add(nO_INVLabel);
+            this.Controls.Add(this.nO_INVTextBox);
+            this.Controls.Add(this.dgv_data);
             this.Controls.Add(this.tb_note);
             this.Controls.Add(label4);
             this.Controls.Add(this.tb_npwp);
@@ -433,17 +478,9 @@ namespace Project_UAS_
             this.Controls.Add(this.tb_alamat);
             this.Controls.Add(this.tb_nmperusahaan);
             this.Controls.Add(p_IDLabel);
-            this.Controls.Add(this.tb_customer);
             this.Controls.Add(this.tb_kota);
             this.Controls.Add(this.tb_email);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.tgl_terima);
-            this.Controls.Add(tGL_INVLabel);
-            this.Controls.Add(this.tgl_in);
-            this.Controls.Add(nO_PNWLabel);
-            this.Controls.Add(this.tb_penwrn);
-            this.Controls.Add(nO_INVLabel);
-            this.Controls.Add(this.tb_invoice);
             this.Controls.Add(this.t_invoiceppn_headerBindingNavigator);
             this.Name = "Invoice";
             this.Text = "Invoice";
@@ -453,6 +490,8 @@ namespace Project_UAS_
             ((System.ComponentModel.ISupportInitialize)(this.t_invoiceppn_headerBindingNavigator)).EndInit();
             this.t_invoiceppn_headerBindingNavigator.ResumeLayout(false);
             this.t_invoiceppn_headerBindingNavigator.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_data)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.t_invoice_headerBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -477,19 +516,22 @@ namespace Project_UAS_
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.ToolStripButton t_invoiceppn_headerBindingNavigatorSaveItem;
-        private System.Windows.Forms.TextBox tb_invoice;
-        private System.Windows.Forms.TextBox tb_penwrn;
-        private System.Windows.Forms.DateTimePicker tgl_in;
-        private System.Windows.Forms.DateTimePicker tgl_terima;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox tb_email;
         private System.Windows.Forms.TextBox tb_kota;
-        private System.Windows.Forms.TextBox tb_customer;
         private System.Windows.Forms.TextBox tb_nmperusahaan;
         private System.Windows.Forms.TextBox tb_alamat;
         private System.Windows.Forms.TextBox tb_namNpwp;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.TextBox tb_npwp;
         private System.Windows.Forms.TextBox tb_note;
+        private System.Windows.Forms.DataGridView dgv_data;
+        private System.Windows.Forms.BindingSource t_invoice_headerBindingSource;
+        private UASDataSetTableAdapters.t_invoice_headerTableAdapter t_invoice_headerTableAdapter;
+        private System.Windows.Forms.TextBox nO_INVTextBox;
+        private System.Windows.Forms.TextBox nO_PNWTextBox;
+        private System.Windows.Forms.DateTimePicker tGL_INVDateTimePicker;
+        private System.Windows.Forms.DateTimePicker tGL_TERIMADateTimePicker;
+        private System.Windows.Forms.TextBox tb_customer;
     }
 }

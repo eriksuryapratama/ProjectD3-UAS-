@@ -11,14 +11,13 @@ using System.Windows.Forms;
 
 namespace Project_UAS_
 {
-    public partial class Invoice : Form
+    public partial class Form1 : Form
     {
         SqlConnection con;
-        
-        public Invoice()
+        public Form1()
         {
             InitializeComponent();
-            con = new SqlConnection (@"Data Source=.\SQLExpress;Initial Catalog=UAS;Integrated Security=True");
+            con = new SqlConnection(@"Data Source=.\SQLExpress;Initial Catalog=UAS;Integrated Security=True");
             refreshSupplier();
         }
 
@@ -91,26 +90,39 @@ namespace Project_UAS_
             con.Close();
         }
 
-        private void t_invoiceppn_headerBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        private void t_invoice_headerBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
             this.Validate();
-            this.t_invoiceppn_headerBindingSource.EndEdit();
+            this.t_invoice_headerBindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.uASDataSet);
 
         }
 
-        private void Invoice_Load(object sender, EventArgs e)
+        private void Form1_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'uASDataSet.t_invoice_header' table. You can move, or remove it, as needed.
             this.t_invoice_headerTableAdapter.Fill(this.uASDataSet.t_invoice_header);
-            // TODO: This line of code loads data into the 'uASDataSet.t_invoiceppn_header' table. You can move, or remove it, as needed.
-            this.t_invoiceppn_headerTableAdapter.Fill(this.uASDataSet.t_invoiceppn_header);
 
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void bindingNavigatorMoveNextItem_Click(object sender, EventArgs e)
         {
+            refreshSupplier();
+        }
 
+        private void bindingNavigatorMovePreviousItem_Click(object sender, EventArgs e)
+        {
+            refreshSupplier();
+        }
+
+        private void bindingNavigatorMoveLastItem_Click(object sender, EventArgs e)
+        {
+            refreshSupplier();
+        }
+
+        private void bindingNavigatorMoveFirstItem_Click(object sender, EventArgs e)
+        {
+            refreshSupplier();
         }
     }
 }

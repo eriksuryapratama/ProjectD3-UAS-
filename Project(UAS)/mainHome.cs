@@ -51,5 +51,12 @@ namespace Project_UAS_
             masterGroupUser form_Group = new masterGroupUser();
             form_Group.Show();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form1 form_Group = new Form1();
+            form_Group.Show();
+        }
     }
 }
