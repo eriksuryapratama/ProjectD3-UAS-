@@ -34,7 +34,6 @@ namespace Project_UAS_
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btn_Delete = new System.Windows.Forms.Button();
-            this.btn_Find = new System.Windows.Forms.Button();
             this.btn_Exit = new System.Windows.Forms.Button();
             this.btn_Print = new System.Windows.Forms.Button();
             this.dgv_Kota = new System.Windows.Forms.DataGridView();
@@ -46,7 +45,7 @@ namespace Project_UAS_
             // 
             // btn_Edit
             // 
-            this.btn_Edit.Location = new System.Drawing.Point(105, 265);
+            this.btn_Edit.Location = new System.Drawing.Point(105, 202);
             this.btn_Edit.Name = "btn_Edit";
             this.btn_Edit.Size = new System.Drawing.Size(100, 23);
             this.btn_Edit.TabIndex = 108;
@@ -92,16 +91,6 @@ namespace Project_UAS_
             this.btn_Delete.Text = "Delete";
             this.btn_Delete.UseVisualStyleBackColor = true;
             this.btn_Delete.Click += new System.EventHandler(this.btn_Delete_Click);
-            // 
-            // btn_Find
-            // 
-            this.btn_Find.Location = new System.Drawing.Point(105, 236);
-            this.btn_Find.Name = "btn_Find";
-            this.btn_Find.Size = new System.Drawing.Size(100, 23);
-            this.btn_Find.TabIndex = 117;
-            this.btn_Find.Text = "Find";
-            this.btn_Find.UseVisualStyleBackColor = true;
-            this.btn_Find.Click += new System.EventHandler(this.btn_Find_Click);
             // 
             // btn_Exit
             // 
@@ -168,7 +157,6 @@ namespace Project_UAS_
             this.Controls.Add(this.tb_Search);
             this.Controls.Add(this.tb_Kota);
             this.Controls.Add(this.dgv_Kota);
-            this.Controls.Add(this.btn_Find);
             this.Controls.Add(this.btn_Exit);
             this.Controls.Add(this.btn_Print);
             this.Controls.Add(this.btn_Delete);
@@ -192,7 +180,6 @@ namespace Project_UAS_
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         public System.Windows.Forms.Button btn_Delete;
-        public System.Windows.Forms.Button btn_Find;
         public System.Windows.Forms.Button btn_Exit;
         public System.Windows.Forms.Button btn_Print;
         private System.Windows.Forms.DataGridView dgv_Kota;

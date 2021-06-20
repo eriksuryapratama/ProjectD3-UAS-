@@ -40,5 +40,12 @@ namespace Project_UAS_
             viewSupplier formViewSupplier = new viewSupplier();
             formViewSupplier.ShowDialog();
         }
+
+        private void btn_Exit_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            mainHome form_Home = new mainHome();
+            form_Home.Show();
+        }
     }
 }

@@ -98,16 +98,6 @@ namespace Project_UAS_
 
         }
 
-        private void btn_Find_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tb_kota_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            
-        }
-
         private void dgv_Kota_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             int rowIndex = e.RowIndex;
