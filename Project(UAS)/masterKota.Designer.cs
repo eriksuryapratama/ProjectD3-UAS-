@@ -129,6 +129,7 @@ namespace Project_UAS_
             this.tb_Kota.Name = "tb_Kota";
             this.tb_Kota.Size = new System.Drawing.Size(100, 20);
             this.tb_Kota.TabIndex = 119;
+            this.tb_Kota.TextChanged += new System.EventHandler(this.tb_Kota_TextChanged);
             // 
             // tb_Search
             // 

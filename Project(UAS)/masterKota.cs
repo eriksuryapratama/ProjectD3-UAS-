@@ -137,5 +137,10 @@ namespace Project_UAS_
             sda.Fill(dt);
             dgv_Kota.DataSource = dt;
         }
+
+        private void tb_Kota_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

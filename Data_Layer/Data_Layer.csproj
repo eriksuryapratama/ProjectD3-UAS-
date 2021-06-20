@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BarangFunction.cs" />
     <Compile Include="ConnectionDB.cs" />
     <Compile Include="GroupUserFunction.cs" />
     <Compile Include="KotaFunction.cs" />
