@@ -58,6 +58,12 @@
     <Compile Include="mainHome.Designer.cs">
       <DependentUpon>mainHome.cs</DependentUpon>
     </Compile>
+    <Compile Include="masterGroupUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="masterGroupUser.Designer.cs">
+      <DependentUpon>masterGroupUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="masterKota.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,6 +130,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="mainHome.resx">
       <DependentUpon>mainHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="masterGroupUser.resx">
+      <DependentUpon>masterGroupUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="masterKota.resx">
       <DependentUpon>masterKota.cs</DependentUpon>

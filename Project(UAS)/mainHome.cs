@@ -44,5 +44,12 @@ namespace Project_UAS_
             masterKota form_Kota = new masterKota();
             form_Kota.Show();
         }
+
+        private void btn_mGroupuser_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            masterGroupUser form_Group = new masterGroupUser();
+            form_Group.Show();
+        }
     }
 }

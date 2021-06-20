@@ -90,6 +90,7 @@ namespace Project_UAS_
             this.btn_mGroupuser.TabIndex = 37;
             this.btn_mGroupuser.Text = "Master Group User";
             this.btn_mGroupuser.UseVisualStyleBackColor = false;
+            this.btn_mGroupuser.Click += new System.EventHandler(this.btn_mGroupuser_Click);
             // 
             // btn_mKota
             // 
@@ -185,7 +186,7 @@ namespace Project_UAS_
             this.Controls.Add(this.btn_mModel);
             this.Controls.Add(this.btn_mBarang);
             this.Name = "mainHome";
-            this.Text = "Form1";
+            this.Text = "MENU";
             this.ResumeLayout(false);
             this.PerformLayout();
 
