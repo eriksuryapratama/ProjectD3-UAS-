@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BarangFunction.cs" />
+    <Compile Include="PelangganFunction.cs" />
     <Compile Include="ConnectionDB.cs" />
     <Compile Include="GroupUserFunction.cs" />
     <Compile Include="KotaFunction.cs" />

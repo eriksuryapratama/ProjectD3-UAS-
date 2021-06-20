@@ -16,20 +16,26 @@ namespace Project_UAS_
     {
         SqlConnection con;
         SqlCommand cmd;
-        SqlDataReader dr;
         ConnectionDB db = new ConnectionDB();
+        SqlDataReader dr;
+        SqlDataAdapter da;
 
         public viewPelanggan()
         {
             InitializeComponent();
 
-            con = new SqlConnection(db.GetConnection());
-            LoadRecords();
+        }
+
+        PelangganFunction bf = new PelangganFunction();
+
+        private void clear()
+        {
+            tb_Search.Clear();
         }
 
         public void LoadRecords()
         {
-            dgv_masterPelanggan.Rows.Clear();
+            dgv_Pelanggan.Rows.Clear();
             int i = 0;
             con.Open();
             cmd = new SqlCommand("SELECT * FROM m_pelanggan", con);
@@ -37,31 +43,71 @@ namespace Project_UAS_
             while (dr.Read())
             {
                 i++;
-                dgv_masterPelanggan.Rows.Add(i, dr["P_CODE"].ToString(), dr["NAMA"].ToString(), dr["ALAMAT"].ToString(), dr["KOTA"].ToString(), dr["TELP"].ToString(), dr["NPWP"].ToString(), dr["NAMA_NPWP"].ToString(), dr["ALAMAT_NPWP"].ToString(), dr["NAMA1"].ToString(), dr["ALAMAT1"].ToString(), dr["KOTA1"].ToString(), dr["HP"].ToString(), dr["KETERANGAN"].ToString());
+                dgv_Pelanggan.Rows.Add(i, dr["P_CODE"].ToString(), dr["NAMA"].ToString(), dr["ALAMAT"].ToString(), dr["KOTA"].ToString(), dr["TELP"].ToString(), dr["NPWP"].ToString(), dr["NAMA_NPWP"].ToString(), dr["ALAMAT_NPWP"].ToString(), dr["NAMA1"].ToString(), dr["ALAMAT1"].ToString(), dr["KOTA1"].ToString(), dr["HP"].ToString(), dr["KETERANGAN"].ToString());
             }
             dr.Close();
             con.Close();
         }
 
-        private void dgv_masterPelanggan_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            string colName = dgv_masterPelanggan.Columns[e.ColumnIndex].Name;
+        
 
-            if (colName == "column_deleted")
+        
+
+        private void viewPelanggan_Load(object sender, EventArgs e)
+        {
+            try
             {
-                if (MessageBox.Show("Ingin Menghapus Data Pelanggan ini?", "MESSAGE", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                {
-                    con.Open();
-                    cmd = new SqlCommand("DELETE FROM m_pelanggan WHERE P_CODE = '" + dgv_masterPelanggan.Rows[e.RowIndex].Cells[1].Value.ToString() + "'", con);
-                    cmd.ExecuteNonQuery();
-                    con.Close();
-                    MessageBox.Show("Data Pelanggan Berhasil Dihapus !", "MESSAGE", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    LoadRecords();
-                }
+                DataTable dt = bf.Select();
+                dgv_Pelanggan.DataSource = dt;
+
+                dgv_Pelanggan.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                dgv_Pelanggan.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                dgv_Pelanggan.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                dgv_Pelanggan.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                dgv_Pelanggan.Columns[13].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            }
+            catch (Exception ex)
+            {
+
             }
         }
 
-        private void btn_addData_Click(object sender, EventArgs e)
+        private void tb_Search_TextChanged(object sender, EventArgs e)
+        {
+            string keyword = tb_Search.Text;
+            SqlConnection con = new SqlConnection(db.GetConnection());
+            SqlDataAdapter sda = new SqlDataAdapter("SELECT * FROM m_pelanggan WHERE NAMA LIKE '%" + keyword + "%'", con);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            dgv_Pelanggan.DataSource = dt;
+        }
+
+        private void btn_Delete_Click(object sender, EventArgs e)
+        {
+            bf.namaPelanggan = textBox1.Text;
+            bool success = bf.Delete(bf);
+            if (success == true)
+            {
+                MessageBox.Show("Data Pelanggan Berhasil Dihapus");
+
+                DataTable dt = bf.Select();
+                dgv_Pelanggan.DataSource = dt;
+                clear();
+            }
+            else
+            {
+                MessageBox.Show("Gagal Menghapus Data Pelanggan");
+            }
+        }
+
+        private void dgv_Pelanggan_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            int rowIndex = e.RowIndex;
+            textBox1.Text = dgv_Pelanggan.Rows[rowIndex].Cells[2].Value.ToString();
+        }
+
+        private void btn_addData_Click_1(object sender, EventArgs e)
         {
             this.Hide();
             masterPelanggan formPelanggan = new masterPelanggan();

@@ -1,28 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using System.Data.SqlClient;
-using Business_Layer;
-using System.Data;
-
 namespace Data_Layer
 {
-    public class BarangFunction
+    public class PelangganFunction
     {
         ConnectionDB db = new ConnectionDB();
-        public string namaBarang { get; set; }
+        public string namaPelanggan { get; set; }
 
-        //SELECT
         public DataTable Select()
         {
             SqlConnection con = new SqlConnection(db.GetConnection());
             DataTable dt = new DataTable();
             try
             {
-                String sql = "SELECT * FROM m_barang";
+                String sql = "SELECT * FROM m_pelanggan";
                 SqlCommand cmd = new SqlCommand(sql, con);
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 con.Open();
@@ -39,16 +36,15 @@ namespace Data_Layer
             return dt;
         }
 
-        //INSERT
-        public bool Insert(BarangFunction bf)
+        public bool Insert(PelangganFunction bf)
         {
             bool isSuccess = false;
             SqlConnection con = new SqlConnection(db.GetConnection());
             try
             {
-                string sql = "INSERT INTO m_barang (KODE, PART_NO, DESCRIPTION, UNIT_PRICE, UNIT, STAMPING, DATA_FISIK, PERSAMAAN, PN1, MERK1, MERK2, MERK3, KETERANGAN) values (@kode, @part_no, @description, @unit_price, @unit, @stamping, @data_fisik, @persamaan, @pn1, @merk1, @merk2, @merk3, @keterangan)";
+                string sql = "INSERT INTO m_pelanggan (P_CODE, NAMA, ALAMAT, KOTA, TELP, NPWP, NAMA_NPWP, ALAMAT_NPWP, NAMA1, ALAMAT1, KOTA1, HP, KETERANGAN) values (@p_code, @nama, @alamat, @kota, @telp, @npwp, @nama_npwp, @alamat_npwp, @nama1, @alamat1, @kota1, @hp, @keterangan)";
                 SqlCommand cmd = new SqlCommand(sql, con);
-                cmd.Parameters.AddWithValue("@description", bf.namaBarang);
+                cmd.Parameters.AddWithValue("@nama", bf.namaPelanggan);
 
                 con.Open();
                 int rows = cmd.ExecuteNonQuery();
@@ -72,17 +68,16 @@ namespace Data_Layer
             return isSuccess;
         }
 
-        //UPDATE
-        public bool Update(BarangFunction bf)
+        public bool Update(PelangganFunction bf)
         {
             bool isSuccess = false;
             SqlConnection con = new SqlConnection(db.GetConnection());
             try
             {
-                string sql = "UPDATE m_barang SET PART_NO = @part_no, DESCRIPTION = @description, UNIT_PRICE = @unit_price, UNIT = @unit, STAMPING = @stamping, DATA_FISIK = @data_fisik, PERSAMAAN = @persamaan, PN1 = @pn1, MERK1 = @merk1, MERK2 = @merk2, MERK3 = @merk3, KETERANGAN = @keterangan WHERE KODE = @kode";
+                string sql = "UPDATE m_pelanggan SET NAMA = @nama, ALAMAT = @alamat, KOTA = @kota, TELP = @telp, NPWP = @npwp, NAMA_NPWP = @nama_npwp, ALAMAT_NPWP = @alamat_npwp, NAMA1 = @nama1, ALAMAT1 = @alamat1, KOTA1 = @kota1, HP = @hp, KETERANGAN = @keterangan WHERE P_CODE = @p_code";
 
                 SqlCommand cmd = new SqlCommand(sql, con);
-                cmd.Parameters.AddWithValue("@namabarang", bf.namaBarang);
+                cmd.Parameters.AddWithValue("@nama", bf.namaPelanggan);
 
                 con.Open();
 
@@ -107,17 +102,16 @@ namespace Data_Layer
             return isSuccess;
         }
 
-        //DELETE
-        public bool Delete(BarangFunction bf)
+        public bool Delete(PelangganFunction bf)
         {
             bool isSuccess = false;
             SqlConnection con = new SqlConnection(db.GetConnection());
             try
             {
-                string sql = "DELETE FROM m_barang WHERE DESCRIPTION = @description";
+                string sql = "DELETE FROM m_pelanggan WHERE NAMA = @nama";
 
                 SqlCommand cmd = new SqlCommand(sql, con);
-                cmd.Parameters.AddWithValue("@description", bf.namaBarang);
+                cmd.Parameters.AddWithValue("@nama", bf.namaPelanggan);
 
                 con.Open();
 
@@ -142,4 +136,6 @@ namespace Data_Layer
             return isSuccess;
         }
     }
+
+
 }

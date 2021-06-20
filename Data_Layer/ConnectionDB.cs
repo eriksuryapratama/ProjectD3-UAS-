@@ -10,7 +10,7 @@ namespace Data_Layer
     {
         public string GetConnection()
         {
-            string con = @"Data Source=.\SQLExpress;Initial Catalog=UAS;User ID=sa;Password=surabaya123321";
+            string con = @"Data Source=.\SQLExpress;Initial Catalog=UAS;Integrated Security=True";
             return con;
         }
     }
