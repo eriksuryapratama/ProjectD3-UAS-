@@ -29,212 +29,121 @@ namespace Project_UAS_
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(viewSupplier));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.tb_Search = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.dgv_Supplier = new System.Windows.Forms.DataGridView();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btn_Delete = new System.Windows.Forms.Button();
             this.btn_addData = new System.Windows.Forms.Button();
-            this.dgv_masterSupplier = new System.Windows.Forms.DataGridView();
-            this.Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.column_deleted = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_masterSupplier)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Supplier)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.btn_addData);
+            this.panel1.Controls.Add(this.tb_Search);
+            this.panel1.Controls.Add(this.label3);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(993, 34);
+            this.panel1.Size = new System.Drawing.Size(929, 34);
             this.panel1.TabIndex = 10;
+            // 
+            // tb_Search
+            // 
+            this.tb_Search.Location = new System.Drawing.Point(592, 3);
+            this.tb_Search.Name = "tb_Search";
+            this.tb_Search.Size = new System.Drawing.Size(171, 20);
+            this.tb_Search.TabIndex = 125;
+            this.tb_Search.TextChanged += new System.EventHandler(this.tb_Search_TextChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(545, 5);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(41, 13);
+            this.label3.TabIndex = 126;
+            this.label3.Text = "Search";
+            // 
+            // dgv_Supplier
+            // 
+            this.dgv_Supplier.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv_Supplier.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
+            this.dgv_Supplier.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_Supplier.Location = new System.Drawing.Point(0, 40);
+            this.dgv_Supplier.Name = "dgv_Supplier";
+            this.dgv_Supplier.ReadOnly = true;
+            this.dgv_Supplier.RowHeadersWidth = 62;
+            this.dgv_Supplier.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_Supplier.Size = new System.Drawing.Size(921, 346);
+            this.dgv_Supplier.TabIndex = 127;
+            this.dgv_Supplier.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Supplier_CellContentClick);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(447, 411);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(182, 20);
+            this.textBox1.TabIndex = 130;
+            // 
+            // btn_Delete
+            // 
+            this.btn_Delete.BackColor = System.Drawing.Color.Red;
+            this.btn_Delete.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Delete.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btn_Delete.Location = new System.Drawing.Point(648, 403);
+            this.btn_Delete.Name = "btn_Delete";
+            this.btn_Delete.Size = new System.Drawing.Size(125, 35);
+            this.btn_Delete.TabIndex = 129;
+            this.btn_Delete.Text = "Delete";
+            this.btn_Delete.UseVisualStyleBackColor = false;
+            this.btn_Delete.Click += new System.EventHandler(this.btn_Delete_Click);
             // 
             // btn_addData
             // 
-            this.btn_addData.Location = new System.Drawing.Point(3, 3);
+            this.btn_addData.BackColor = System.Drawing.Color.LimeGreen;
+            this.btn_addData.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_addData.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btn_addData.Location = new System.Drawing.Point(19, 403);
             this.btn_addData.Name = "btn_addData";
-            this.btn_addData.Size = new System.Drawing.Size(128, 23);
-            this.btn_addData.TabIndex = 0;
+            this.btn_addData.Size = new System.Drawing.Size(128, 35);
+            this.btn_addData.TabIndex = 128;
             this.btn_addData.Text = "Add Data";
-            this.btn_addData.UseVisualStyleBackColor = true;
+            this.btn_addData.UseVisualStyleBackColor = false;
             this.btn_addData.Click += new System.EventHandler(this.btn_addData_Click);
-            // 
-            // dgv_masterSupplier
-            // 
-            this.dgv_masterSupplier.AllowUserToAddRows = false;
-            this.dgv_masterSupplier.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dgv_masterSupplier.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_masterSupplier.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column14,
-            this.Column11,
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5,
-            this.Column6,
-            this.Column7,
-            this.Column8,
-            this.Column9,
-            this.Column10,
-            this.column_deleted});
-            this.dgv_masterSupplier.Location = new System.Drawing.Point(3, 32);
-            this.dgv_masterSupplier.Name = "dgv_masterSupplier";
-            this.dgv_masterSupplier.ReadOnly = true;
-            this.dgv_masterSupplier.RowHeadersVisible = false;
-            this.dgv_masterSupplier.RowHeadersWidth = 62;
-            this.dgv_masterSupplier.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_masterSupplier.Size = new System.Drawing.Size(986, 414);
-            this.dgv_masterSupplier.TabIndex = 11;
-            this.dgv_masterSupplier.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_masterSupplier_CellContentClick);
-            // 
-            // Column14
-            // 
-            this.Column14.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Column14.HeaderText = "#";
-            this.Column14.MinimumWidth = 8;
-            this.Column14.Name = "Column14";
-            this.Column14.ReadOnly = true;
-            this.Column14.Width = 39;
-            // 
-            // Column11
-            // 
-            this.Column11.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Column11.HeaderText = "KODE";
-            this.Column11.Name = "Column11";
-            this.Column11.ReadOnly = true;
-            this.Column11.Width = 62;
-            // 
-            // Column1
-            // 
-            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Column1.HeaderText = "NAMA";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Width = 63;
-            // 
-            // Column2
-            // 
-            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column2.HeaderText = "ALAMAT";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Column3.HeaderText = "KOTA";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            this.Column3.Width = 61;
-            // 
-            // Column4
-            // 
-            this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Column4.HeaderText = "TELP/HP";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            this.Column4.Width = 79;
-            // 
-            // Column5
-            // 
-            this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Column5.HeaderText = "NPWP";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            this.Column5.Width = 65;
-            // 
-            // Column6
-            // 
-            this.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Column6.HeaderText = "NAMA NPWP";
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            this.Column6.Width = 99;
-            // 
-            // Column7
-            // 
-            this.Column7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column7.HeaderText = "ALAMAT NPWP";
-            this.Column7.Name = "Column7";
-            this.Column7.ReadOnly = true;
-            // 
-            // Column8
-            // 
-            this.Column8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Column8.HeaderText = "EMAIL";
-            this.Column8.Name = "Column8";
-            this.Column8.ReadOnly = true;
-            this.Column8.Width = 64;
-            // 
-            // Column9
-            // 
-            this.Column9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Column9.HeaderText = "BANK";
-            this.Column9.Name = "Column9";
-            this.Column9.ReadOnly = true;
-            this.Column9.Width = 61;
-            // 
-            // Column10
-            // 
-            this.Column10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column10.HeaderText = "NOTE";
-            this.Column10.Name = "Column10";
-            this.Column10.ReadOnly = true;
-            // 
-            // column_deleted
-            // 
-            this.column_deleted.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.column_deleted.HeaderText = "";
-            this.column_deleted.Image = ((System.Drawing.Image)(resources.GetObject("column_deleted.Image")));
-            this.column_deleted.MinimumWidth = 8;
-            this.column_deleted.Name = "column_deleted";
-            this.column_deleted.ReadOnly = true;
-            this.column_deleted.Width = 8;
             // 
             // viewSupplier
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(993, 450);
+            this.ClientSize = new System.Drawing.Size(929, 450);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.btn_Delete);
+            this.Controls.Add(this.btn_addData);
+            this.Controls.Add(this.dgv_Supplier);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.dgv_masterSupplier);
             this.Name = "viewSupplier";
             this.Text = "viewSupplier";
+            this.Load += new System.EventHandler(this.viewSupplier_Load);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_masterSupplier)).EndInit();
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Supplier)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.Panel panel1;
+        public System.Windows.Forms.TextBox tb_Search;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DataGridView dgv_Supplier;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button btn_Delete;
         private System.Windows.Forms.Button btn_addData;
-        private System.Windows.Forms.DataGridView dgv_masterSupplier;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column14;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
-        private System.Windows.Forms.DataGridViewImageColumn column_deleted;
     }
 }

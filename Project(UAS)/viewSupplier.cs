@@ -16,31 +16,75 @@ namespace Project_UAS_
     {
         SqlConnection con;
         SqlCommand cmd;
-        SqlDataReader dr;
         ConnectionDB db = new ConnectionDB();
+        SqlDataReader dr;
+        SqlDataAdapter da;
 
         public viewSupplier()
         {
             InitializeComponent();
 
-            con = new SqlConnection(db.GetConnection());
-            LoadRecords();
+            
         }
 
-        public void LoadRecords()
+        SupplierFunction bf = new SupplierFunction();
+
+        private void clear()
         {
-            dgv_masterSupplier.Rows.Clear();
-            int i = 0;
-            con.Open();
-            cmd = new SqlCommand("SELECT * FROM m_supplier", con);
-            dr = cmd.ExecuteReader();
-            while (dr.Read())
+            tb_Search.Clear();
+        }
+
+        private void viewSupplier_Load(object sender, EventArgs e)
+        {
+            try
             {
-                i++;
-                dgv_masterSupplier.Rows.Add(i, dr["P_ID"].ToString(), dr["NAMA"].ToString(), dr["ALAMAT"].ToString(), dr["KOTA"].ToString(), dr["TELP_HP"].ToString(), dr["NPWP"].ToString(), dr["NAMA_NPWP"].ToString(), dr["ALAMAT_NPW"].ToString(), dr["EMAIL"].ToString(), dr["BANK"].ToString(), dr["NOTE"].ToString());
+                DataTable dt = bf.Select();
+                dgv_Supplier.DataSource = dt;
+
+                dgv_Supplier.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                dgv_Supplier.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                dgv_Supplier.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                dgv_Supplier.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                
             }
-            dr.Close();
-            con.Close();
+            catch (Exception ex)
+            {
+
+            }
+        }
+
+        private void tb_Search_TextChanged(object sender, EventArgs e)
+        {
+            string keyword = tb_Search.Text;
+            SqlConnection con = new SqlConnection(db.GetConnection());
+            SqlDataAdapter sda = new SqlDataAdapter("SELECT * FROM m_supplier WHERE NAMA LIKE '%" + keyword + "%'", con);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            dgv_Supplier.DataSource = dt;
+        }
+
+        private void btn_Delete_Click(object sender, EventArgs e)
+        {
+            bf.namaSupplier = textBox1.Text;
+            bool success = bf.Delete(bf);
+            if (success == true)
+            {
+                MessageBox.Show("Data Supplier Berhasil Dihapus");
+
+                DataTable dt = bf.Select();
+                dgv_Supplier.DataSource = dt;
+                clear();
+            }
+            else
+            {
+                MessageBox.Show("Gagal Menghapus Data Supplier");
+            }
+        }
+
+        private void dgv_Supplier_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int rowIndex = e.RowIndex;
+            textBox1.Text = dgv_Supplier.Rows[rowIndex].Cells[1].Value.ToString();
         }
 
         private void btn_addData_Click(object sender, EventArgs e)
@@ -48,24 +92,6 @@ namespace Project_UAS_
             this.Hide();
             masterSupplier formSupplier = new masterSupplier();
             formSupplier.ShowDialog();
-        }
-
-        private void dgv_masterSupplier_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            string colName = dgv_masterSupplier.Columns[e.ColumnIndex].Name;
-
-            if (colName == "column_deleted")
-            {
-                if (MessageBox.Show("Ingin Menghapus Data Pelanggan ini?", "MESSAGE", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                {
-                    con.Open();
-                    cmd = new SqlCommand("DELETE FROM m_supplier WHERE P_ID = '" + dgv_masterSupplier.Rows[e.RowIndex].Cells[1].Value.ToString() + "'", con);
-                    cmd.ExecuteNonQuery();
-                    con.Close();
-                    MessageBox.Show("Data Pelanggan Berhasil Dihapus !", "MESSAGE", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    LoadRecords();
-                }
-            }
         }
     }
 }

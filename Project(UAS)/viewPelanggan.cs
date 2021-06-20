@@ -32,25 +32,6 @@ namespace Project_UAS_
         {
             tb_Search.Clear();
         }
-
-        public void LoadRecords()
-        {
-            dgv_Pelanggan.Rows.Clear();
-            int i = 0;
-            con.Open();
-            cmd = new SqlCommand("SELECT * FROM m_pelanggan", con);
-            dr = cmd.ExecuteReader();
-            while (dr.Read())
-            {
-                i++;
-                dgv_Pelanggan.Rows.Add(i, dr["P_CODE"].ToString(), dr["NAMA"].ToString(), dr["ALAMAT"].ToString(), dr["KOTA"].ToString(), dr["TELP"].ToString(), dr["NPWP"].ToString(), dr["NAMA_NPWP"].ToString(), dr["ALAMAT_NPWP"].ToString(), dr["NAMA1"].ToString(), dr["ALAMAT1"].ToString(), dr["KOTA1"].ToString(), dr["HP"].ToString(), dr["KETERANGAN"].ToString());
-            }
-            dr.Close();
-            con.Close();
-        }
-
-        
-
         
 
         private void viewPelanggan_Load(object sender, EventArgs e)
