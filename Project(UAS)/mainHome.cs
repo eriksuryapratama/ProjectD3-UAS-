@@ -58,5 +58,12 @@ namespace Project_UAS_
             Form1 form_Group = new Form1();
             form_Group.Show();
         }
+
+        private void btn_mModel_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            masterModel form_Group = new masterModel();
+            form_Group.Show();
+        }
     }
 }

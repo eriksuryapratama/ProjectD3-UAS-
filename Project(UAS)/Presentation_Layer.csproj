@@ -125,6 +125,12 @@
     <Compile Include="viewMerk.Designer.cs">
       <DependentUpon>viewMerk.cs</DependentUpon>
     </Compile>
+    <Compile Include="viewModel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="viewModel.Designer.cs">
+      <DependentUpon>viewModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="viewPelanggan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -181,6 +187,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="viewMerk.resx">
       <DependentUpon>viewMerk.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="viewModel.resx">
+      <DependentUpon>viewModel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="viewPelanggan.resx">
       <DependentUpon>viewPelanggan.cs</DependentUpon>

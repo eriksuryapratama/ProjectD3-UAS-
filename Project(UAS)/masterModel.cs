@@ -31,5 +31,19 @@ namespace Project_UAS_
             this.m_modelTableAdapter.Fill(this.uASDataSet.m_model);
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            viewModel formViewModel = new viewModel();
+            formViewModel.ShowDialog();
+        }
+
+        private void btn_Exit_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            mainHome form_Home = new mainHome();
+            form_Home.Show();
+        }
     }
 }

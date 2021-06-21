@@ -47,9 +47,10 @@ namespace Project_UAS_
             this.btn_mPelanggan.BackColor = System.Drawing.Color.MediumPurple;
             this.btn_mPelanggan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_mPelanggan.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btn_mPelanggan.Location = new System.Drawing.Point(372, 128);
+            this.btn_mPelanggan.Location = new System.Drawing.Point(248, 83);
+            this.btn_mPelanggan.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_mPelanggan.Name = "btn_mPelanggan";
-            this.btn_mPelanggan.Size = new System.Drawing.Size(284, 78);
+            this.btn_mPelanggan.Size = new System.Drawing.Size(189, 51);
             this.btn_mPelanggan.TabIndex = 40;
             this.btn_mPelanggan.Text = "Master Pelanggan";
             this.btn_mPelanggan.UseVisualStyleBackColor = false;
@@ -60,10 +61,9 @@ namespace Project_UAS_
             this.btn_mUsers.BackColor = System.Drawing.Color.Firebrick;
             this.btn_mUsers.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_mUsers.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btn_mUsers.Location = new System.Drawing.Point(82, 300);
-            this.btn_mUsers.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btn_mUsers.Location = new System.Drawing.Point(55, 195);
             this.btn_mUsers.Name = "btn_mUsers";
-            this.btn_mUsers.Size = new System.Drawing.Size(284, 78);
+            this.btn_mUsers.Size = new System.Drawing.Size(189, 51);
             this.btn_mUsers.TabIndex = 39;
             this.btn_mUsers.Text = "Master Users";
             this.btn_mUsers.UseVisualStyleBackColor = false;
@@ -73,10 +73,9 @@ namespace Project_UAS_
             this.btn_mHakaksesgroupuser.BackColor = System.Drawing.Color.Orange;
             this.btn_mHakaksesgroupuser.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_mHakaksesgroupuser.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btn_mHakaksesgroupuser.Location = new System.Drawing.Point(662, 300);
-            this.btn_mHakaksesgroupuser.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btn_mHakaksesgroupuser.Location = new System.Drawing.Point(441, 195);
             this.btn_mHakaksesgroupuser.Name = "btn_mHakaksesgroupuser";
-            this.btn_mHakaksesgroupuser.Size = new System.Drawing.Size(284, 78);
+            this.btn_mHakaksesgroupuser.Size = new System.Drawing.Size(189, 51);
             this.btn_mHakaksesgroupuser.TabIndex = 38;
             this.btn_mHakaksesgroupuser.Text = "Master Hak Akses Group User";
             this.btn_mHakaksesgroupuser.UseVisualStyleBackColor = false;
@@ -86,10 +85,9 @@ namespace Project_UAS_
             this.btn_mGroupuser.BackColor = System.Drawing.Color.Tomato;
             this.btn_mGroupuser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_mGroupuser.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btn_mGroupuser.Location = new System.Drawing.Point(372, 300);
-            this.btn_mGroupuser.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btn_mGroupuser.Location = new System.Drawing.Point(248, 195);
             this.btn_mGroupuser.Name = "btn_mGroupuser";
-            this.btn_mGroupuser.Size = new System.Drawing.Size(284, 78);
+            this.btn_mGroupuser.Size = new System.Drawing.Size(189, 51);
             this.btn_mGroupuser.TabIndex = 37;
             this.btn_mGroupuser.Text = "Master Group User";
             this.btn_mGroupuser.UseVisualStyleBackColor = false;
@@ -100,10 +98,9 @@ namespace Project_UAS_
             this.btn_mKota.BackColor = System.Drawing.Color.MediumAquamarine;
             this.btn_mKota.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_mKota.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btn_mKota.Location = new System.Drawing.Point(662, 214);
-            this.btn_mKota.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btn_mKota.Location = new System.Drawing.Point(441, 139);
             this.btn_mKota.Name = "btn_mKota";
-            this.btn_mKota.Size = new System.Drawing.Size(284, 78);
+            this.btn_mKota.Size = new System.Drawing.Size(189, 51);
             this.btn_mKota.TabIndex = 36;
             this.btn_mKota.Text = "Master Kota";
             this.btn_mKota.UseVisualStyleBackColor = false;
@@ -113,10 +110,9 @@ namespace Project_UAS_
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Modern No. 20", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(328, 42);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(219, 27);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(372, 42);
+            this.label1.Size = new System.Drawing.Size(257, 29);
             this.label1.TabIndex = 35;
             this.label1.Text = "Warehouse Program";
             // 
@@ -125,9 +121,10 @@ namespace Project_UAS_
             this.btn_mMerk.BackColor = System.Drawing.Color.MediumSpringGreen;
             this.btn_mMerk.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_mMerk.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btn_mMerk.Location = new System.Drawing.Point(372, 214);
+            this.btn_mMerk.Location = new System.Drawing.Point(248, 139);
+            this.btn_mMerk.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_mMerk.Name = "btn_mMerk";
-            this.btn_mMerk.Size = new System.Drawing.Size(284, 78);
+            this.btn_mMerk.Size = new System.Drawing.Size(189, 51);
             this.btn_mMerk.TabIndex = 34;
             this.btn_mMerk.Text = "Master Merk";
             this.btn_mMerk.UseVisualStyleBackColor = false;
@@ -137,9 +134,10 @@ namespace Project_UAS_
             this.btn_mSupplier.BackColor = System.Drawing.Color.MediumOrchid;
             this.btn_mSupplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_mSupplier.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btn_mSupplier.Location = new System.Drawing.Point(662, 128);
+            this.btn_mSupplier.Location = new System.Drawing.Point(441, 83);
+            this.btn_mSupplier.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_mSupplier.Name = "btn_mSupplier";
-            this.btn_mSupplier.Size = new System.Drawing.Size(284, 78);
+            this.btn_mSupplier.Size = new System.Drawing.Size(189, 51);
             this.btn_mSupplier.TabIndex = 33;
             this.btn_mSupplier.Text = "Master Supplier";
             this.btn_mSupplier.UseVisualStyleBackColor = false;
@@ -150,21 +148,24 @@ namespace Project_UAS_
             this.btn_mModel.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.btn_mModel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_mModel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btn_mModel.Location = new System.Drawing.Point(82, 214);
+            this.btn_mModel.Location = new System.Drawing.Point(55, 139);
+            this.btn_mModel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_mModel.Name = "btn_mModel";
-            this.btn_mModel.Size = new System.Drawing.Size(284, 78);
+            this.btn_mModel.Size = new System.Drawing.Size(189, 51);
             this.btn_mModel.TabIndex = 32;
             this.btn_mModel.Text = "Master Model";
             this.btn_mModel.UseVisualStyleBackColor = false;
+            this.btn_mModel.Click += new System.EventHandler(this.btn_mModel_Click);
             // 
             // btn_mBarang
             // 
             this.btn_mBarang.BackColor = System.Drawing.Color.CornflowerBlue;
             this.btn_mBarang.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_mBarang.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btn_mBarang.Location = new System.Drawing.Point(82, 128);
+            this.btn_mBarang.Location = new System.Drawing.Point(55, 83);
+            this.btn_mBarang.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_mBarang.Name = "btn_mBarang";
-            this.btn_mBarang.Size = new System.Drawing.Size(284, 78);
+            this.btn_mBarang.Size = new System.Drawing.Size(189, 51);
             this.btn_mBarang.TabIndex = 31;
             this.btn_mBarang.Text = "Master Barang";
             this.btn_mBarang.UseVisualStyleBackColor = false;
@@ -175,9 +176,10 @@ namespace Project_UAS_
             this.button1.BackColor = System.Drawing.Color.SaddleBrown;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            this.button1.Location = new System.Drawing.Point(82, 387);
+            this.button1.Location = new System.Drawing.Point(55, 252);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(284, 88);
+            this.button1.Size = new System.Drawing.Size(189, 57);
             this.button1.TabIndex = 41;
             this.button1.Text = "INVOICE";
             this.button1.UseVisualStyleBackColor = false;
@@ -185,10 +187,10 @@ namespace Project_UAS_
             // 
             // mainHome
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1034, 532);
+            this.ClientSize = new System.Drawing.Size(689, 346);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btn_mPelanggan);
             this.Controls.Add(this.btn_mUsers);
@@ -200,7 +202,6 @@ namespace Project_UAS_
             this.Controls.Add(this.btn_mSupplier);
             this.Controls.Add(this.btn_mModel);
             this.Controls.Add(this.btn_mBarang);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "mainHome";
             this.Text = "MENU";
             this.ResumeLayout(false);
