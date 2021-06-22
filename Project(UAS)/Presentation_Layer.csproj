@@ -82,6 +82,12 @@
     <Compile Include="masterGroupUser.Designer.cs">
       <DependentUpon>masterGroupUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="masterHakAksesGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="masterHakAksesGroup.Designer.cs">
+      <DependentUpon>masterHakAksesGroup.cs</DependentUpon>
+    </Compile>
     <Compile Include="masterKota.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -184,6 +190,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="masterGroupUser.resx">
       <DependentUpon>masterGroupUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="masterHakAksesGroup.resx">
+      <DependentUpon>masterHakAksesGroup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="masterKota.resx">
       <DependentUpon>masterKota.cs</DependentUpon>
