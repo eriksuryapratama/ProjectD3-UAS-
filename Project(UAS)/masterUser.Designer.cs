@@ -32,7 +32,7 @@ namespace Project_UAS_
             this.label3 = new System.Windows.Forms.Label();
             this.tb_Search = new System.Windows.Forms.TextBox();
             this.tb_Username = new System.Windows.Forms.TextBox();
-            this.dgv_Kota = new System.Windows.Forms.DataGridView();
+            this.dgv_User = new System.Windows.Forms.DataGridView();
             this.btn_Exit = new System.Windows.Forms.Button();
             this.btn_Print = new System.Windows.Forms.Button();
             this.btn_Delete = new System.Windows.Forms.Button();
@@ -44,7 +44,7 @@ namespace Project_UAS_
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.cb_NamaGroupUser = new System.Windows.Forms.ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_Kota)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_User)).BeginInit();
             this.SuspendLayout();
             // 
             // label3
@@ -62,6 +62,7 @@ namespace Project_UAS_
             this.tb_Search.Name = "tb_Search";
             this.tb_Search.Size = new System.Drawing.Size(235, 20);
             this.tb_Search.TabIndex = 131;
+            this.tb_Search.TextChanged += new System.EventHandler(this.tb_Search_TextChanged);
             // 
             // tb_Username
             // 
@@ -70,15 +71,17 @@ namespace Project_UAS_
             this.tb_Username.Size = new System.Drawing.Size(135, 20);
             this.tb_Username.TabIndex = 130;
             // 
-            // dgv_Kota
+            // dgv_User
             // 
-            this.dgv_Kota.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgv_Kota.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_Kota.Location = new System.Drawing.Point(44, 301);
-            this.dgv_Kota.Name = "dgv_Kota";
-            this.dgv_Kota.ReadOnly = true;
-            this.dgv_Kota.Size = new System.Drawing.Size(279, 213);
-            this.dgv_Kota.TabIndex = 129;
+            this.dgv_User.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv_User.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_User.Location = new System.Drawing.Point(44, 301);
+            this.dgv_User.Name = "dgv_User";
+            this.dgv_User.ReadOnly = true;
+            this.dgv_User.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_User.Size = new System.Drawing.Size(279, 213);
+            this.dgv_User.TabIndex = 129;
+            this.dgv_User.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_User_CellContentClick);
             // 
             // btn_Exit
             // 
@@ -107,6 +110,7 @@ namespace Project_UAS_
             this.btn_Delete.TabIndex = 126;
             this.btn_Delete.Text = "Delete";
             this.btn_Delete.UseVisualStyleBackColor = true;
+            this.btn_Delete.Click += new System.EventHandler(this.btn_Delete_Click);
             // 
             // label2
             // 
@@ -135,6 +139,7 @@ namespace Project_UAS_
             this.btn_Edit.TabIndex = 123;
             this.btn_Edit.Text = "Update";
             this.btn_Edit.UseVisualStyleBackColor = true;
+            this.btn_Edit.Click += new System.EventHandler(this.btn_Edit_Click);
             // 
             // btn_Add
             // 
@@ -192,7 +197,7 @@ namespace Project_UAS_
             this.Controls.Add(this.label3);
             this.Controls.Add(this.tb_Search);
             this.Controls.Add(this.tb_Username);
-            this.Controls.Add(this.dgv_Kota);
+            this.Controls.Add(this.dgv_User);
             this.Controls.Add(this.btn_Exit);
             this.Controls.Add(this.btn_Print);
             this.Controls.Add(this.btn_Delete);
@@ -203,7 +208,7 @@ namespace Project_UAS_
             this.Name = "masterUser";
             this.Text = "masterUser";
             this.Load += new System.EventHandler(this.masterUser_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_Kota)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_User)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -214,7 +219,7 @@ namespace Project_UAS_
         private System.Windows.Forms.Label label3;
         public System.Windows.Forms.TextBox tb_Search;
         private System.Windows.Forms.TextBox tb_Username;
-        private System.Windows.Forms.DataGridView dgv_Kota;
+        private System.Windows.Forms.DataGridView dgv_User;
         public System.Windows.Forms.Button btn_Exit;
         public System.Windows.Forms.Button btn_Print;
         public System.Windows.Forms.Button btn_Delete;

@@ -124,7 +124,7 @@ namespace Data_Layer
                 string sql = "DELETE FROM m_users WHERE USERNAME = @username";
 
                 SqlCommand cmd = new SqlCommand(sql, con);
-                cmd.Parameters.AddWithValue("@username", uf.user_namaGroupUser);
+                cmd.Parameters.AddWithValue("@username", uf.user_Username);
 
                 con.Open();
 
