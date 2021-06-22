@@ -79,5 +79,12 @@ namespace Project_UAS_
             FormLogin form_Login = new FormLogin();
             form_Login.Show();
         }
+
+        private void btn_mMerk_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            masterMerk2 form_Group = new masterMerk2();
+            form_Group.Show();
+        }
     }
 }

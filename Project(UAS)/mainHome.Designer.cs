@@ -133,6 +133,7 @@ namespace Project_UAS_
             this.btn_mMerk.TabIndex = 34;
             this.btn_mMerk.Text = "Master Merk";
             this.btn_mMerk.UseVisualStyleBackColor = false;
+            this.btn_mMerk.Click += new System.EventHandler(this.btn_mMerk_Click);
             // 
             // btn_mSupplier
             // 
