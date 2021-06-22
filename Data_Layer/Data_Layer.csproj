@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BarangFunction.cs" />
+    <Compile Include="Merk2Function.cs" />
     <Compile Include="ModelFunction.cs" />
     <Compile Include="PelangganFunction.cs" />
     <Compile Include="ConnectionDB.cs" />

@@ -88,8 +88,8 @@ namespace Project_UAS_
         private void btn_addData_Click(object sender, EventArgs e)
         {
             this.Hide();
-            masterPelanggan formPelanggan = new masterPelanggan();
-            formPelanggan.ShowDialog();
+            masterModel formModel = new masterModel();
+            formModel.ShowDialog();
         }
     }
 }

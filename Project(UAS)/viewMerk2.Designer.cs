@@ -33,9 +33,9 @@ namespace Project_UAS_
             this.label3 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.btn_Delete = new System.Windows.Forms.Button();
-            this.dgv_Model = new System.Windows.Forms.DataGridView();
+            this.dgv_Merk2 = new System.Windows.Forms.DataGridView();
             this.btn_addData = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_Model)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Merk2)).BeginInit();
             this.SuspendLayout();
             // 
             // tb_Search
@@ -44,6 +44,7 @@ namespace Project_UAS_
             this.tb_Search.Name = "tb_Search";
             this.tb_Search.Size = new System.Drawing.Size(171, 20);
             this.tb_Search.TabIndex = 136;
+            this.tb_Search.TextChanged += new System.EventHandler(this.tb_Search_TextChanged);
             // 
             // label3
             // 
@@ -72,19 +73,21 @@ namespace Project_UAS_
             this.btn_Delete.TabIndex = 139;
             this.btn_Delete.Text = "Delete";
             this.btn_Delete.UseVisualStyleBackColor = false;
+            this.btn_Delete.Click += new System.EventHandler(this.btn_Delete_Click);
             // 
-            // dgv_Model
+            // dgv_Merk2
             // 
-            this.dgv_Model.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgv_Model.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
-            this.dgv_Model.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_Model.Location = new System.Drawing.Point(6, 42);
-            this.dgv_Model.Name = "dgv_Model";
-            this.dgv_Model.ReadOnly = true;
-            this.dgv_Model.RowHeadersWidth = 62;
-            this.dgv_Model.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_Model.Size = new System.Drawing.Size(788, 346);
-            this.dgv_Model.TabIndex = 138;
+            this.dgv_Merk2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv_Merk2.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
+            this.dgv_Merk2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_Merk2.Location = new System.Drawing.Point(6, 42);
+            this.dgv_Merk2.Name = "dgv_Merk2";
+            this.dgv_Merk2.ReadOnly = true;
+            this.dgv_Merk2.RowHeadersWidth = 62;
+            this.dgv_Merk2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_Merk2.Size = new System.Drawing.Size(788, 346);
+            this.dgv_Merk2.TabIndex = 138;
+            this.dgv_Merk2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Merk2_CellContentClick);
             // 
             // btn_addData
             // 
@@ -97,6 +100,7 @@ namespace Project_UAS_
             this.btn_addData.TabIndex = 141;
             this.btn_addData.Text = "Add Data";
             this.btn_addData.UseVisualStyleBackColor = false;
+            this.btn_addData.Click += new System.EventHandler(this.btn_addData_Click);
             // 
             // viewMerk2
             // 
@@ -109,10 +113,11 @@ namespace Project_UAS_
             this.Controls.Add(this.label3);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.btn_Delete);
-            this.Controls.Add(this.dgv_Model);
+            this.Controls.Add(this.dgv_Merk2);
             this.Name = "viewMerk2";
             this.Text = "viewMerk2";
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_Model)).EndInit();
+            this.Load += new System.EventHandler(this.viewMerk2_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Merk2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -124,7 +129,7 @@ namespace Project_UAS_
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button btn_Delete;
-        private System.Windows.Forms.DataGridView dgv_Model;
+        private System.Windows.Forms.DataGridView dgv_Merk2;
         private System.Windows.Forms.Button btn_addData;
     }
 }
