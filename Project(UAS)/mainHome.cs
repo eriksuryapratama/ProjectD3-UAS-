@@ -72,5 +72,12 @@ namespace Project_UAS_
             masterUser form_User = new masterUser();
             form_User.Show();
         }
+
+        private void btn_Exit_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormLogin form_Login = new FormLogin();
+            form_Login.Show();
+        }
     }
 }

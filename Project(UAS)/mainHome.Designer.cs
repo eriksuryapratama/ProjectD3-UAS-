@@ -40,6 +40,7 @@ namespace Project_UAS_
             this.btn_mModel = new System.Windows.Forms.Button();
             this.btn_mBarang = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.btn_Exit = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btn_mPelanggan
@@ -177,14 +178,28 @@ namespace Project_UAS_
             this.button1.BackColor = System.Drawing.Color.SaddleBrown;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.InactiveBorder;
-            this.button1.Location = new System.Drawing.Point(55, 252);
+            this.button1.Location = new System.Drawing.Point(55, 251);
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(189, 57);
+            this.button1.Size = new System.Drawing.Size(189, 51);
             this.button1.TabIndex = 41;
-            this.button1.Text = "INVOICE";
+            this.button1.Text = "Invoice";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btn_Exit
+            // 
+            this.btn_Exit.BackColor = System.Drawing.Color.SaddleBrown;
+            this.btn_Exit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Exit.ForeColor = System.Drawing.SystemColors.InactiveBorder;
+            this.btn_Exit.Location = new System.Drawing.Point(441, 251);
+            this.btn_Exit.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_Exit.Name = "btn_Exit";
+            this.btn_Exit.Size = new System.Drawing.Size(189, 51);
+            this.btn_Exit.TabIndex = 42;
+            this.btn_Exit.Text = "Exit";
+            this.btn_Exit.UseVisualStyleBackColor = false;
+            this.btn_Exit.Click += new System.EventHandler(this.btn_Exit_Click);
             // 
             // mainHome
             // 
@@ -192,6 +207,7 @@ namespace Project_UAS_
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(689, 346);
+            this.Controls.Add(this.btn_Exit);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btn_mPelanggan);
             this.Controls.Add(this.btn_mUsers);
@@ -223,6 +239,7 @@ namespace Project_UAS_
         private System.Windows.Forms.Button btn_mModel;
         private System.Windows.Forms.Button btn_mBarang;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_Exit;
     }
 }
 
