@@ -29,6 +29,7 @@ namespace Project_UAS_
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainHome));
             this.btn_mPelanggan = new System.Windows.Forms.Button();
             this.btn_mUsers = new System.Windows.Forms.Button();
             this.btn_mHakaksesgroupuser = new System.Windows.Forms.Button();
@@ -45,7 +46,7 @@ namespace Project_UAS_
             // 
             // btn_mPelanggan
             // 
-            this.btn_mPelanggan.BackColor = System.Drawing.Color.MediumPurple;
+            this.btn_mPelanggan.BackColor = System.Drawing.Color.SteelBlue;
             this.btn_mPelanggan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_mPelanggan.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btn_mPelanggan.Location = new System.Drawing.Point(248, 83);
@@ -59,7 +60,7 @@ namespace Project_UAS_
             // 
             // btn_mUsers
             // 
-            this.btn_mUsers.BackColor = System.Drawing.Color.Firebrick;
+            this.btn_mUsers.BackColor = System.Drawing.Color.SteelBlue;
             this.btn_mUsers.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_mUsers.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btn_mUsers.Location = new System.Drawing.Point(55, 195);
@@ -72,7 +73,7 @@ namespace Project_UAS_
             // 
             // btn_mHakaksesgroupuser
             // 
-            this.btn_mHakaksesgroupuser.BackColor = System.Drawing.Color.Orange;
+            this.btn_mHakaksesgroupuser.BackColor = System.Drawing.Color.SteelBlue;
             this.btn_mHakaksesgroupuser.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_mHakaksesgroupuser.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btn_mHakaksesgroupuser.Location = new System.Drawing.Point(441, 195);
@@ -84,7 +85,7 @@ namespace Project_UAS_
             // 
             // btn_mGroupuser
             // 
-            this.btn_mGroupuser.BackColor = System.Drawing.Color.Tomato;
+            this.btn_mGroupuser.BackColor = System.Drawing.Color.SteelBlue;
             this.btn_mGroupuser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_mGroupuser.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btn_mGroupuser.Location = new System.Drawing.Point(248, 195);
@@ -97,7 +98,7 @@ namespace Project_UAS_
             // 
             // btn_mKota
             // 
-            this.btn_mKota.BackColor = System.Drawing.Color.MediumAquamarine;
+            this.btn_mKota.BackColor = System.Drawing.Color.SteelBlue;
             this.btn_mKota.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_mKota.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btn_mKota.Location = new System.Drawing.Point(441, 139);
@@ -111,7 +112,9 @@ namespace Project_UAS_
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Modern No. 20", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(219, 27);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(257, 29);
@@ -120,7 +123,7 @@ namespace Project_UAS_
             // 
             // btn_mMerk
             // 
-            this.btn_mMerk.BackColor = System.Drawing.Color.MediumSpringGreen;
+            this.btn_mMerk.BackColor = System.Drawing.Color.SteelBlue;
             this.btn_mMerk.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_mMerk.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btn_mMerk.Location = new System.Drawing.Point(248, 139);
@@ -133,7 +136,7 @@ namespace Project_UAS_
             // 
             // btn_mSupplier
             // 
-            this.btn_mSupplier.BackColor = System.Drawing.Color.MediumOrchid;
+            this.btn_mSupplier.BackColor = System.Drawing.Color.SteelBlue;
             this.btn_mSupplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_mSupplier.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btn_mSupplier.Location = new System.Drawing.Point(441, 83);
@@ -147,7 +150,7 @@ namespace Project_UAS_
             // 
             // btn_mModel
             // 
-            this.btn_mModel.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btn_mModel.BackColor = System.Drawing.Color.SteelBlue;
             this.btn_mModel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_mModel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btn_mModel.Location = new System.Drawing.Point(55, 139);
@@ -161,7 +164,7 @@ namespace Project_UAS_
             // 
             // btn_mBarang
             // 
-            this.btn_mBarang.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btn_mBarang.BackColor = System.Drawing.Color.SteelBlue;
             this.btn_mBarang.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_mBarang.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btn_mBarang.Location = new System.Drawing.Point(55, 83);
@@ -175,7 +178,7 @@ namespace Project_UAS_
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.SaddleBrown;
+            this.button1.BackColor = System.Drawing.Color.SteelBlue;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.InactiveBorder;
             this.button1.Location = new System.Drawing.Point(55, 251);
@@ -189,7 +192,7 @@ namespace Project_UAS_
             // 
             // btn_Exit
             // 
-            this.btn_Exit.BackColor = System.Drawing.Color.SaddleBrown;
+            this.btn_Exit.BackColor = System.Drawing.Color.Red;
             this.btn_Exit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Exit.ForeColor = System.Drawing.SystemColors.InactiveBorder;
             this.btn_Exit.Location = new System.Drawing.Point(441, 251);
@@ -206,6 +209,7 @@ namespace Project_UAS_
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(689, 346);
             this.Controls.Add(this.btn_Exit);
             this.Controls.Add(this.button1);
