@@ -15,11 +15,7 @@ namespace Project_UAS_
 {
     public partial class masterGroupUser : Form
     {
-        SqlConnection con;
-        SqlCommand cmd;
         ConnectionDB db = new ConnectionDB();
-        SqlDataReader dr;
-        SqlDataAdapter da;
 
         public masterGroupUser()
         {

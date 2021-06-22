@@ -48,7 +48,7 @@ namespace Project_UAS_
             this.btn_mPelanggan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_mPelanggan.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btn_mPelanggan.Location = new System.Drawing.Point(248, 83);
-            this.btn_mPelanggan.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_mPelanggan.Margin = new System.Windows.Forms.Padding(2);
             this.btn_mPelanggan.Name = "btn_mPelanggan";
             this.btn_mPelanggan.Size = new System.Drawing.Size(189, 51);
             this.btn_mPelanggan.TabIndex = 40;
@@ -67,6 +67,7 @@ namespace Project_UAS_
             this.btn_mUsers.TabIndex = 39;
             this.btn_mUsers.Text = "Master Users";
             this.btn_mUsers.UseVisualStyleBackColor = false;
+            this.btn_mUsers.Click += new System.EventHandler(this.btn_mUsers_Click);
             // 
             // btn_mHakaksesgroupuser
             // 
@@ -122,7 +123,7 @@ namespace Project_UAS_
             this.btn_mMerk.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_mMerk.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btn_mMerk.Location = new System.Drawing.Point(248, 139);
-            this.btn_mMerk.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_mMerk.Margin = new System.Windows.Forms.Padding(2);
             this.btn_mMerk.Name = "btn_mMerk";
             this.btn_mMerk.Size = new System.Drawing.Size(189, 51);
             this.btn_mMerk.TabIndex = 34;
@@ -135,7 +136,7 @@ namespace Project_UAS_
             this.btn_mSupplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_mSupplier.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btn_mSupplier.Location = new System.Drawing.Point(441, 83);
-            this.btn_mSupplier.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_mSupplier.Margin = new System.Windows.Forms.Padding(2);
             this.btn_mSupplier.Name = "btn_mSupplier";
             this.btn_mSupplier.Size = new System.Drawing.Size(189, 51);
             this.btn_mSupplier.TabIndex = 33;
@@ -149,7 +150,7 @@ namespace Project_UAS_
             this.btn_mModel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_mModel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btn_mModel.Location = new System.Drawing.Point(55, 139);
-            this.btn_mModel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_mModel.Margin = new System.Windows.Forms.Padding(2);
             this.btn_mModel.Name = "btn_mModel";
             this.btn_mModel.Size = new System.Drawing.Size(189, 51);
             this.btn_mModel.TabIndex = 32;
@@ -163,7 +164,7 @@ namespace Project_UAS_
             this.btn_mBarang.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_mBarang.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btn_mBarang.Location = new System.Drawing.Point(55, 83);
-            this.btn_mBarang.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_mBarang.Margin = new System.Windows.Forms.Padding(2);
             this.btn_mBarang.Name = "btn_mBarang";
             this.btn_mBarang.Size = new System.Drawing.Size(189, 51);
             this.btn_mBarang.TabIndex = 31;
@@ -177,7 +178,7 @@ namespace Project_UAS_
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.InactiveBorder;
             this.button1.Location = new System.Drawing.Point(55, 252);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(189, 57);
             this.button1.TabIndex = 41;
