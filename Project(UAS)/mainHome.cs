@@ -86,5 +86,12 @@ namespace Project_UAS_
             masterMerk2 form_Group = new masterMerk2();
             form_Group.Show();
         }
+
+        private void btn_mHakaksesgroupuser_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            masterHakAksesGroup form_Group = new masterHakAksesGroup();
+            form_Group.Show();
+        }
     }
 }

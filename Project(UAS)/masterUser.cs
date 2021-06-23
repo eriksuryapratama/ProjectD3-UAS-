@@ -148,5 +148,10 @@ namespace Project_UAS_
             tb_Password.Text = dgv_User.Rows[rowIndex].Cells[1].Value.ToString();
             cb_NamaGroupUser.SelectedValue = dgv_User.Rows[rowIndex].Cells[2].Value.ToString();
         }
+
+        private void btn_Print_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

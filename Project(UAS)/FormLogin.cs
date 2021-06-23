@@ -56,7 +56,7 @@ namespace Project_UAS_
 
         private void FormLogin_Load(object sender, EventArgs e)
         {
-
+            tb_Password.PasswordChar = '*';
         }
     }
 }
