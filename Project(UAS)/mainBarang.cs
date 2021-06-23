@@ -20,9 +20,17 @@ namespace Project_UAS_
 
         private void m_barangBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
+            if(kODETextBox.TextLength == 0 || dESCRIPTIONTextBox.TextLength == 0 || pART_NOTextBox.TextLength == 0 || uNIT_PRICETextBox.TextLength == 0 || uNITTextBox.TextLength == 0)
+            {
+                MessageBox.Show("Kode Barang, Nama Barang, Part Nomor, Unit, Harga satuan tidak boleh kosong !");
+            }
+            else
+            {
                 this.Validate();
                 this.m_barangBindingSource.EndEdit();
                 this.tableAdapterManager.UpdateAll(this.uASDataSet);
+                MessageBox.Show("Data barang berhasil ditambahkan");
+            }
         }
 
         private void mainBarang_Load(object sender, EventArgs e)

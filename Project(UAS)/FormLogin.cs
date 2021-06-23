@@ -16,9 +16,6 @@ namespace Project_UAS_
     {
         //VARIABEL
         private SqlCommand cmd;
-        private DataSet ds;
-        private SqlDataAdapter da;
-        private SqlDataReader rd;
 
         //KONEKSI
         ConnectionDB Konn = new ConnectionDB();

@@ -15,11 +15,7 @@ namespace Project_UAS_
 {
     public partial class masterKota : Form
     {
-        SqlConnection con;
-        SqlCommand cmd;
         ConnectionDB db = new ConnectionDB();
-        SqlDataReader dr;
-        SqlDataAdapter da;
 
         public masterKota()
         {
@@ -66,9 +62,9 @@ namespace Project_UAS_
                 DataTable dt = c.Select();
                 dgv_Kota.DataSource = dt;
             }
-            catch (Exception ex)
+            catch (SqlException ex)
             {
-
+                MessageBox.Show("Sql Server Error " + ex);
             }
         }
 
@@ -79,24 +75,24 @@ namespace Project_UAS_
             f.Show();
         }
 
-        private void btn_Edit_Click(object sender, EventArgs e)
-        {
-            c.namaKota = tb_Kota.Text;
+        //private void btn_Edit_Click(object sender, EventArgs e)
+        //{
+        //    c.namaKota = tb_Kota.Text;
 
-            bool success = c.Update(c);
-            if(success == true)
-            {
-                MessageBox.Show("Kota berhasil Diupdate");
+        //    bool success = c.Update(c);
+        //    if(success == true)
+        //    {
+        //        MessageBox.Show("Kota berhasil Diupdate");
 
-                DataTable dt = c.Select();
-                dgv_Kota.DataSource = dt;
-            }
-            else
-            {
-                MessageBox.Show("Kota gagal Diupdate");
-            }
+        //        DataTable dt = c.Select();
+        //        dgv_Kota.DataSource = dt;
+        //    }
+        //    else
+        //    {
+        //        MessageBox.Show("Kota gagal Diupdate");
+        //    }
 
-        }
+        //}
 
         private void dgv_Kota_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {

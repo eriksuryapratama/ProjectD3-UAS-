@@ -14,11 +14,7 @@ namespace Project_UAS_
 {
     public partial class viewPelanggan : Form
     {
-        SqlConnection con;
-        SqlCommand cmd;
         ConnectionDB db = new ConnectionDB();
-        SqlDataReader dr;
-        SqlDataAdapter da;
 
         public viewPelanggan()
         {
@@ -47,9 +43,9 @@ namespace Project_UAS_
                 dgv_Pelanggan.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                 dgv_Pelanggan.Columns[13].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             }
-            catch (Exception ex)
+            catch (SqlException ex)
             {
-
+                MessageBox.Show("Sql Server Error " + ex);
             }
         }
 

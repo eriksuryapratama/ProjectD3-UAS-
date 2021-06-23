@@ -352,7 +352,6 @@ namespace Project_UAS_
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Position";
             this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -613,7 +612,7 @@ namespace Project_UAS_
             this.Controls.Add(this.kODETextBox);
             this.Controls.Add(this.m_barangBindingNavigator);
             this.Name = "mainBarang";
-            this.Text = "mainBarang";
+            this.Text = "Master Barang";
             this.Load += new System.EventHandler(this.mainBarang_Load);
             ((System.ComponentModel.ISupportInitialize)(this.uASDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.m_barangBindingSource)).EndInit();

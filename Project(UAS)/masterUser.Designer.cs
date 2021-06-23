@@ -90,31 +90,34 @@ namespace Project_UAS_
             // 
             // btn_Exit
             // 
+            this.btn_Exit.BackColor = System.Drawing.Color.Red;
             this.btn_Exit.Location = new System.Drawing.Point(187, 216);
             this.btn_Exit.Name = "btn_Exit";
             this.btn_Exit.Size = new System.Drawing.Size(89, 23);
             this.btn_Exit.TabIndex = 128;
             this.btn_Exit.Text = "Exit";
-            this.btn_Exit.UseVisualStyleBackColor = true;
+            this.btn_Exit.UseVisualStyleBackColor = false;
             this.btn_Exit.Click += new System.EventHandler(this.btn_Exit_Click);
             // 
             // btn_Print
             // 
+            this.btn_Print.BackColor = System.Drawing.Color.SteelBlue;
             this.btn_Print.Location = new System.Drawing.Point(85, 216);
             this.btn_Print.Name = "btn_Print";
             this.btn_Print.Size = new System.Drawing.Size(89, 23);
             this.btn_Print.TabIndex = 127;
             this.btn_Print.Text = "Print";
-            this.btn_Print.UseVisualStyleBackColor = true;
+            this.btn_Print.UseVisualStyleBackColor = false;
             // 
             // btn_Delete
             // 
+            this.btn_Delete.BackColor = System.Drawing.Color.Red;
             this.btn_Delete.Location = new System.Drawing.Point(234, 187);
             this.btn_Delete.Name = "btn_Delete";
             this.btn_Delete.Size = new System.Drawing.Size(89, 23);
             this.btn_Delete.TabIndex = 126;
             this.btn_Delete.Text = "Delete";
-            this.btn_Delete.UseVisualStyleBackColor = true;
+            this.btn_Delete.UseVisualStyleBackColor = false;
             this.btn_Delete.Click += new System.EventHandler(this.btn_Delete_Click);
             // 
             // label2
@@ -143,22 +146,24 @@ namespace Project_UAS_
             // 
             // btn_Edit
             // 
+            this.btn_Edit.BackColor = System.Drawing.Color.Yellow;
             this.btn_Edit.Location = new System.Drawing.Point(139, 187);
             this.btn_Edit.Name = "btn_Edit";
             this.btn_Edit.Size = new System.Drawing.Size(89, 23);
             this.btn_Edit.TabIndex = 123;
             this.btn_Edit.Text = "Update";
-            this.btn_Edit.UseVisualStyleBackColor = true;
+            this.btn_Edit.UseVisualStyleBackColor = false;
             this.btn_Edit.Click += new System.EventHandler(this.btn_Edit_Click);
             // 
             // btn_Add
             // 
+            this.btn_Add.BackColor = System.Drawing.Color.LimeGreen;
             this.btn_Add.Location = new System.Drawing.Point(44, 187);
             this.btn_Add.Name = "btn_Add";
             this.btn_Add.Size = new System.Drawing.Size(89, 23);
             this.btn_Add.TabIndex = 122;
             this.btn_Add.Text = "Add";
-            this.btn_Add.UseVisualStyleBackColor = true;
+            this.btn_Add.UseVisualStyleBackColor = false;
             this.btn_Add.Click += new System.EventHandler(this.btn_Add_Click);
             // 
             // tb_Password
@@ -223,7 +228,7 @@ namespace Project_UAS_
             this.Controls.Add(this.btn_Edit);
             this.Controls.Add(this.btn_Add);
             this.Name = "masterUser";
-            this.Text = "masterUser";
+            this.Text = "Master User";
             this.Load += new System.EventHandler(this.masterUser_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_User)).EndInit();
             this.ResumeLayout(false);

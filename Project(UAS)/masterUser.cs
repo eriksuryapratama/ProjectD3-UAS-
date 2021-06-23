@@ -15,11 +15,7 @@ namespace Project_UAS_
 {
     public partial class masterUser : Form
     {
-        SqlConnection con;
-        SqlCommand cmd;
         ConnectionDB db = new ConnectionDB();
-        SqlDataReader dr;
-        SqlDataAdapter da;
 
         public masterUser()
         {
@@ -48,9 +44,9 @@ namespace Project_UAS_
                 cb_NamaGroupUser.DisplayMember = "NAMAGROUPUSER";
                 cb_NamaGroupUser.ValueMember = "NAMAGROUPUSER";
             }
-            catch (Exception ex)
+            catch (SqlException ex)
             {
-
+                MessageBox.Show("Sql Server Error " + ex);
             }
         }
 
