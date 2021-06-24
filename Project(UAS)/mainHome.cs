@@ -97,8 +97,8 @@ namespace Project_UAS_
         private void button2_Click(object sender, EventArgs e)
         {
             this.Hide();
-            pembelianHeader form_Pembelian = new pembelianHeader();
-            form_Pembelian.Show();
+            Pembelian form_Group = new Pembelian();
+            form_Group.Show();
         }
     }
 }

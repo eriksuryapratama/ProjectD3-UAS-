@@ -14,11 +14,7 @@ namespace Project_UAS_
 {
     public partial class viewMerk2 : Form
     {
-        SqlConnection con;
-        SqlCommand cmd;
         ConnectionDB db = new ConnectionDB();
-        SqlDataReader dr;
-        SqlDataAdapter da;
 
         public viewMerk2()
         {
@@ -87,7 +83,7 @@ namespace Project_UAS_
         private void btn_addData_Click(object sender, EventArgs e)
         {
             this.Hide();
-            masterMerk formPelanggan = new masterMerk();
+            masterMerk2 formPelanggan = new masterMerk2();
             formPelanggan.ShowDialog();
         }
     }
