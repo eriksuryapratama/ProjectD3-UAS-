@@ -55,6 +55,7 @@
     <Compile Include="GroupUserFunction.cs" />
     <Compile Include="KotaFunction.cs" />
     <Compile Include="MerkFunction.cs" />
+    <Compile Include="PembelianHeaderFunction.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SupplierFunction.cs" />

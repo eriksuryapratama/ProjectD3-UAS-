@@ -62,7 +62,7 @@ namespace Project_UAS_
             else
             {
                 bool success = hf.Insert(hf);
-                if (success = true)
+                if (success == true)
                 {
                     MessageBox.Show("Hak Akses Group telah ditambahkan");
                     clear();

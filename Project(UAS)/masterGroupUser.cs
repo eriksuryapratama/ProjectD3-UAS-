@@ -44,7 +44,7 @@ namespace Project_UAS_
             else
             {
                 bool success = cg.Insert(cg);
-                if (success = true)
+                if (success == true)
                 {
                     MessageBox.Show("Group Baru telah ditambahkan");
                     clear();
@@ -120,9 +120,9 @@ namespace Project_UAS_
                 DataTable dt = cg.Select();
                 dgv_Group.DataSource = dt;
             }
-            catch (Exception ex)
+            catch (SqlException ex)
             {
-
+                MessageBox.Show("Sql Server Error " + ex);
             }
         }
 

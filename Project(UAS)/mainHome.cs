@@ -93,5 +93,12 @@ namespace Project_UAS_
             masterHakAksesGroup form_Group = new masterHakAksesGroup();
             form_Group.Show();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            pembelianHeader form_Pembelian = new pembelianHeader();
+            form_Pembelian.Show();
+        }
     }
 }

@@ -39,7 +39,7 @@ namespace Project_UAS_
             else
             {
                 bool success = c.Insert(c);
-                if (success = true)
+                if (success == true)
                 {
                     MessageBox.Show("Kota Baru telah ditambahkan");
                     clear();
