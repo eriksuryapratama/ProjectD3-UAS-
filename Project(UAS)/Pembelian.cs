@@ -14,11 +14,12 @@ namespace Project_UAS_
 {
     public partial class Pembelian : Form
     {
-        PembelianHeaderFunction pHf = new PembelianHeaderFunction();
+        SqlConnection con;
 
         public Pembelian()
         {
             InitializeComponent();
+            con = new SqlConnection(@"Data Source=.\SQLExpress;Initial Catalog=UAS;Integrated Security=True");
         }
 
         private void t_pembelian_headerBindingNavigatorSaveItem_Click(object sender, EventArgs e)
@@ -27,19 +28,13 @@ namespace Project_UAS_
             this.t_pembelian_headerBindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.uASDataSet);
 
-            try
-            {
-                DataTable dt = pHf.Select();
-                dgv_pembelianHeader.DataSource = dt;
-            }
-            catch (SqlException ex)
-            {
-                MessageBox.Show("Sql Server Error " + ex);
-            }
+            
         }
 
         private void Pembelian_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'uASDataSet.m_barang' table. You can move, or remove it, as needed.
+            this.m_barangTableAdapter.Fill(this.uASDataSet.m_barang);
             // TODO: This line of code loads data into the 'uASDataSet.m_supplier' table. You can move, or remove it, as needed.
             this.m_supplierTableAdapter.Fill(this.uASDataSet.m_supplier);
             // TODO: This line of code loads data into the 'uASDataSet.t_pembelian_header' table. You can move, or remove it, as needed.
@@ -48,15 +43,7 @@ namespace Project_UAS_
             tb_NPWP2.Text = nAMA_NPWPTextBox.Text;
             tb_Alamat.Text = aLAMAT_NPWTextBox.Text + ", " + kOTATextBox.Text;
 
-            try
-            {
-                DataTable dt = pHf.Select();
-                dgv_pembelianHeader.DataSource = dt;
-            }
-            catch (SqlException ex)
-            {
-                MessageBox.Show("Sql Server Error " + ex);
-            }
+            data_beli();
         }
 
         private void clear()
@@ -73,35 +60,27 @@ namespace Project_UAS_
             tb_Alamat.Clear();
         }
 
-        private void btn_Delete_Click(object sender, EventArgs e)
+        public void data_beli()
         {
-            pHf.nomor_PNW = nO_PNWTextBox.Text;
-            bool success = pHf.Delete(pHf);
-            if (success == true)
-            {
-                MessageBox.Show("Pembelian Berhasil Dihapus");
+            con.Open();
 
-                DataTable dt = pHf.Select();
-                dgv_pembelianHeader.DataSource = dt;
-                clear();
-            }
-            else
-            {
-                MessageBox.Show("Gagal Menghapus Pembelian");
-            }
+            DataSet ds = new DataSet();
+            String query = $"SELECT mb.kode as KODE,mb.part_no AS 'PART NO',mb.description AS DESCRIPTION,mb.unit AS UNIT ,mb.merk1 AS MERK,td.qty AS QUANTITY ,FORMAT(mb.unit_price,'C') AS PRICE,FORMAT((td.qty*mb.unit_price),'C') as Amount " +
+                           $"FROM m_barang mb,t_pembelian_detail td,t_pembelian_header th " +
+                           $"where th.no_pnw = td.no_pnw " +
+                           $"and mb.kode = td.kode " +
+                           $"and th.no_nota = td.no_nota " +
+                             $"and th.no_nota = '{nO_NOTATextBox.Text}' ";
+            SqlCommand cmd = new SqlCommand(query, con);
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            adapter.Fill(ds);
+            dgv_databeli.DataSource = ds.Tables[0];
+            con.Close();
+
+
         }
 
-        private void dgv_pembelianHeader_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            int rowIndex = e.RowIndex;
-            nO_PNWTextBox.Text = dgv_pembelianHeader.Rows[rowIndex].Cells[0].Value.ToString();
-            nO_NOTATextBox.Text = dgv_pembelianHeader.Rows[rowIndex].Cells[1].Value.ToString();
-            nPWPTextBox.Text = dgv_pembelianHeader.Rows[rowIndex].Cells[2].Value.ToString();
-            tGL_PNWDateTimePicker.Text = dgv_pembelianHeader.Rows[rowIndex].Cells[3].Value.ToString();
 
-            kETERANGANTextBox.Text = dgv_pembelianHeader.Rows[rowIndex].Cells[5].Value.ToString();
-            fAKTUR_PAJTextBox.Text = dgv_pembelianHeader.Rows[rowIndex].Cells[6].Value.ToString();
-        }
 
         private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
         {
@@ -111,6 +90,72 @@ namespace Project_UAS_
         private void nO_NOTATextBox_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void bindingNavigatorMovePreviousItem_Click(object sender, EventArgs e)
+        {
+            data_beli();
+        }
+
+        private void bindingNavigatorMoveNextItem_Click(object sender, EventArgs e)
+        {
+            data_beli();
+        }
+
+        private void bindingNavigatorMoveFirstItem_Click(object sender, EventArgs e)
+        {
+            data_beli();
+        }
+
+        private void bindingNavigatorMoveLastItem_Click(object sender, EventArgs e)
+        {
+            data_beli();
+        }
+
+        private void btn_tmbhitem_Click(object sender, EventArgs e)
+        {
+            con.Open();
+            String DataBrg = $"SELECT kode " +
+                         $"FROM m_barang " +
+                         $"WHERE id = '{cb_nmbarang.SelectedValue}'";
+            SqlCommand comm = new SqlCommand(DataBrg, con);
+            String DataBrg2 = $"SELECT part_no " +
+                         $"FROM m_barang " +
+                         $"WHERE id = '{cb_nmbarang.SelectedValue}'";
+            SqlCommand comm2 = new SqlCommand(DataBrg2, con);
+            String DataBrg3 = $"SELECT description " +
+                         $"FROM m_barang " +
+                         $"WHERE id = '{cb_nmbarang.SelectedValue}'";
+            SqlCommand comm3 = new SqlCommand(DataBrg3, con);
+            String DataBrg4 = $"SELECT unit " +
+                         $"FROM m_barang " +
+                         $"WHERE id = '{cb_nmbarang.SelectedValue}'";
+            SqlCommand comm4 = new SqlCommand(DataBrg4, con);
+            String DataBrg5 = $"SELECT merk1 " +
+                         $"FROM m_barang " +
+                         $"WHERE id = '{cb_nmbarang.SelectedValue}'";
+            SqlCommand comm5 = new SqlCommand(DataBrg5, con);
+            String merk = comm5.ExecuteScalar().ToString();
+            String kode = comm.ExecuteScalar().ToString();
+            String part_no = comm2.ExecuteScalar().ToString();
+            String description = comm3.ExecuteScalar().ToString();
+            String unit = comm3.ExecuteScalar().ToString();
+
+            String cek = tb_qty.Text;
+            int num = -1;
+            if (!int.TryParse(cek, out num))
+            {
+                MessageBox.Show("Not an integer");
+            }
+            else
+            {
+                String query = $"Insert into t_pembelian_detail(no_pnw,no_nota,kode,part_no,descriptio,unit,merk,qty) values('{nO_PNWTextBox.Text}','{nO_NOTATextBox.Text}','{kode}','{part_no}','{description}','{unit}','{merk}','{Convert.ToInt32(tb_qty.Text)}')";
+                comm = new SqlCommand(query, con);
+                comm.ExecuteNonQuery();
+            }
+
+            con.Close();
+            data_beli();
         }
     }
 }
