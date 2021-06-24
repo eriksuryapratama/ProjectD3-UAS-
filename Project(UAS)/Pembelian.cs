@@ -70,17 +70,13 @@ namespace Project_UAS_
                            $"where th.no_pnw = td.no_pnw " +
                            $"and mb.kode = td.kode " +
                            $"and th.no_nota = td.no_nota " +
-                             $"and th.no_nota = '{nO_NOTATextBox.Text}' ";
+                           $"and th.no_nota = '{nO_NOTATextBox.Text}' ";
             SqlCommand cmd = new SqlCommand(query, con);
             SqlDataAdapter adapter = new SqlDataAdapter(cmd);
             adapter.Fill(ds);
             dgv_databeli.DataSource = ds.Tables[0];
             con.Close();
-
-
         }
-
-
 
         private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
         {
@@ -115,37 +111,38 @@ namespace Project_UAS_
         private void btn_tmbhitem_Click(object sender, EventArgs e)
         {
             con.Open();
-            String DataBrg = $"SELECT kode " +
-                         $"FROM m_barang " +
-                         $"WHERE id = '{cb_nmbarang.SelectedValue}'";
+
+            //KODE BARANG
+            String DataBrg = $"SELECT kode FROM m_barang WHERE id = '{cb_nmbarang.SelectedValue}'";
             SqlCommand comm = new SqlCommand(DataBrg, con);
-            String DataBrg2 = $"SELECT part_no " +
-                         $"FROM m_barang " +
-                         $"WHERE id = '{cb_nmbarang.SelectedValue}'";
+            String kode = comm.ExecuteScalar().ToString();
+
+            //PART NOMOR BARANG
+            String DataBrg2 = $"SELECT part_no FROM m_barang WHERE id = '{cb_nmbarang.SelectedValue}'";
             SqlCommand comm2 = new SqlCommand(DataBrg2, con);
-            String DataBrg3 = $"SELECT description " +
-                         $"FROM m_barang " +
-                         $"WHERE id = '{cb_nmbarang.SelectedValue}'";
+            String part_no = comm2.ExecuteScalar().ToString();
+
+            //DESCRIPTION BARANG
+            String DataBrg3 = $"SELECT description FROM m_barang WHERE id = '{cb_nmbarang.SelectedValue}'";
             SqlCommand comm3 = new SqlCommand(DataBrg3, con);
-            String DataBrg4 = $"SELECT unit " +
-                         $"FROM m_barang " +
-                         $"WHERE id = '{cb_nmbarang.SelectedValue}'";
+            String description = comm3.ExecuteScalar().ToString();
+
+            //UNIT BARANG
+            String DataBrg4 = $"SELECT unit FROM m_barang WHERE id = '{cb_nmbarang.SelectedValue}'";
             SqlCommand comm4 = new SqlCommand(DataBrg4, con);
-            String DataBrg5 = $"SELECT merk1 " +
-                         $"FROM m_barang " +
-                         $"WHERE id = '{cb_nmbarang.SelectedValue}'";
+            String unit = comm4.ExecuteScalar().ToString();
+
+            //MERK BARANG
+            String DataBrg5 = $"SELECT merk1 FROM m_barang WHERE id = '{cb_nmbarang.SelectedValue}'";
             SqlCommand comm5 = new SqlCommand(DataBrg5, con);
             String merk = comm5.ExecuteScalar().ToString();
-            String kode = comm.ExecuteScalar().ToString();
-            String part_no = comm2.ExecuteScalar().ToString();
-            String description = comm3.ExecuteScalar().ToString();
-            String unit = comm3.ExecuteScalar().ToString();
 
+            //PENGECEKAN & INPUT DATA
             String cek = tb_qty.Text;
             int num = -1;
             if (!int.TryParse(cek, out num))
             {
-                MessageBox.Show("Not an integer");
+                MessageBox.Show("Data Qty Harus Angka !");
             }
             else
             {
@@ -153,9 +150,51 @@ namespace Project_UAS_
                 comm = new SqlCommand(query, con);
                 comm.ExecuteNonQuery();
             }
-
             con.Close();
             data_beli();
+        }
+
+        private void btn_hpsitem_Click(object sender, EventArgs e)
+        {
+            con.Open();
+
+            //KODE BARANG
+            String DataBrg = $"SELECT kode FROM m_barang WHERE id = '{cb_nmbarang.SelectedValue}'";
+            SqlCommand comm = new SqlCommand(DataBrg, con);
+            String kode = comm.ExecuteScalar().ToString();
+
+            //PART NOMOR BARANG
+            String DataBrg2 = $"SELECT part_no FROM m_barang WHERE id = '{cb_nmbarang.SelectedValue}'";
+            SqlCommand comm2 = new SqlCommand(DataBrg2, con);
+            String part_no = comm2.ExecuteScalar().ToString();
+
+            //DESCRIPTION BARANG
+            String DataBrg3 = $"SELECT description FROM m_barang WHERE id = '{cb_nmbarang.SelectedValue}'";
+            SqlCommand comm3 = new SqlCommand(DataBrg3, con);
+            String description = comm3.ExecuteScalar().ToString();
+
+            //UNIT BARANG
+            String DataBrg4 = $"SELECT unit FROM m_barang WHERE id = '{cb_nmbarang.SelectedValue}'";
+            SqlCommand comm4 = new SqlCommand(DataBrg4, con);
+            String unit = comm4.ExecuteScalar().ToString();
+
+            //MERK BARANG
+            String DataBrg5 = $"SELECT merk1 FROM m_barang WHERE id = '{cb_nmbarang.SelectedValue}'";
+            SqlCommand comm5 = new SqlCommand(DataBrg5, con);
+            String merk = comm5.ExecuteScalar().ToString();
+
+            //DELETE BARANG
+            String query = $"DELETE FROM t_pembelian_detail WHERE KODE = '{tb_Kode.Text}' AND NO_NOTA = '{nO_NOTATextBox.Text}'";
+            comm = new SqlCommand(query, con);
+            comm.ExecuteNonQuery();
+            con.Close();
+            data_beli();
+        }
+
+        private void dgv_databeli_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int rowIndex = e.RowIndex;
+            tb_Kode.Text = dgv_databeli.Rows[rowIndex].Cells[0].Value.ToString();
         }
     }
 }
