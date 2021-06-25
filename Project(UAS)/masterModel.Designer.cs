@@ -33,7 +33,6 @@ namespace Project_UAS_
             System.Windows.Forms.Label mODEL_IDLabel;
             System.Windows.Forms.Label dESCRIPTIONLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(masterModel));
-            this.btn_Browse = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.uASDataSet = new Project_UAS_.UASDataSet();
             this.m_modelBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -68,6 +67,8 @@ namespace Project_UAS_
             // mODEL_IDLabel
             // 
             mODEL_IDLabel.AutoSize = true;
+            mODEL_IDLabel.BackColor = System.Drawing.Color.Transparent;
+            mODEL_IDLabel.ForeColor = System.Drawing.Color.White;
             mODEL_IDLabel.Location = new System.Drawing.Point(145, 132);
             mODEL_IDLabel.Name = "mODEL_IDLabel";
             mODEL_IDLabel.Size = new System.Drawing.Size(62, 13);
@@ -77,26 +78,21 @@ namespace Project_UAS_
             // dESCRIPTIONLabel
             // 
             dESCRIPTIONLabel.AutoSize = true;
+            dESCRIPTIONLabel.BackColor = System.Drawing.Color.Transparent;
+            dESCRIPTIONLabel.ForeColor = System.Drawing.Color.White;
             dESCRIPTIONLabel.Location = new System.Drawing.Point(124, 158);
             dESCRIPTIONLabel.Name = "dESCRIPTIONLabel";
             dESCRIPTIONLabel.Size = new System.Drawing.Size(83, 13);
             dESCRIPTIONLabel.TabIndex = 70;
             dESCRIPTIONLabel.Text = "DESCRIPTION:";
             // 
-            // btn_Browse
-            // 
-            this.btn_Browse.Location = new System.Drawing.Point(344, 44);
-            this.btn_Browse.Name = "btn_Browse";
-            this.btn_Browse.Size = new System.Drawing.Size(75, 23);
-            this.btn_Browse.TabIndex = 68;
-            this.btn_Browse.Text = "Browse";
-            this.btn_Browse.UseVisualStyleBackColor = true;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(64, 36);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(121, 36);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(249, 31);
             this.label1.TabIndex = 67;
@@ -225,7 +221,6 @@ namespace Project_UAS_
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Position";
             this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -291,7 +286,7 @@ namespace Project_UAS_
             this.btn_Exit.ForeColor = System.Drawing.Color.White;
             this.btn_Exit.Location = new System.Drawing.Point(336, 264);
             this.btn_Exit.Name = "btn_Exit";
-            this.btn_Exit.Size = new System.Drawing.Size(140, 46);
+            this.btn_Exit.Size = new System.Drawing.Size(140, 33);
             this.btn_Exit.TabIndex = 111;
             this.btn_Exit.Text = "Exit";
             this.btn_Exit.UseVisualStyleBackColor = false;
@@ -304,7 +299,7 @@ namespace Project_UAS_
             this.btn_Print.ForeColor = System.Drawing.Color.White;
             this.btn_Print.Location = new System.Drawing.Point(190, 263);
             this.btn_Print.Name = "btn_Print";
-            this.btn_Print.Size = new System.Drawing.Size(140, 47);
+            this.btn_Print.Size = new System.Drawing.Size(140, 34);
             this.btn_Print.TabIndex = 110;
             this.btn_Print.Text = "Print";
             this.btn_Print.UseVisualStyleBackColor = false;
@@ -316,7 +311,7 @@ namespace Project_UAS_
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Location = new System.Drawing.Point(43, 263);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(141, 47);
+            this.button1.Size = new System.Drawing.Size(141, 34);
             this.button1.TabIndex = 109;
             this.button1.Text = "Browse";
             this.button1.UseVisualStyleBackColor = false;
@@ -327,7 +322,8 @@ namespace Project_UAS_
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(515, 450);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.ClientSize = new System.Drawing.Size(515, 331);
             this.Controls.Add(this.btn_Exit);
             this.Controls.Add(this.btn_Print);
             this.Controls.Add(this.button1);
@@ -336,7 +332,6 @@ namespace Project_UAS_
             this.Controls.Add(mODEL_IDLabel);
             this.Controls.Add(this.mODEL_IDTextBox);
             this.Controls.Add(this.m_modelBindingNavigator);
-            this.Controls.Add(this.btn_Browse);
             this.Controls.Add(this.label1);
             this.Name = "masterModel";
             this.Text = "masterModel";
@@ -352,8 +347,6 @@ namespace Project_UAS_
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btn_Browse;
         private System.Windows.Forms.Label label1;
         private UASDataSet uASDataSet;
         private System.Windows.Forms.BindingSource m_modelBindingSource;

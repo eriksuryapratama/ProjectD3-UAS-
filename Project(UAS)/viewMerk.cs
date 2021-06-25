@@ -65,5 +65,10 @@ namespace Project_UAS_
         {
             
         }
+
+        private void viewMerk_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

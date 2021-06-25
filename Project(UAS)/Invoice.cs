@@ -14,103 +14,169 @@ namespace Project_UAS_
     public partial class Invoice : Form
     {
         SqlConnection con;
-        
+
         public Invoice()
         {
             InitializeComponent();
-            con = new SqlConnection (@"Data Source=.\SQLExpress;Initial Catalog=UAS;Integrated Security=True");
-            refreshSupplier();
+            con = new SqlConnection(@"Data Source=.\SQLExpress;Initial Catalog=UAS;Integrated Security=True");
         }
 
-        public void refreshSupplier()
-        {
-            con.Open();
-
-            //NAMA
-            String temp = $"SELECT nama " +
-                         $"FROM m_supplier " +
-                         $"WHERE p_id = '{tb_customer.Text}'";
-            SqlCommand comm = new SqlCommand(temp, con);
-            tb_nmperusahaan.Text = comm.ExecuteScalar().ToString();
-
-            //ALAMAT
-            String alamat = $"SELECT alamat " +
-                         $"FROM m_supplier " +
-                         $"WHERE p_id = '{tb_customer.Text}'";
-            SqlCommand commAlamat = new SqlCommand(alamat, con);
-            tb_alamat.Text = commAlamat.ExecuteScalar().ToString();
-
-
-            //NPWP
-            String npwp = $"SELECT npwp " +
-                         $"FROM m_supplier " +
-                         $"WHERE p_id = '{tb_customer.Text}'";
-            SqlCommand commNpwp = new SqlCommand(npwp, con);
-            textBox6.Text = commNpwp.ExecuteScalar().ToString();
-
-
-            //NAMANPWP
-            String namanpwp = $"SELECT nama_npwp " +
-                         $"FROM m_supplier " +
-                         $"WHERE p_id = '{tb_customer.Text}'";
-            SqlCommand commnamaNpwp = new SqlCommand(namanpwp, con);
-            tb_namNpwp.Text = commnamaNpwp.ExecuteScalar().ToString();
-
-            //KOTA
-            String kota = $"SELECT kota " +
-                         $"FROM m_supplier " +
-                         $"WHERE p_id = '{tb_customer.Text}'";
-            SqlCommand commKota = new SqlCommand(kota, con);
-            tb_kota.Text = commKota.ExecuteScalar().ToString();
-
-            //EMAIL
-            String email = $"SELECT EMAIL " +
-                        $"FROM m_supplier " +
-                        $"WHERE p_id = '{tb_customer.Text}'";
-            SqlCommand commEmail = new SqlCommand(email, con);
-            tb_email.Text = commKota.ExecuteScalar().ToString();
-
-            //NOTE
-            String note = $"SELECT note " +
-                        $"FROM m_supplier " +
-                        $"WHERE p_id = '{tb_customer.Text}'";
-            SqlCommand commNote = new SqlCommand(note, con);
-            tb_note.Text = commNote.ExecuteScalar().ToString();
-
-
-            DataSet ds = new DataSet();
-            String query = $"SELECT mb.kode as KODE,mb.part_no AS 'PART NO',mb.description AS DESCRIPTION,mb.unit AS UNIT ,mb.merk1 AS MERK,td.qty AS QUANTITY ,FORMAT(mb.unit_price,'C') AS PRICE,FORMAT((td.qty*mb.unit_price),'C') as Amount " +
-                           $"FROM m_barang mb,t_pembelian_detail td,t_pembelian_header th " +
-                           $"where mb.kode = td.kode " +
-                           $"and th.p_id = '{tb_customer.Text}'";
-            SqlCommand cmd = new SqlCommand(query, con);
-            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-            adapter.Fill(ds);
-            dgv_data.DataSource = ds.Tables[0];
-
-            con.Close();
-        }
-
-        private void t_invoiceppn_headerBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        private void t_invoice_headerBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
             this.Validate();
-            this.t_invoiceppn_headerBindingSource.EndEdit();
+            this.t_invoice_headerBindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.uASDataSet);
 
         }
 
         private void Invoice_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'uASDataSet.m_barang' table. You can move, or remove it, as needed.
+            this.m_barangTableAdapter.Fill(this.uASDataSet.m_barang);
+            // TODO: This line of code loads data into the 'uASDataSet.m_pelanggan' table. You can move, or remove it, as needed.
+            this.m_pelangganTableAdapter.Fill(this.uASDataSet.m_pelanggan);
             // TODO: This line of code loads data into the 'uASDataSet.t_invoice_header' table. You can move, or remove it, as needed.
             this.t_invoice_headerTableAdapter.Fill(this.uASDataSet.t_invoice_header);
-            // TODO: This line of code loads data into the 'uASDataSet.t_invoiceppn_header' table. You can move, or remove it, as needed.
-            this.t_invoiceppn_headerTableAdapter.Fill(this.uASDataSet.t_invoiceppn_header);
 
+            tb_alamatLengkap.Text = tb_alamatNPWP.Text + ", " + tb_kotaCustomer.Text;
+
+            data_invoice();
+        }
+        public void data_invoice()
+        {
+            con.Open();
+
+            DataSet ds = new DataSet();
+            String query = $"SELECT mb.kode as KODE,mb.part_no AS 'PART NO',mb.description AS DESCRIPTION,mb.unit AS UNIT ,mb.merk1 AS MERK,td.qty AS QUANTITY ,FORMAT(mb.unit_price,'C') AS PRICE,FORMAT((td.qty * mb.unit_price),'C') as Amount " +
+                           $"FROM m_barang mb,t_invoice_detail td,t_invoice_header th " +
+                           $"where th.no_inv = td.no_inv " +
+                           $"and mb.kode = td.kode " +
+                           $"and th.no_inv = '{tb_noINV.Text}' ";
+            SqlCommand cmd = new SqlCommand(query, con);
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            adapter.Fill(ds);
+            dgv_dataInvoice.DataSource = ds.Tables[0];
+            con.Close();
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void bindingNavigatorMoveFirstItem_Click(object sender, EventArgs e)
         {
+            data_invoice();
+        }
 
+        private void bindingNavigatorMovePreviousItem_Click(object sender, EventArgs e)
+        {
+            data_invoice();
+        }
+
+        private void bindingNavigatorMoveNextItem_Click(object sender, EventArgs e)
+        {
+            data_invoice();
+        }
+
+        private void bindingNavigatorMoveLastItem_Click(object sender, EventArgs e)
+        {
+            data_invoice();
+        }
+
+        private void btn_tmbhitem_Click(object sender, EventArgs e)
+        {
+            con.Open();
+
+            //KODE BARANG
+            String DataBrg = $"SELECT kode FROM m_barang WHERE id = '{cb_nmbarang.SelectedValue}'";
+            SqlCommand comm = new SqlCommand(DataBrg, con);
+            String kode = comm.ExecuteScalar().ToString();
+
+            //PART NOMOR BARANG
+            String DataBrg2 = $"SELECT part_no FROM m_barang WHERE id = '{cb_nmbarang.SelectedValue}'";
+            SqlCommand comm2 = new SqlCommand(DataBrg2, con);
+            String part_no = comm2.ExecuteScalar().ToString();
+
+            //DESCRIPTION BARANG
+            String DataBrg3 = $"SELECT description FROM m_barang WHERE id = '{cb_nmbarang.SelectedValue}'";
+            SqlCommand comm3 = new SqlCommand(DataBrg3, con);
+            String description = comm3.ExecuteScalar().ToString();
+
+            //UNIT BARANG
+            String DataBrg4 = $"SELECT unit FROM m_barang WHERE id = '{cb_nmbarang.SelectedValue}'";
+            SqlCommand comm4 = new SqlCommand(DataBrg4, con);
+            String unit = comm4.ExecuteScalar().ToString();
+
+            //UNIT BARANG
+            String DataBrg5 = $"SELECT unit_price FROM m_barang WHERE id = '{cb_nmbarang.SelectedValue}'";
+            SqlCommand comm5 = new SqlCommand(DataBrg4, con);
+            String unit_price = comm5.ExecuteScalar().ToString();
+
+            //MERK BARANG
+            String DataBrg6 = $"SELECT merk1 FROM m_barang WHERE id = '{cb_nmbarang.SelectedValue}'";
+            SqlCommand comm6 = new SqlCommand(DataBrg5, con);
+            String merk = comm6.ExecuteScalar().ToString();
+
+            //PENGECEKAN & INPUT DATA
+            String cek = tb_qty.Text;
+            int num = -1;
+            if (!int.TryParse(cek, out num))
+            {
+                MessageBox.Show("Data Qty Harus Angka !");
+            }
+            else
+            {
+                String query = $"Insert into t_invoice_detail(no_inv, kode, part_no, descriptio, qty, unit_price) values('{tb_noINV.Text}', '{kode}', '{part_no}', '{description}', '{Convert.ToInt32(tb_qty.Text)}', '{unit_price}')";
+                comm = new SqlCommand(query, con);
+                comm.ExecuteNonQuery();
+            }
+            con.Close();
+            data_invoice();
+        }
+
+        private void btn_hpsitem_Click(object sender, EventArgs e)
+        {
+            con.Open();
+
+            //KODE BARANG
+            String DataBrg = $"SELECT kode FROM m_barang WHERE id = '{cb_nmbarang.SelectedValue}'";
+            SqlCommand comm = new SqlCommand(DataBrg, con);
+            String kode = comm.ExecuteScalar().ToString();
+
+            //PART NOMOR BARANG
+            String DataBrg2 = $"SELECT part_no FROM m_barang WHERE id = '{cb_nmbarang.SelectedValue}'";
+            SqlCommand comm2 = new SqlCommand(DataBrg2, con);
+            String part_no = comm2.ExecuteScalar().ToString();
+
+            //DESCRIPTION BARANG
+            String DataBrg3 = $"SELECT description FROM m_barang WHERE id = '{cb_nmbarang.SelectedValue}'";
+            SqlCommand comm3 = new SqlCommand(DataBrg3, con);
+            String description = comm3.ExecuteScalar().ToString();
+
+            //UNIT BARANG
+            String DataBrg4 = $"SELECT unit FROM m_barang WHERE id = '{cb_nmbarang.SelectedValue}'";
+            SqlCommand comm4 = new SqlCommand(DataBrg4, con);
+            String unit = comm4.ExecuteScalar().ToString();
+
+            //UNIT BARANG
+            String DataBrg5 = $"SELECT unit_price FROM m_barang WHERE id = '{cb_nmbarang.SelectedValue}'";
+            SqlCommand comm5 = new SqlCommand(DataBrg4, con);
+            String unit_price = comm5.ExecuteScalar().ToString();
+
+            //MERK BARANG
+            String DataBrg6 = $"SELECT merk1 FROM m_barang WHERE id = '{cb_nmbarang.SelectedValue}'";
+            SqlCommand comm6 = new SqlCommand(DataBrg5, con);
+            String merk = comm6.ExecuteScalar().ToString();
+
+            //DELETE BARANG
+            String query = $"DELETE FROM t_invoice_detail WHERE KODE = '{tb_Kode.Text}'";
+            comm = new SqlCommand(query, con);
+            comm.ExecuteNonQuery();
+
+            con.Close();
+            data_invoice();
+        }
+
+        private void dgv_dataInvoice_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int rowIndex = e.RowIndex;
+            tb_Kode.Text = dgv_dataInvoice.Rows[rowIndex].Cells[0].Value.ToString();
         }
     }
 }

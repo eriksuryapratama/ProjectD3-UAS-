@@ -31,12 +31,12 @@ namespace Project_UAS_
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(viewMerk));
             this.dgv_masterBarang = new System.Windows.Forms.DataGridView();
+            this.Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.column_deleted = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btn_addData = new System.Windows.Forms.Button();
-            this.column_deleted = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_masterBarang)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -61,6 +61,42 @@ namespace Project_UAS_
             this.dgv_masterBarang.TabIndex = 9;
             this.dgv_masterBarang.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_masterBarang_CellContentClick);
             // 
+            // Column14
+            // 
+            this.Column14.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Column14.HeaderText = "#";
+            this.Column14.MinimumWidth = 8;
+            this.Column14.Name = "Column14";
+            this.Column14.ReadOnly = true;
+            this.Column14.Width = 39;
+            // 
+            // Column1
+            // 
+            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Column1.HeaderText = "MERK CODE";
+            this.Column1.MinimumWidth = 8;
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Width = 96;
+            // 
+            // Column13
+            // 
+            this.Column13.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column13.HeaderText = "MERK DESCRIPTION";
+            this.Column13.MinimumWidth = 8;
+            this.Column13.Name = "Column13";
+            this.Column13.ReadOnly = true;
+            // 
+            // column_deleted
+            // 
+            this.column_deleted.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.column_deleted.HeaderText = "";
+            this.column_deleted.Image = ((System.Drawing.Image)(resources.GetObject("column_deleted.Image")));
+            this.column_deleted.MinimumWidth = 8;
+            this.column_deleted.Name = "column_deleted";
+            this.column_deleted.ReadOnly = true;
+            this.column_deleted.Width = 8;
+            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.btn_addData);
@@ -80,42 +116,6 @@ namespace Project_UAS_
             this.btn_addData.UseVisualStyleBackColor = true;
             this.btn_addData.Click += new System.EventHandler(this.btn_addData_Click);
             // 
-            // column_deleted
-            // 
-            this.column_deleted.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.column_deleted.HeaderText = "";
-            this.column_deleted.Image = ((System.Drawing.Image)(resources.GetObject("column_deleted.Image")));
-            this.column_deleted.MinimumWidth = 8;
-            this.column_deleted.Name = "column_deleted";
-            this.column_deleted.ReadOnly = true;
-            this.column_deleted.Width = 8;
-            // 
-            // Column13
-            // 
-            this.Column13.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column13.HeaderText = "MERK DESCRIPTION";
-            this.Column13.MinimumWidth = 8;
-            this.Column13.Name = "Column13";
-            this.Column13.ReadOnly = true;
-            // 
-            // Column1
-            // 
-            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Column1.HeaderText = "MERK CODE";
-            this.Column1.MinimumWidth = 8;
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Width = 96;
-            // 
-            // Column14
-            // 
-            this.Column14.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Column14.HeaderText = "#";
-            this.Column14.MinimumWidth = 8;
-            this.Column14.Name = "Column14";
-            this.Column14.ReadOnly = true;
-            this.Column14.Width = 39;
-            // 
             // viewMerk
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -126,6 +126,7 @@ namespace Project_UAS_
             this.Controls.Add(this.panel1);
             this.Name = "viewMerk";
             this.Text = "viewMerk";
+            this.Load += new System.EventHandler(this.viewMerk_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_masterBarang)).EndInit();
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);

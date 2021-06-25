@@ -39,6 +39,8 @@ namespace Project_UAS_
             System.Windows.Forms.Label nPWPLabel;
             System.Windows.Forms.Label label1;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Pembelian));
+            System.Windows.Forms.Label dISCOUNTLabel;
+            System.Windows.Forms.Label pPNLabel;
             this.uASDataSet = new Project_UAS_.UASDataSet();
             this.t_pembelian_headerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.t_pembelian_headerTableAdapter = new Project_UAS_.UASDataSetTableAdapters.t_pembelian_headerTableAdapter();
@@ -82,6 +84,12 @@ namespace Project_UAS_
             this.btn_hpsitem = new System.Windows.Forms.Button();
             this.tb_Kode = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.dISCOUNTTextBox = new System.Windows.Forms.TextBox();
+            this.pPNTextBox = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             nO_PNWLabel = new System.Windows.Forms.Label();
             nO_NOTALabel = new System.Windows.Forms.Label();
             p_IDLabel = new System.Windows.Forms.Label();
@@ -90,6 +98,8 @@ namespace Project_UAS_
             fAKTUR_PAJLabel = new System.Windows.Forms.Label();
             nPWPLabel = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
+            dISCOUNTLabel = new System.Windows.Forms.Label();
+            pPNLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.uASDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.t_pembelian_headerBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.t_pembelian_headerBindingNavigator)).BeginInit();
@@ -102,72 +112,96 @@ namespace Project_UAS_
             // nO_PNWLabel
             // 
             nO_PNWLabel.AutoSize = true;
-            nO_PNWLabel.Location = new System.Drawing.Point(21, 76);
+            nO_PNWLabel.BackColor = System.Drawing.Color.Transparent;
+            nO_PNWLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            nO_PNWLabel.ForeColor = System.Drawing.Color.White;
+            nO_PNWLabel.Location = new System.Drawing.Point(19, 74);
             nO_PNWLabel.Name = "nO_PNWLabel";
-            nO_PNWLabel.Size = new System.Drawing.Size(44, 13);
+            nO_PNWLabel.Size = new System.Drawing.Size(53, 16);
             nO_PNWLabel.TabIndex = 1;
             nO_PNWLabel.Text = "No Urut";
             // 
             // nO_NOTALabel
             // 
             nO_NOTALabel.AutoSize = true;
-            nO_NOTALabel.Location = new System.Drawing.Point(165, 77);
+            nO_NOTALabel.BackColor = System.Drawing.Color.Transparent;
+            nO_NOTALabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            nO_NOTALabel.ForeColor = System.Drawing.Color.White;
+            nO_NOTALabel.Location = new System.Drawing.Point(163, 75);
             nO_NOTALabel.Name = "nO_NOTALabel";
-            nO_NOTALabel.Size = new System.Drawing.Size(50, 13);
+            nO_NOTALabel.Size = new System.Drawing.Size(61, 16);
             nO_NOTALabel.TabIndex = 3;
             nO_NOTALabel.Text = "No. Nota";
             // 
             // p_IDLabel
             // 
             p_IDLabel.AutoSize = true;
-            p_IDLabel.Location = new System.Drawing.Point(20, 116);
+            p_IDLabel.BackColor = System.Drawing.Color.Transparent;
+            p_IDLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            p_IDLabel.ForeColor = System.Drawing.Color.White;
+            p_IDLabel.Location = new System.Drawing.Point(18, 114);
             p_IDLabel.Name = "p_IDLabel";
-            p_IDLabel.Size = new System.Drawing.Size(45, 13);
+            p_IDLabel.Size = new System.Drawing.Size(58, 16);
             p_IDLabel.TabIndex = 5;
             p_IDLabel.Text = "Supplier";
             // 
             // tGL_PNWLabel
             // 
             tGL_PNWLabel.AutoSize = true;
-            tGL_PNWLabel.Location = new System.Drawing.Point(748, 80);
+            tGL_PNWLabel.BackColor = System.Drawing.Color.Transparent;
+            tGL_PNWLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            tGL_PNWLabel.ForeColor = System.Drawing.Color.White;
+            tGL_PNWLabel.Location = new System.Drawing.Point(736, 78);
             tGL_PNWLabel.Name = "tGL_PNWLabel";
-            tGL_PNWLabel.Size = new System.Drawing.Size(60, 13);
+            tGL_PNWLabel.Size = new System.Drawing.Size(74, 16);
             tGL_PNWLabel.TabIndex = 10;
             tGL_PNWLabel.Text = "Tgl Invoice";
             // 
             // kETERANGANLabel
             // 
             kETERANGANLabel.AutoSize = true;
-            kETERANGANLabel.Location = new System.Drawing.Point(21, 191);
+            kETERANGANLabel.BackColor = System.Drawing.Color.Transparent;
+            kETERANGANLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            kETERANGANLabel.ForeColor = System.Drawing.Color.White;
+            kETERANGANLabel.Location = new System.Drawing.Point(19, 189);
             kETERANGANLabel.Name = "kETERANGANLabel";
-            kETERANGANLabel.Size = new System.Drawing.Size(62, 13);
+            kETERANGANLabel.Size = new System.Drawing.Size(77, 16);
             kETERANGANLabel.TabIndex = 15;
             kETERANGANLabel.Text = "Keterangan";
             // 
             // fAKTUR_PAJLabel
             // 
             fAKTUR_PAJLabel.AutoSize = true;
-            fAKTUR_PAJLabel.Location = new System.Drawing.Point(494, 77);
+            fAKTUR_PAJLabel.BackColor = System.Drawing.Color.Transparent;
+            fAKTUR_PAJLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            fAKTUR_PAJLabel.ForeColor = System.Drawing.Color.White;
+            fAKTUR_PAJLabel.Location = new System.Drawing.Point(492, 75);
             fAKTUR_PAJLabel.Name = "fAKTUR_PAJLabel";
-            fAKTUR_PAJLabel.Size = new System.Drawing.Size(67, 13);
+            fAKTUR_PAJLabel.Size = new System.Drawing.Size(83, 16);
             fAKTUR_PAJLabel.TabIndex = 17;
             fAKTUR_PAJLabel.Text = "Faktur Pajak";
             // 
             // nPWPLabel
             // 
             nPWPLabel.AutoSize = true;
-            nPWPLabel.Location = new System.Drawing.Point(328, 79);
+            nPWPLabel.BackColor = System.Drawing.Color.Transparent;
+            nPWPLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            nPWPLabel.ForeColor = System.Drawing.Color.White;
+            nPWPLabel.Location = new System.Drawing.Point(326, 77);
             nPWPLabel.Name = "nPWPLabel";
-            nPWPLabel.Size = new System.Drawing.Size(40, 13);
+            nPWPLabel.Size = new System.Drawing.Size(49, 16);
             nPWPLabel.TabIndex = 19;
             nPWPLabel.Text = "NPWP";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(738, 154);
+            label1.BackColor = System.Drawing.Color.Transparent;
+            label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label1.ForeColor = System.Drawing.Color.White;
+            label1.Location = new System.Drawing.Point(736, 152);
             label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(37, 13);
+            label1.Size = new System.Drawing.Size(46, 16);
             label1.TabIndex = 133;
             label1.Text = "NOTE";
             // 
@@ -303,7 +337,6 @@ namespace Project_UAS_
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Position";
             this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -351,7 +384,7 @@ namespace Project_UAS_
             // nO_PNWTextBox
             // 
             this.nO_PNWTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.t_pembelian_headerBindingSource, "NO_PNW", true));
-            this.nO_PNWTextBox.Location = new System.Drawing.Point(71, 73);
+            this.nO_PNWTextBox.Location = new System.Drawing.Point(78, 73);
             this.nO_PNWTextBox.Name = "nO_PNWTextBox";
             this.nO_PNWTextBox.Size = new System.Drawing.Size(79, 20);
             this.nO_PNWTextBox.TabIndex = 2;
@@ -359,9 +392,9 @@ namespace Project_UAS_
             // nO_NOTATextBox
             // 
             this.nO_NOTATextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.t_pembelian_headerBindingSource, "NO_NOTA", true));
-            this.nO_NOTATextBox.Location = new System.Drawing.Point(221, 74);
+            this.nO_NOTATextBox.Location = new System.Drawing.Point(230, 74);
             this.nO_NOTATextBox.Name = "nO_NOTATextBox";
-            this.nO_NOTATextBox.Size = new System.Drawing.Size(95, 20);
+            this.nO_NOTATextBox.Size = new System.Drawing.Size(86, 20);
             this.nO_NOTATextBox.TabIndex = 4;
             this.nO_NOTATextBox.TextChanged += new System.EventHandler(this.nO_NOTATextBox_TextChanged);
             // 
@@ -371,9 +404,9 @@ namespace Project_UAS_
             this.p_IDComboBox.DataSource = this.msupplierBindingSource;
             this.p_IDComboBox.DisplayMember = "P_ID";
             this.p_IDComboBox.FormattingEnabled = true;
-            this.p_IDComboBox.Location = new System.Drawing.Point(71, 113);
+            this.p_IDComboBox.Location = new System.Drawing.Point(78, 113);
             this.p_IDComboBox.Name = "p_IDComboBox";
-            this.p_IDComboBox.Size = new System.Drawing.Size(111, 21);
+            this.p_IDComboBox.Size = new System.Drawing.Size(104, 21);
             this.p_IDComboBox.TabIndex = 6;
             this.p_IDComboBox.ValueMember = "P_ID";
             // 
@@ -412,9 +445,9 @@ namespace Project_UAS_
             // tGL_PNWDateTimePicker
             // 
             this.tGL_PNWDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.t_pembelian_headerBindingSource, "TGL_PNW", true));
-            this.tGL_PNWDateTimePicker.Location = new System.Drawing.Point(814, 76);
+            this.tGL_PNWDateTimePicker.Location = new System.Drawing.Point(816, 76);
             this.tGL_PNWDateTimePicker.Name = "tGL_PNWDateTimePicker";
-            this.tGL_PNWDateTimePicker.Size = new System.Drawing.Size(159, 20);
+            this.tGL_PNWDateTimePicker.Size = new System.Drawing.Size(157, 20);
             this.tGL_PNWDateTimePicker.TabIndex = 11;
             // 
             // tb_NPWP2
@@ -437,25 +470,25 @@ namespace Project_UAS_
             // 
             this.nOTETextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.msupplierBindingSource, "NOTE", true));
             this.nOTETextBox.Enabled = false;
-            this.nOTETextBox.Location = new System.Drawing.Point(781, 151);
+            this.nOTETextBox.Location = new System.Drawing.Point(788, 151);
             this.nOTETextBox.Name = "nOTETextBox";
-            this.nOTETextBox.Size = new System.Drawing.Size(192, 20);
+            this.nOTETextBox.Size = new System.Drawing.Size(185, 20);
             this.nOTETextBox.TabIndex = 15;
             // 
             // kETERANGANTextBox
             // 
             this.kETERANGANTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.t_pembelian_headerBindingSource, "KETERANGAN", true));
-            this.kETERANGANTextBox.Location = new System.Drawing.Point(89, 188);
+            this.kETERANGANTextBox.Location = new System.Drawing.Point(102, 188);
             this.kETERANGANTextBox.Name = "kETERANGANTextBox";
-            this.kETERANGANTextBox.Size = new System.Drawing.Size(884, 20);
+            this.kETERANGANTextBox.Size = new System.Drawing.Size(871, 20);
             this.kETERANGANTextBox.TabIndex = 16;
             // 
             // fAKTUR_PAJTextBox
             // 
             this.fAKTUR_PAJTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.t_pembelian_headerBindingSource, "FAKTUR_PAJ", true));
-            this.fAKTUR_PAJTextBox.Location = new System.Drawing.Point(567, 76);
+            this.fAKTUR_PAJTextBox.Location = new System.Drawing.Point(581, 76);
             this.fAKTUR_PAJTextBox.Name = "fAKTUR_PAJTextBox";
-            this.fAKTUR_PAJTextBox.Size = new System.Drawing.Size(175, 20);
+            this.fAKTUR_PAJTextBox.Size = new System.Drawing.Size(145, 20);
             this.fAKTUR_PAJTextBox.TabIndex = 18;
             // 
             // nPWPTextBox
@@ -483,8 +516,8 @@ namespace Project_UAS_
             // 
             // tb_qty
             // 
-            this.tb_qty.Location = new System.Drawing.Point(122, 571);
-            this.tb_qty.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tb_qty.Location = new System.Drawing.Point(122, 592);
+            this.tb_qty.Margin = new System.Windows.Forms.Padding(2);
             this.tb_qty.Name = "tb_qty";
             this.tb_qty.Size = new System.Drawing.Size(140, 20);
             this.tb_qty.TabIndex = 136;
@@ -492,10 +525,13 @@ namespace Project_UAS_
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(93, 574);
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(75, 593);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(23, 13);
+            this.label2.Size = new System.Drawing.Size(28, 16);
             this.label2.TabIndex = 137;
             this.label2.Text = "Qty";
             // 
@@ -504,8 +540,8 @@ namespace Project_UAS_
             this.cb_nmbarang.DataSource = this.mbarangBindingSource;
             this.cb_nmbarang.DisplayMember = "DESCRIPTION";
             this.cb_nmbarang.FormattingEnabled = true;
-            this.cb_nmbarang.Location = new System.Drawing.Point(122, 546);
-            this.cb_nmbarang.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cb_nmbarang.Location = new System.Drawing.Point(122, 567);
+            this.cb_nmbarang.Margin = new System.Windows.Forms.Padding(2);
             this.cb_nmbarang.Name = "cb_nmbarang";
             this.cb_nmbarang.Size = new System.Drawing.Size(140, 21);
             this.cb_nmbarang.TabIndex = 138;
@@ -519,10 +555,13 @@ namespace Project_UAS_
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(44, 549);
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(26, 568);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(72, 13);
+            this.label3.Size = new System.Drawing.Size(92, 16);
             this.label3.TabIndex = 139;
             this.label3.Text = "Nama Barang";
             // 
@@ -532,30 +571,34 @@ namespace Project_UAS_
             // 
             // btn_tmbhitem
             // 
-            this.btn_tmbhitem.Location = new System.Drawing.Point(286, 521);
-            this.btn_tmbhitem.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_tmbhitem.BackColor = System.Drawing.Color.LimeGreen;
+            this.btn_tmbhitem.ForeColor = System.Drawing.Color.White;
+            this.btn_tmbhitem.Location = new System.Drawing.Point(286, 542);
+            this.btn_tmbhitem.Margin = new System.Windows.Forms.Padding(2);
             this.btn_tmbhitem.Name = "btn_tmbhitem";
             this.btn_tmbhitem.Size = new System.Drawing.Size(93, 29);
             this.btn_tmbhitem.TabIndex = 140;
-            this.btn_tmbhitem.Text = "TAMBAH ITEM";
-            this.btn_tmbhitem.UseVisualStyleBackColor = true;
+            this.btn_tmbhitem.Text = "Tambah Item";
+            this.btn_tmbhitem.UseVisualStyleBackColor = false;
             this.btn_tmbhitem.Click += new System.EventHandler(this.btn_tmbhitem_Click);
             // 
             // btn_hpsitem
             // 
-            this.btn_hpsitem.Location = new System.Drawing.Point(286, 562);
-            this.btn_hpsitem.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_hpsitem.BackColor = System.Drawing.Color.Red;
+            this.btn_hpsitem.ForeColor = System.Drawing.Color.White;
+            this.btn_hpsitem.Location = new System.Drawing.Point(286, 583);
+            this.btn_hpsitem.Margin = new System.Windows.Forms.Padding(2);
             this.btn_hpsitem.Name = "btn_hpsitem";
             this.btn_hpsitem.Size = new System.Drawing.Size(93, 29);
             this.btn_hpsitem.TabIndex = 141;
-            this.btn_hpsitem.Text = "HAPUS ITEM";
-            this.btn_hpsitem.UseVisualStyleBackColor = true;
+            this.btn_hpsitem.Text = "Hapus Item";
+            this.btn_hpsitem.UseVisualStyleBackColor = false;
             this.btn_hpsitem.Click += new System.EventHandler(this.btn_hpsitem_Click);
             // 
             // tb_Kode
             // 
             this.tb_Kode.Enabled = false;
-            this.tb_Kode.Location = new System.Drawing.Point(122, 521);
+            this.tb_Kode.Location = new System.Drawing.Point(122, 542);
             this.tb_Kode.Name = "tb_Kode";
             this.tb_Kode.Size = new System.Drawing.Size(140, 20);
             this.tb_Kode.TabIndex = 142;
@@ -563,18 +606,108 @@ namespace Project_UAS_
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(47, 524);
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(29, 543);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(69, 13);
+            this.label4.Size = new System.Drawing.Size(87, 16);
             this.label4.TabIndex = 143;
             this.label4.Text = "Kode Barang";
+            // 
+            // dISCOUNTLabel
+            // 
+            dISCOUNTLabel.AutoSize = true;
+            dISCOUNTLabel.BackColor = System.Drawing.Color.Transparent;
+            dISCOUNTLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dISCOUNTLabel.ForeColor = System.Drawing.Color.White;
+            dISCOUNTLabel.Location = new System.Drawing.Point(789, 566);
+            dISCOUNTLabel.Name = "dISCOUNTLabel";
+            dISCOUNTLabel.Size = new System.Drawing.Size(78, 16);
+            dISCOUNTLabel.TabIndex = 143;
+            dISCOUNTLabel.Text = "DISCOUNT";
+            // 
+            // dISCOUNTTextBox
+            // 
+            this.dISCOUNTTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.t_pembelian_headerBindingSource, "DISCOUNT", true));
+            this.dISCOUNTTextBox.Location = new System.Drawing.Point(873, 565);
+            this.dISCOUNTTextBox.Name = "dISCOUNTTextBox";
+            this.dISCOUNTTextBox.Size = new System.Drawing.Size(100, 20);
+            this.dISCOUNTTextBox.TabIndex = 144;
+            // 
+            // pPNLabel
+            // 
+            pPNLabel.AutoSize = true;
+            pPNLabel.BackColor = System.Drawing.Color.Transparent;
+            pPNLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            pPNLabel.ForeColor = System.Drawing.Color.White;
+            pPNLabel.Location = new System.Drawing.Point(831, 592);
+            pPNLabel.Name = "pPNLabel";
+            pPNLabel.Size = new System.Drawing.Size(36, 16);
+            pPNLabel.TabIndex = 144;
+            pPNLabel.Text = "PPN";
+            // 
+            // pPNTextBox
+            // 
+            this.pPNTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.t_pembelian_headerBindingSource, "PPN", true));
+            this.pPNTextBox.Location = new System.Drawing.Point(873, 591);
+            this.pPNTextBox.Name = "pPNTextBox";
+            this.pPNTextBox.Size = new System.Drawing.Size(100, 20);
+            this.pPNTextBox.TabIndex = 145;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(873, 617);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 146;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(873, 539);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(100, 20);
+            this.textBox2.TabIndex = 147;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(760, 540);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(107, 16);
+            this.label5.TabIndex = 148;
+            this.label5.Text = "Total Pembelian";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(788, 618);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(79, 16);
+            this.label6.TabIndex = 149;
+            this.label6.Text = "Grand Total";
             // 
             // Pembelian
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(999, 615);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.ClientSize = new System.Drawing.Size(999, 666);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(pPNLabel);
+            this.Controls.Add(this.pPNTextBox);
+            this.Controls.Add(dISCOUNTLabel);
+            this.Controls.Add(this.dISCOUNTTextBox);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.tb_Kode);
             this.Controls.Add(this.btn_hpsitem);
@@ -667,5 +800,11 @@ namespace Project_UAS_
         private System.Windows.Forms.Button btn_hpsitem;
         private System.Windows.Forms.TextBox tb_Kode;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox dISCOUNTTextBox;
+        private System.Windows.Forms.TextBox pPNTextBox;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
     }
 }

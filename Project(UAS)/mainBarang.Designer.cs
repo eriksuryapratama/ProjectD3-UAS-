@@ -107,6 +107,8 @@ namespace Project_UAS_
             // kODELabel
             // 
             kODELabel.AutoSize = true;
+            kODELabel.BackColor = System.Drawing.Color.Transparent;
+            kODELabel.ForeColor = System.Drawing.Color.White;
             kODELabel.Location = new System.Drawing.Point(27, 106);
             kODELabel.Name = "kODELabel";
             kODELabel.Size = new System.Drawing.Size(75, 13);
@@ -116,6 +118,8 @@ namespace Project_UAS_
             // dESCRIPTIONLabel
             // 
             dESCRIPTIONLabel.AutoSize = true;
+            dESCRIPTIONLabel.BackColor = System.Drawing.Color.Transparent;
+            dESCRIPTIONLabel.ForeColor = System.Drawing.Color.White;
             dESCRIPTIONLabel.Location = new System.Drawing.Point(24, 139);
             dESCRIPTIONLabel.Name = "dESCRIPTIONLabel";
             dESCRIPTIONLabel.Size = new System.Drawing.Size(78, 13);
@@ -125,6 +129,8 @@ namespace Project_UAS_
             // pART_NOLabel
             // 
             pART_NOLabel.AutoSize = true;
+            pART_NOLabel.BackColor = System.Drawing.Color.Transparent;
+            pART_NOLabel.ForeColor = System.Drawing.Color.White;
             pART_NOLabel.Location = new System.Drawing.Point(259, 106);
             pART_NOLabel.Name = "pART_NOLabel";
             pART_NOLabel.Size = new System.Drawing.Size(72, 13);
@@ -134,6 +140,8 @@ namespace Project_UAS_
             // pN1Label
             // 
             pN1Label.AutoSize = true;
+            pN1Label.BackColor = System.Drawing.Color.Transparent;
+            pN1Label.ForeColor = System.Drawing.Color.White;
             pN1Label.Location = new System.Drawing.Point(515, 106);
             pN1Label.Name = "pN1Label";
             pN1Label.Size = new System.Drawing.Size(45, 13);
@@ -143,6 +151,8 @@ namespace Project_UAS_
             // uNIT_PRICELabel
             // 
             uNIT_PRICELabel.AutoSize = true;
+            uNIT_PRICELabel.BackColor = System.Drawing.Color.Transparent;
+            uNIT_PRICELabel.ForeColor = System.Drawing.Color.White;
             uNIT_PRICELabel.Location = new System.Drawing.Point(719, 106);
             uNIT_PRICELabel.Name = "uNIT_PRICELabel";
             uNIT_PRICELabel.Size = new System.Drawing.Size(79, 13);
@@ -152,6 +162,8 @@ namespace Project_UAS_
             // uNITLabel
             // 
             uNITLabel.AutoSize = true;
+            uNITLabel.BackColor = System.Drawing.Color.Transparent;
+            uNITLabel.ForeColor = System.Drawing.Color.White;
             uNITLabel.Location = new System.Drawing.Point(299, 139);
             uNITLabel.Name = "uNITLabel";
             uNITLabel.Size = new System.Drawing.Size(32, 13);
@@ -161,6 +173,8 @@ namespace Project_UAS_
             // sTAMPINGLabel
             // 
             sTAMPINGLabel.AutoSize = true;
+            sTAMPINGLabel.BackColor = System.Drawing.Color.Transparent;
+            sTAMPINGLabel.ForeColor = System.Drawing.Color.White;
             sTAMPINGLabel.Location = new System.Drawing.Point(45, 173);
             sTAMPINGLabel.Name = "sTAMPINGLabel";
             sTAMPINGLabel.Size = new System.Drawing.Size(57, 13);
@@ -170,6 +184,8 @@ namespace Project_UAS_
             // dATA_FISIKLabel
             // 
             dATA_FISIKLabel.AutoSize = true;
+            dATA_FISIKLabel.BackColor = System.Drawing.Color.Transparent;
+            dATA_FISIKLabel.ForeColor = System.Drawing.Color.White;
             dATA_FISIKLabel.Location = new System.Drawing.Point(271, 173);
             dATA_FISIKLabel.Name = "dATA_FISIKLabel";
             dATA_FISIKLabel.Size = new System.Drawing.Size(60, 13);
@@ -179,6 +195,8 @@ namespace Project_UAS_
             // pERSAMAANLabel
             // 
             pERSAMAANLabel.AutoSize = true;
+            pERSAMAANLabel.BackColor = System.Drawing.Color.Transparent;
+            pERSAMAANLabel.ForeColor = System.Drawing.Color.White;
             pERSAMAANLabel.Location = new System.Drawing.Point(494, 173);
             pERSAMAANLabel.Name = "pERSAMAANLabel";
             pERSAMAANLabel.Size = new System.Drawing.Size(66, 13);
@@ -188,6 +206,8 @@ namespace Project_UAS_
             // kETERANGANLabel
             // 
             kETERANGANLabel.AutoSize = true;
+            kETERANGANLabel.BackColor = System.Drawing.Color.Transparent;
+            kETERANGANLabel.ForeColor = System.Drawing.Color.White;
             kETERANGANLabel.Location = new System.Drawing.Point(34, 263);
             kETERANGANLabel.Name = "kETERANGANLabel";
             kETERANGANLabel.Size = new System.Drawing.Size(68, 13);
@@ -197,6 +217,8 @@ namespace Project_UAS_
             // mERK1Label
             // 
             mERK1Label.AutoSize = true;
+            mERK1Label.BackColor = System.Drawing.Color.Transparent;
+            mERK1Label.ForeColor = System.Drawing.Color.White;
             mERK1Label.Location = new System.Drawing.Point(56, 209);
             mERK1Label.Name = "mERK1Label";
             mERK1Label.Size = new System.Drawing.Size(46, 13);
@@ -206,6 +228,8 @@ namespace Project_UAS_
             // mERK2Label
             // 
             mERK2Label.AutoSize = true;
+            mERK2Label.BackColor = System.Drawing.Color.Transparent;
+            mERK2Label.ForeColor = System.Drawing.Color.White;
             mERK2Label.Location = new System.Drawing.Point(285, 209);
             mERK2Label.Name = "mERK2Label";
             mERK2Label.Size = new System.Drawing.Size(46, 13);
@@ -215,6 +239,8 @@ namespace Project_UAS_
             // mERK3Label
             // 
             mERK3Label.AutoSize = true;
+            mERK3Label.BackColor = System.Drawing.Color.Transparent;
+            mERK3Label.ForeColor = System.Drawing.Color.White;
             mERK3Label.Location = new System.Drawing.Point(514, 209);
             mERK3Label.Name = "mERK3Label";
             mERK3Label.Size = new System.Drawing.Size(46, 13);
@@ -450,7 +476,9 @@ namespace Project_UAS_
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(358, 40);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(261, 31);
@@ -579,6 +607,7 @@ namespace Project_UAS_
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(969, 390);
             this.Controls.Add(this.btn_Exit);
             this.Controls.Add(this.btn_Print);

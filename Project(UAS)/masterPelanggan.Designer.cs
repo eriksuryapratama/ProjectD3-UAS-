@@ -105,6 +105,8 @@ namespace Project_UAS_
             // p_CODELabel
             // 
             p_CODELabel.AutoSize = true;
+            p_CODELabel.BackColor = System.Drawing.Color.Transparent;
+            p_CODELabel.ForeColor = System.Drawing.Color.White;
             p_CODELabel.Location = new System.Drawing.Point(47, 105);
             p_CODELabel.Name = "p_CODELabel";
             p_CODELabel.Size = new System.Drawing.Size(76, 13);
@@ -114,6 +116,8 @@ namespace Project_UAS_
             // nAMALabel
             // 
             nAMALabel.AutoSize = true;
+            nAMALabel.BackColor = System.Drawing.Color.Transparent;
+            nAMALabel.ForeColor = System.Drawing.Color.White;
             nAMALabel.Location = new System.Drawing.Point(83, 134);
             nAMALabel.Name = "nAMALabel";
             nAMALabel.Size = new System.Drawing.Size(41, 13);
@@ -124,6 +128,8 @@ namespace Project_UAS_
             // aLAMATLabel
             // 
             aLAMATLabel.AutoSize = true;
+            aLAMATLabel.BackColor = System.Drawing.Color.Transparent;
+            aLAMATLabel.ForeColor = System.Drawing.Color.White;
             aLAMATLabel.Location = new System.Drawing.Point(71, 166);
             aLAMATLabel.Name = "aLAMATLabel";
             aLAMATLabel.Size = new System.Drawing.Size(53, 13);
@@ -134,6 +140,8 @@ namespace Project_UAS_
             // tELPLabel
             // 
             tELPLabel.AutoSize = true;
+            tELPLabel.BackColor = System.Drawing.Color.Transparent;
+            tELPLabel.ForeColor = System.Drawing.Color.White;
             tELPLabel.Location = new System.Drawing.Point(573, 134);
             tELPLabel.Name = "tELPLabel";
             tELPLabel.Size = new System.Drawing.Size(37, 13);
@@ -143,6 +151,8 @@ namespace Project_UAS_
             // kOTALabel
             // 
             kOTALabel.AutoSize = true;
+            kOTALabel.BackColor = System.Drawing.Color.Transparent;
+            kOTALabel.ForeColor = System.Drawing.Color.White;
             kOTALabel.Location = new System.Drawing.Point(571, 167);
             kOTALabel.Name = "kOTALabel";
             kOTALabel.Size = new System.Drawing.Size(39, 13);
@@ -152,6 +162,8 @@ namespace Project_UAS_
             // hPLabel
             // 
             hPLabel.AutoSize = true;
+            hPLabel.BackColor = System.Drawing.Color.Transparent;
+            hPLabel.ForeColor = System.Drawing.Color.White;
             hPLabel.Location = new System.Drawing.Point(584, 222);
             hPLabel.Name = "hPLabel";
             hPLabel.Size = new System.Drawing.Size(25, 13);
@@ -162,6 +174,8 @@ namespace Project_UAS_
             // kOTA1Label
             // 
             kOTA1Label.AutoSize = true;
+            kOTA1Label.BackColor = System.Drawing.Color.Transparent;
+            kOTA1Label.ForeColor = System.Drawing.Color.White;
             kOTA1Label.Location = new System.Drawing.Point(564, 248);
             kOTA1Label.Name = "kOTA1Label";
             kOTA1Label.Size = new System.Drawing.Size(45, 13);
@@ -171,6 +185,8 @@ namespace Project_UAS_
             // nPWPLabel
             // 
             nPWPLabel.AutoSize = true;
+            nPWPLabel.BackColor = System.Drawing.Color.Transparent;
+            nPWPLabel.ForeColor = System.Drawing.Color.White;
             nPWPLabel.Location = new System.Drawing.Point(567, 299);
             nPWPLabel.Name = "nPWPLabel";
             nPWPLabel.Size = new System.Drawing.Size(43, 13);
@@ -180,6 +196,8 @@ namespace Project_UAS_
             // nAMA1Label
             // 
             nAMA1Label.AutoSize = true;
+            nAMA1Label.BackColor = System.Drawing.Color.Transparent;
+            nAMA1Label.ForeColor = System.Drawing.Color.White;
             nAMA1Label.Location = new System.Drawing.Point(77, 221);
             nAMA1Label.Name = "nAMA1Label";
             nAMA1Label.Size = new System.Drawing.Size(47, 13);
@@ -190,6 +208,8 @@ namespace Project_UAS_
             // aLAMAT1Label
             // 
             aLAMAT1Label.AutoSize = true;
+            aLAMAT1Label.BackColor = System.Drawing.Color.Transparent;
+            aLAMAT1Label.ForeColor = System.Drawing.Color.White;
             aLAMAT1Label.Location = new System.Drawing.Point(65, 247);
             aLAMAT1Label.Name = "aLAMAT1Label";
             aLAMAT1Label.Size = new System.Drawing.Size(59, 13);
@@ -200,6 +220,8 @@ namespace Project_UAS_
             // kETERANGANLabel
             // 
             kETERANGANLabel.AutoSize = true;
+            kETERANGANLabel.BackColor = System.Drawing.Color.Transparent;
+            kETERANGANLabel.ForeColor = System.Drawing.Color.White;
             kETERANGANLabel.Location = new System.Drawing.Point(45, 372);
             kETERANGANLabel.Name = "kETERANGANLabel";
             kETERANGANLabel.Size = new System.Drawing.Size(84, 13);
@@ -209,6 +231,8 @@ namespace Project_UAS_
             // nAMA_NPWPLabel
             // 
             nAMA_NPWPLabel.AutoSize = true;
+            nAMA_NPWPLabel.BackColor = System.Drawing.Color.Transparent;
+            nAMA_NPWPLabel.ForeColor = System.Drawing.Color.White;
             nAMA_NPWPLabel.Location = new System.Drawing.Point(52, 299);
             nAMA_NPWPLabel.Name = "nAMA_NPWPLabel";
             nAMA_NPWPLabel.Size = new System.Drawing.Size(77, 13);
@@ -218,6 +242,8 @@ namespace Project_UAS_
             // aLAMAT_NPWPLabel
             // 
             aLAMAT_NPWPLabel.AutoSize = true;
+            aLAMAT_NPWPLabel.BackColor = System.Drawing.Color.Transparent;
+            aLAMAT_NPWPLabel.ForeColor = System.Drawing.Color.White;
             aLAMAT_NPWPLabel.Location = new System.Drawing.Point(40, 325);
             aLAMAT_NPWPLabel.Name = "aLAMAT_NPWPLabel";
             aLAMAT_NPWPLabel.Size = new System.Drawing.Size(89, 13);
@@ -229,7 +255,7 @@ namespace Project_UAS_
             this.btn_Browse.BackColor = System.Drawing.Color.Orange;
             this.btn_Browse.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Browse.ForeColor = System.Drawing.Color.White;
-            this.btn_Browse.Location = new System.Drawing.Point(270, 428);
+            this.btn_Browse.Location = new System.Drawing.Point(228, 422);
             this.btn_Browse.Name = "btn_Browse";
             this.btn_Browse.Size = new System.Drawing.Size(141, 46);
             this.btn_Browse.TabIndex = 55;
@@ -240,7 +266,9 @@ namespace Project_UAS_
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(314, 44);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(296, 31);
@@ -320,7 +348,7 @@ namespace Project_UAS_
             this.m_pelangganBindingNavigator.Name = "m_pelangganBindingNavigator";
             this.m_pelangganBindingNavigator.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
             this.m_pelangganBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.m_pelangganBindingNavigator.Size = new System.Drawing.Size(913, 31);
+            this.m_pelangganBindingNavigator.Size = new System.Drawing.Size(846, 31);
             this.m_pelangganBindingNavigator.TabIndex = 56;
             this.m_pelangganBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -546,7 +574,7 @@ namespace Project_UAS_
             this.btn_Print.BackColor = System.Drawing.Color.LimeGreen;
             this.btn_Print.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Print.ForeColor = System.Drawing.Color.White;
-            this.btn_Print.Location = new System.Drawing.Point(417, 428);
+            this.btn_Print.Location = new System.Drawing.Point(375, 422);
             this.btn_Print.Name = "btn_Print";
             this.btn_Print.Size = new System.Drawing.Size(141, 46);
             this.btn_Print.TabIndex = 70;
@@ -558,7 +586,7 @@ namespace Project_UAS_
             this.btn_Exit.BackColor = System.Drawing.Color.Red;
             this.btn_Exit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Exit.ForeColor = System.Drawing.Color.White;
-            this.btn_Exit.Location = new System.Drawing.Point(564, 428);
+            this.btn_Exit.Location = new System.Drawing.Point(522, 422);
             this.btn_Exit.Name = "btn_Exit";
             this.btn_Exit.Size = new System.Drawing.Size(141, 46);
             this.btn_Exit.TabIndex = 108;
@@ -571,7 +599,8 @@ namespace Project_UAS_
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(913, 498);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.ClientSize = new System.Drawing.Size(846, 498);
             this.Controls.Add(this.btn_Exit);
             this.Controls.Add(this.btn_Print);
             this.Controls.Add(aLAMAT_NPWPLabel);

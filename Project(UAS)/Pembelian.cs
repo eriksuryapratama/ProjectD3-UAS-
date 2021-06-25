@@ -46,20 +46,6 @@ namespace Project_UAS_
             data_beli();
         }
 
-        private void clear()
-        {
-            nO_PNWTextBox.Clear();
-            nO_NOTATextBox.Clear();
-            nPWPTextBox.Clear();
-            fAKTUR_PAJTextBox.Clear();
-            nAMA_NPWPTextBox.Clear();
-            aLAMAT_NPWTextBox.Clear();
-            kOTATextBox.Clear();
-            nOTETextBox.Clear();
-            tb_NPWP2.Clear();
-            tb_Alamat.Clear();
-        }
-
         public void data_beli()
         {
             con.Open();
