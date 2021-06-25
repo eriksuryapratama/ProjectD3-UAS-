@@ -54,9 +54,7 @@ namespace Project_UAS_
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Form1 form_Group = new Form1();
-            form_Group.Show();
+            
         }
 
         private void btn_mModel_Click(object sender, EventArgs e)
@@ -98,6 +96,13 @@ namespace Project_UAS_
         {
             this.Hide();
             Pembelian form_Group = new Pembelian();
+            form_Group.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Penawaran form_Group = new Penawaran();
             form_Group.Show();
         }
     }
