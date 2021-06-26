@@ -46,16 +46,39 @@ namespace Project_UAS_
         {
             con.Open();
 
+            //DATA GRID
             DataSet ds = new DataSet();
             String query = $"SELECT mb.kode as KODE,mb.part_no AS 'PART NO',mb.description AS DESCRIPTION,mb.unit AS UNIT ,mb.merk1 AS MERK,td.qty AS QUANTITY ,FORMAT(mb.unit_price,'C', 'id-ID') AS PRICE,FORMAT((td.qty * mb.unit_price),'C', 'id-ID') as Amount " +
                            $"FROM m_barang mb,t_invoice_detail td,t_invoice_header th " +
                            $"where th.no_inv = td.no_inv " +
                            $"and mb.kode = td.kode " +
-                           $"and th.no_inv = '{tb_noINV.Text}' ";
+                           $"and th.no_inv = '{tb_noINV.Text}'";
             SqlCommand cmd = new SqlCommand(query, con);
             SqlDataAdapter adapter = new SqlDataAdapter(cmd);
             adapter.Fill(ds);
             dgv_dataInvoice.DataSource = ds.Tables[0];
+
+            //Hitung Total
+            String HitungTotal = $"SELECT format(sum(td.qty * mb.unit_price), 'C', 'id-ID') " +
+                                 $"FROM m_barang mb,t_invoice_detail td,t_invoice_header th " +
+                                 $"where th.no_inv = td.no_inv " +
+                                 $"and mb.kode = td.kode " +
+                                 $"and th.no_inv = '{tb_noINV.Text}'";
+            SqlCommand commSum1 = new SqlCommand(HitungTotal, con);
+            String totalHarga = commSum1.ExecuteScalar().ToString();
+
+            //Hitung Grand Total
+            String GrandTotal = $"SELECT format(sum(td.qty * mb.unit_price - th.discount - th.ppn), 'C', 'id-ID') " +
+                                $"FROM m_barang mb,t_invoice_detail td,t_invoice_header th " +
+                                 $"where th.no_inv = td.no_inv " +
+                                 $"and mb.kode = td.kode " +
+                                 $"and th.no_inv = '{tb_noINV.Text}'";
+            SqlCommand commSum2 = new SqlCommand(GrandTotal, con);
+            String grandHarga = commSum2.ExecuteScalar().ToString();
+
+            tb_totalBeli.Text = totalHarga;
+            tb_grandTotal.Text = grandHarga;
+
             con.Close();
         }
 
