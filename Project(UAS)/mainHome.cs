@@ -54,7 +54,9 @@ namespace Project_UAS_
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+            this.Hide();
+            Invoice form_Invoice = new Invoice();
+            form_Invoice.Show();
         }
 
         private void btn_mModel_Click(object sender, EventArgs e)

@@ -27,8 +27,6 @@ namespace Project_UAS_
             this.Validate();
             this.t_pembelian_headerBindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.uASDataSet);
-
-            
         }
 
         private void Pembelian_Load(object sender, EventArgs e)
@@ -40,7 +38,7 @@ namespace Project_UAS_
             // TODO: This line of code loads data into the 'uASDataSet.t_pembelian_header' table. You can move, or remove it, as needed.
             this.t_pembelian_headerTableAdapter.Fill(this.uASDataSet.t_pembelian_header);
 
-            tb_NPWP2.Text = nAMA_NPWPTextBox.Text;
+            //tb_NPWP2.Text = nAMA_NPWPTextBox.Text;
             tb_Alamat.Text = aLAMAT_NPWTextBox.Text + ", " + kOTATextBox.Text;
 
             data_beli();
@@ -51,7 +49,7 @@ namespace Project_UAS_
             con.Open();
 
             DataSet ds = new DataSet();
-            String query = $"SELECT mb.kode as KODE,mb.part_no AS 'PART NO',mb.description AS DESCRIPTION,mb.unit AS UNIT ,mb.merk1 AS MERK,td.qty AS QUANTITY ,FORMAT(mb.unit_price,'C') AS PRICE,FORMAT((td.qty*mb.unit_price),'C') as Amount " +
+            String query = $"SELECT mb.kode as KODE,mb.part_no AS 'PART NO',mb.description AS DESCRIPTION,mb.unit AS UNIT ,mb.merk1 AS MERK,td.qty AS QUANTITY ,FORMAT(mb.unit_price,'C', 'id-ID') AS PRICE,FORMAT((td.qty*mb.unit_price),'C', 'id-ID') as Amount " +
                            $"FROM m_barang mb,t_pembelian_detail td,t_pembelian_header th " +
                            $"where th.no_pnw = td.no_pnw " +
                            $"and mb.kode = td.kode " +
@@ -61,6 +59,7 @@ namespace Project_UAS_
             SqlDataAdapter adapter = new SqlDataAdapter(cmd);
             adapter.Fill(ds);
             dgv_databeli.DataSource = ds.Tables[0];
+
             con.Close();
         }
 
@@ -118,10 +117,15 @@ namespace Project_UAS_
             SqlCommand comm4 = new SqlCommand(DataBrg4, con);
             String unit = comm4.ExecuteScalar().ToString();
 
-            //MERK BARANG
-            String DataBrg5 = $"SELECT merk1 FROM m_barang WHERE id = '{cb_nmbarang.SelectedValue}'";
+            //UNIT PRICE BARANG
+            String DataBrg5 = $"SELECT unit_price FROM m_barang WHERE id = '{cb_nmbarang.SelectedValue}'";
             SqlCommand comm5 = new SqlCommand(DataBrg5, con);
-            String merk = comm5.ExecuteScalar().ToString();
+            String unit_price = comm5.ExecuteScalar().ToString();
+
+            //MERK BARANG
+            String DataBrg6 = $"SELECT merk1 FROM m_barang WHERE id = '{cb_nmbarang.SelectedValue}'";
+            SqlCommand comm6 = new SqlCommand(DataBrg6, con);
+            String merk = comm6.ExecuteScalar().ToString();
 
             //PENGECEKAN & INPUT DATA
             String cek = tb_qty.Text;
@@ -132,7 +136,7 @@ namespace Project_UAS_
             }
             else
             {
-                String query = $"Insert into t_pembelian_detail(no_pnw,no_nota,kode,part_no,descriptio,unit,merk,qty) values('{nO_PNWTextBox.Text}','{nO_NOTATextBox.Text}','{kode}','{part_no}','{description}','{unit}','{merk}','{Convert.ToInt32(tb_qty.Text)}')";
+                String query = $"Insert into t_pembelian_detail(no_pnw, no_nota, kode, part_no, descriptio, unit, merk, qty, unit_price) values('{nO_PNWTextBox.Text}', '{nO_NOTATextBox.Text}', '{kode}', '{part_no}', '{description}', '{unit}', '{merk}', '{Convert.ToInt32(tb_qty.Text)}', '{unit_price}')";
                 comm = new SqlCommand(query, con);
                 comm.ExecuteNonQuery();
             }
@@ -164,10 +168,15 @@ namespace Project_UAS_
             SqlCommand comm4 = new SqlCommand(DataBrg4, con);
             String unit = comm4.ExecuteScalar().ToString();
 
-            //MERK BARANG
-            String DataBrg5 = $"SELECT merk1 FROM m_barang WHERE id = '{cb_nmbarang.SelectedValue}'";
+            //UNIT PRICE BARANG
+            String DataBrg5 = $"SELECT unit_price FROM m_barang WHERE id = '{cb_nmbarang.SelectedValue}'";
             SqlCommand comm5 = new SqlCommand(DataBrg5, con);
-            String merk = comm5.ExecuteScalar().ToString();
+            String unit_price = comm5.ExecuteScalar().ToString();
+
+            //MERK BARANG
+            String DataBrg6 = $"SELECT merk1 FROM m_barang WHERE id = '{cb_nmbarang.SelectedValue}'";
+            SqlCommand comm6 = new SqlCommand(DataBrg6, con);
+            String merk = comm6.ExecuteScalar().ToString();
 
             //DELETE BARANG
             String query = $"DELETE FROM t_pembelian_detail WHERE KODE = '{tb_Kode.Text}' AND NO_NOTA = '{nO_NOTATextBox.Text}'";

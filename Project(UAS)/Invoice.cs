@@ -47,7 +47,7 @@ namespace Project_UAS_
             con.Open();
 
             DataSet ds = new DataSet();
-            String query = $"SELECT mb.kode as KODE,mb.part_no AS 'PART NO',mb.description AS DESCRIPTION,mb.unit AS UNIT ,mb.merk1 AS MERK,td.qty AS QUANTITY ,FORMAT(mb.unit_price,'C') AS PRICE,FORMAT((td.qty * mb.unit_price),'C') as Amount " +
+            String query = $"SELECT mb.kode as KODE,mb.part_no AS 'PART NO',mb.description AS DESCRIPTION,mb.unit AS UNIT ,mb.merk1 AS MERK,td.qty AS QUANTITY ,FORMAT(mb.unit_price,'C', 'id-ID') AS PRICE,FORMAT((td.qty * mb.unit_price),'C', 'id-ID') as Amount " +
                            $"FROM m_barang mb,t_invoice_detail td,t_invoice_header th " +
                            $"where th.no_inv = td.no_inv " +
                            $"and mb.kode = td.kode " +
@@ -103,14 +103,14 @@ namespace Project_UAS_
             SqlCommand comm4 = new SqlCommand(DataBrg4, con);
             String unit = comm4.ExecuteScalar().ToString();
 
-            //UNIT BARANG
+            //UNIT PRICE BARANG
             String DataBrg5 = $"SELECT unit_price FROM m_barang WHERE id = '{cb_nmbarang.SelectedValue}'";
-            SqlCommand comm5 = new SqlCommand(DataBrg4, con);
+            SqlCommand comm5 = new SqlCommand(DataBrg5, con);
             String unit_price = comm5.ExecuteScalar().ToString();
 
             //MERK BARANG
             String DataBrg6 = $"SELECT merk1 FROM m_barang WHERE id = '{cb_nmbarang.SelectedValue}'";
-            SqlCommand comm6 = new SqlCommand(DataBrg5, con);
+            SqlCommand comm6 = new SqlCommand(DataBrg6, con);
             String merk = comm6.ExecuteScalar().ToString();
 
             //PENGECEKAN & INPUT DATA
@@ -154,14 +154,14 @@ namespace Project_UAS_
             SqlCommand comm4 = new SqlCommand(DataBrg4, con);
             String unit = comm4.ExecuteScalar().ToString();
 
-            //UNIT BARANG
+            //UNIT PRICE BARANG
             String DataBrg5 = $"SELECT unit_price FROM m_barang WHERE id = '{cb_nmbarang.SelectedValue}'";
-            SqlCommand comm5 = new SqlCommand(DataBrg4, con);
+            SqlCommand comm5 = new SqlCommand(DataBrg5, con);
             String unit_price = comm5.ExecuteScalar().ToString();
 
             //MERK BARANG
             String DataBrg6 = $"SELECT merk1 FROM m_barang WHERE id = '{cb_nmbarang.SelectedValue}'";
-            SqlCommand comm6 = new SqlCommand(DataBrg5, con);
+            SqlCommand comm6 = new SqlCommand(DataBrg6, con);
             String merk = comm6.ExecuteScalar().ToString();
 
             //DELETE BARANG

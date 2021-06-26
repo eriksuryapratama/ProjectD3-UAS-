@@ -38,9 +38,9 @@ namespace Project_UAS_
             System.Windows.Forms.Label fAKTUR_PAJLabel;
             System.Windows.Forms.Label nPWPLabel;
             System.Windows.Forms.Label label1;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Pembelian));
             System.Windows.Forms.Label dISCOUNTLabel;
             System.Windows.Forms.Label pPNLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Pembelian));
             this.uASDataSet = new Project_UAS_.UASDataSet();
             this.t_pembelian_headerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.t_pembelian_headerTableAdapter = new Project_UAS_.UASDataSetTableAdapters.t_pembelian_headerTableAdapter();
@@ -67,7 +67,6 @@ namespace Project_UAS_
             this.aLAMAT_NPWTextBox = new System.Windows.Forms.TextBox();
             this.kOTATextBox = new System.Windows.Forms.TextBox();
             this.tGL_PNWDateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.tb_NPWP2 = new System.Windows.Forms.TextBox();
             this.tb_Alamat = new System.Windows.Forms.TextBox();
             this.nOTETextBox = new System.Windows.Forms.TextBox();
             this.kETERANGANTextBox = new System.Windows.Forms.TextBox();
@@ -86,10 +85,11 @@ namespace Project_UAS_
             this.label4 = new System.Windows.Forms.Label();
             this.dISCOUNTTextBox = new System.Windows.Forms.TextBox();
             this.pPNTextBox = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.tb_grandTotal = new System.Windows.Forms.TextBox();
+            this.tb_totalBeli = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
             nO_PNWLabel = new System.Windows.Forms.Label();
             nO_NOTALabel = new System.Windows.Forms.Label();
             p_IDLabel = new System.Windows.Forms.Label();
@@ -204,6 +204,30 @@ namespace Project_UAS_
             label1.Size = new System.Drawing.Size(46, 16);
             label1.TabIndex = 133;
             label1.Text = "NOTE";
+            // 
+            // dISCOUNTLabel
+            // 
+            dISCOUNTLabel.AutoSize = true;
+            dISCOUNTLabel.BackColor = System.Drawing.Color.Transparent;
+            dISCOUNTLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dISCOUNTLabel.ForeColor = System.Drawing.Color.White;
+            dISCOUNTLabel.Location = new System.Drawing.Point(789, 566);
+            dISCOUNTLabel.Name = "dISCOUNTLabel";
+            dISCOUNTLabel.Size = new System.Drawing.Size(78, 16);
+            dISCOUNTLabel.TabIndex = 143;
+            dISCOUNTLabel.Text = "DISCOUNT";
+            // 
+            // pPNLabel
+            // 
+            pPNLabel.AutoSize = true;
+            pPNLabel.BackColor = System.Drawing.Color.Transparent;
+            pPNLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            pPNLabel.ForeColor = System.Drawing.Color.White;
+            pPNLabel.Location = new System.Drawing.Point(831, 592);
+            pPNLabel.Name = "pPNLabel";
+            pPNLabel.Size = new System.Drawing.Size(36, 16);
+            pPNLabel.TabIndex = 144;
+            pPNLabel.Text = "PPN";
             // 
             // uASDataSet
             // 
@@ -337,6 +361,7 @@ namespace Project_UAS_
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Position";
             this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -449,14 +474,6 @@ namespace Project_UAS_
             this.tGL_PNWDateTimePicker.Name = "tGL_PNWDateTimePicker";
             this.tGL_PNWDateTimePicker.Size = new System.Drawing.Size(157, 20);
             this.tGL_PNWDateTimePicker.TabIndex = 11;
-            // 
-            // tb_NPWP2
-            // 
-            this.tb_NPWP2.Enabled = false;
-            this.tb_NPWP2.Location = new System.Drawing.Point(24, 151);
-            this.tb_NPWP2.Name = "tb_NPWP2";
-            this.tb_NPWP2.Size = new System.Drawing.Size(238, 20);
-            this.tb_NPWP2.TabIndex = 12;
             // 
             // tb_Alamat
             // 
@@ -615,18 +632,6 @@ namespace Project_UAS_
             this.label4.TabIndex = 143;
             this.label4.Text = "Kode Barang";
             // 
-            // dISCOUNTLabel
-            // 
-            dISCOUNTLabel.AutoSize = true;
-            dISCOUNTLabel.BackColor = System.Drawing.Color.Transparent;
-            dISCOUNTLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dISCOUNTLabel.ForeColor = System.Drawing.Color.White;
-            dISCOUNTLabel.Location = new System.Drawing.Point(789, 566);
-            dISCOUNTLabel.Name = "dISCOUNTLabel";
-            dISCOUNTLabel.Size = new System.Drawing.Size(78, 16);
-            dISCOUNTLabel.TabIndex = 143;
-            dISCOUNTLabel.Text = "DISCOUNT";
-            // 
             // dISCOUNTTextBox
             // 
             this.dISCOUNTTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.t_pembelian_headerBindingSource, "DISCOUNT", true));
@@ -634,18 +639,6 @@ namespace Project_UAS_
             this.dISCOUNTTextBox.Name = "dISCOUNTTextBox";
             this.dISCOUNTTextBox.Size = new System.Drawing.Size(100, 20);
             this.dISCOUNTTextBox.TabIndex = 144;
-            // 
-            // pPNLabel
-            // 
-            pPNLabel.AutoSize = true;
-            pPNLabel.BackColor = System.Drawing.Color.Transparent;
-            pPNLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            pPNLabel.ForeColor = System.Drawing.Color.White;
-            pPNLabel.Location = new System.Drawing.Point(831, 592);
-            pPNLabel.Name = "pPNLabel";
-            pPNLabel.Size = new System.Drawing.Size(36, 16);
-            pPNLabel.TabIndex = 144;
-            pPNLabel.Text = "PPN";
             // 
             // pPNTextBox
             // 
@@ -655,19 +648,19 @@ namespace Project_UAS_
             this.pPNTextBox.Size = new System.Drawing.Size(100, 20);
             this.pPNTextBox.TabIndex = 145;
             // 
-            // textBox1
+            // tb_grandTotal
             // 
-            this.textBox1.Location = new System.Drawing.Point(873, 617);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 146;
+            this.tb_grandTotal.Location = new System.Drawing.Point(873, 617);
+            this.tb_grandTotal.Name = "tb_grandTotal";
+            this.tb_grandTotal.Size = new System.Drawing.Size(100, 20);
+            this.tb_grandTotal.TabIndex = 146;
             // 
-            // textBox2
+            // tb_totalBeli
             // 
-            this.textBox2.Location = new System.Drawing.Point(873, 539);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 147;
+            this.tb_totalBeli.Location = new System.Drawing.Point(873, 539);
+            this.tb_totalBeli.Name = "tb_totalBeli";
+            this.tb_totalBeli.Size = new System.Drawing.Size(100, 20);
+            this.tb_totalBeli.TabIndex = 147;
             // 
             // label5
             // 
@@ -693,6 +686,15 @@ namespace Project_UAS_
             this.label6.TabIndex = 149;
             this.label6.Text = "Grand Total";
             // 
+            // textBox3
+            // 
+            this.textBox3.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.msupplierBindingSource, "NAMA_NPWP", true));
+            this.textBox3.Enabled = false;
+            this.textBox3.Location = new System.Drawing.Point(21, 151);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(241, 20);
+            this.textBox3.TabIndex = 150;
+            // 
             // Pembelian
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -700,10 +702,11 @@ namespace Project_UAS_
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(999, 666);
+            this.Controls.Add(this.textBox3);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tb_totalBeli);
+            this.Controls.Add(this.tb_grandTotal);
             this.Controls.Add(pPNLabel);
             this.Controls.Add(this.pPNTextBox);
             this.Controls.Add(dISCOUNTLabel);
@@ -726,7 +729,6 @@ namespace Project_UAS_
             this.Controls.Add(this.kETERANGANTextBox);
             this.Controls.Add(this.nOTETextBox);
             this.Controls.Add(this.tb_Alamat);
-            this.Controls.Add(this.tb_NPWP2);
             this.Controls.Add(tGL_PNWLabel);
             this.Controls.Add(this.tGL_PNWDateTimePicker);
             this.Controls.Add(this.kOTATextBox);
@@ -783,7 +785,6 @@ namespace Project_UAS_
         private System.Windows.Forms.TextBox aLAMAT_NPWTextBox;
         private System.Windows.Forms.TextBox kOTATextBox;
         private System.Windows.Forms.DateTimePicker tGL_PNWDateTimePicker;
-        private System.Windows.Forms.TextBox tb_NPWP2;
         private System.Windows.Forms.TextBox tb_Alamat;
         private System.Windows.Forms.TextBox nOTETextBox;
         private System.Windows.Forms.TextBox kETERANGANTextBox;
@@ -802,9 +803,10 @@ namespace Project_UAS_
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox dISCOUNTTextBox;
         private System.Windows.Forms.TextBox pPNTextBox;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox tb_grandTotal;
+        private System.Windows.Forms.TextBox tb_totalBeli;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox textBox3;
     }
 }
