@@ -215,5 +215,17 @@ namespace Project_UAS_
             int rowIndex = e.RowIndex;
             tb_Kode.Text = dgv_databeli.Rows[rowIndex].Cells[0].Value.ToString();
         }
+
+        private void btn_Exit_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            mainHome form_Home = new mainHome();
+            form_Home.Show();
+        }
+
+        private void btn_Print_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

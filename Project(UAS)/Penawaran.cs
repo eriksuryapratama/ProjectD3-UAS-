@@ -202,5 +202,12 @@ namespace Project_UAS_
         {
             data_invoice();
         }
+
+        private void btn_Exit_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            mainHome form_Home = new mainHome();
+            form_Home.Show();
+        }
     }
 }
