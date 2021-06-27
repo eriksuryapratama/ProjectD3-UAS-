@@ -201,5 +201,75 @@ namespace Project_UAS_
             int rowIndex = e.RowIndex;
             tb_Kode.Text = dgv_dataInvoice.Rows[rowIndex].Cells[0].Value.ToString();
         }
+
+        private void tb_grandTotal_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pPNTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dISCOUNTTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pPNLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dISCOUNTLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tb_Kode_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tb_totalBeli_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cb_nmbarang_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tb_qty_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -30,9 +30,177 @@ namespace Project_UAS_
 
         private void Penawaran_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'uASDataSet.t_pembelian_header' table. You can move, or remove it, as needed.
+            this.t_pembelian_headerTableAdapter.Fill(this.uASDataSet.t_pembelian_header);
+            // TODO: This line of code loads data into the 'uASDataSet.m_barang' table. You can move, or remove it, as needed.
+            this.m_barangTableAdapter.Fill(this.uASDataSet.m_barang);
+            // TODO: This line of code loads data into the 'uASDataSet.m_supplier' table. You can move, or remove it, as needed.
+            this.m_supplierTableAdapter.Fill(this.uASDataSet.m_supplier);
+            // TODO: This line of code loads data into the 'uASDataSet.m_pelanggan' table. You can move, or remove it, as needed.
+            this.m_pelangganTableAdapter.Fill(this.uASDataSet.m_pelanggan);
             // TODO: This line of code loads data into the 'uASDataSet.t_penawaran_header' table. You can move, or remove it, as needed.
             this.t_penawaran_headerTableAdapter.Fill(this.uASDataSet.t_penawaran_header);
+            data_invoice();
+        }
 
+        public void data_invoice()
+        {
+            con.Open();
+
+            //DATA GRID
+            DataSet ds = new DataSet();
+            String query = $"SELECT mb.kode as KODE,mb.part_no AS 'PART NO',mb.description AS DESCRIPTION,mb.unit AS UNIT ,mb.merk1 AS MERK,td.qty AS QUANTITY ,FORMAT(mb.unit_price,'C', 'id-ID') AS PRICE,FORMAT((td.qty * mb.unit_price),'C', 'id-ID') as Amount " +
+                           $"FROM m_barang mb,t_penawaran_detail td,t_penawaran_header th " +
+                           $"where th.no_pnw = td.no_pnw " +
+                           $"and mb.kode = td.kode " +
+                           $"and th.no_pnw = '{nO_PNWTextBox.Text}'";
+            SqlCommand cmd = new SqlCommand(query, con);
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            adapter.Fill(ds);
+            dgv_penawaran.DataSource = ds.Tables[0];
+
+            //Hitung Total
+            String HitungTotal = $"SELECT format(sum(td.qty * mb.unit_price), 'C', 'id-ID') " +
+                                 $"FROM m_barang mb,t_penawaran_detail td,t_penawaran_header th " +
+                                 $"where th.no_pnw = td.no_pnw " +
+                                 $"and mb.kode = td.kode " +
+                                 $"and th.no_pnw = '{nO_PNWTextBox.Text}'";
+            SqlCommand commSum1 = new SqlCommand(HitungTotal, con);
+            String totalHarga = commSum1.ExecuteScalar().ToString();
+
+            //Hitung Grand Total
+            String GrandTotal = $"SELECT format(sum(td.qty * mb.unit_price - th.discount - th.ppn), 'C', 'id-ID') " +
+                                $"FROM m_barang mb,t_penawaran_detail td,t_penawaran_header th " +
+                                 $"where th.no_pnw = td.no_pnw " +
+                                 $"and mb.kode = td.kode " +
+                                 $"and th.no_pnw = '{nO_PNWTextBox.Text}'";
+            SqlCommand commSum2 = new SqlCommand(GrandTotal, con);
+            String grandHarga = commSum2.ExecuteScalar().ToString();
+
+            tb_totalBeli.Text = totalHarga;
+            tb_grandTotal.Text = grandHarga;
+
+            con.Close();
+        }
+
+        private void btn_tmbhitem_Click(object sender, EventArgs e)
+        {
+            con.Open();
+
+            //KODE BARANG
+            String DataBrg = $"SELECT kode FROM m_barang WHERE id = '{cb_nmbarang.SelectedValue}'";
+            SqlCommand comm = new SqlCommand(DataBrg, con);
+            String kode = comm.ExecuteScalar().ToString();
+
+            //PART NOMOR BARANG
+            String DataBrg2 = $"SELECT part_no FROM m_barang WHERE id = '{cb_nmbarang.SelectedValue}'";
+            SqlCommand comm2 = new SqlCommand(DataBrg2, con);
+            String part_no = comm2.ExecuteScalar().ToString();
+
+            //DESCRIPTION BARANG
+            String DataBrg3 = $"SELECT description FROM m_barang WHERE id = '{cb_nmbarang.SelectedValue}'";
+            SqlCommand comm3 = new SqlCommand(DataBrg3, con);
+            String description = comm3.ExecuteScalar().ToString();
+
+            //UNIT BARANG
+            String DataBrg4 = $"SELECT unit FROM m_barang WHERE id = '{cb_nmbarang.SelectedValue}'";
+            SqlCommand comm4 = new SqlCommand(DataBrg4, con);
+            String unit = comm4.ExecuteScalar().ToString();
+
+            //UNIT PRICE BARANG
+            String DataBrg5 = $"SELECT unit_price FROM m_barang WHERE id = '{cb_nmbarang.SelectedValue}'";
+            SqlCommand comm5 = new SqlCommand(DataBrg5, con);
+            String unit_price = comm5.ExecuteScalar().ToString();
+
+            //MERK BARANG
+            String DataBrg6 = $"SELECT merk1 FROM m_barang WHERE id = '{cb_nmbarang.SelectedValue}'";
+            SqlCommand comm6 = new SqlCommand(DataBrg6, con);
+            String merk = comm6.ExecuteScalar().ToString();
+
+            //PENGECEKAN & INPUT DATA
+            String cek = tb_qty.Text;
+            int num = -1;
+            if (!int.TryParse(cek, out num))
+            {
+                MessageBox.Show("Data Qty Harus Angka !");
+            }
+            else
+            {
+                String query = $"Insert into t_penawaran_detail(no_pnw, kode, part_no, descriptio, qty, unit_price) values('{nO_PNWTextBox.Text}', '{kode}', '{part_no}', '{description}', '{Convert.ToInt32(tb_qty.Text)}', '{unit_price}')";
+                comm = new SqlCommand(query, con);
+                comm.ExecuteNonQuery();
+            }
+            con.Close();
+            data_invoice();
+        }
+
+        private void dgv_penawaran_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int rowIndex = e.RowIndex;
+            tb_Kode.Text = dgv_penawaran.Rows[rowIndex].Cells[0].Value.ToString();
+        }
+
+        private void btn_hpsitem_Click(object sender, EventArgs e)
+        {
+            con.Open();
+
+            //KODE BARANG
+            String DataBrg = $"SELECT kode FROM m_barang WHERE id = '{cb_nmbarang.SelectedValue}'";
+            SqlCommand comm = new SqlCommand(DataBrg, con);
+            String kode = comm.ExecuteScalar().ToString();
+
+            //PART NOMOR BARANG
+            String DataBrg2 = $"SELECT part_no FROM m_barang WHERE id = '{cb_nmbarang.SelectedValue}'";
+            SqlCommand comm2 = new SqlCommand(DataBrg2, con);
+            String part_no = comm2.ExecuteScalar().ToString();
+
+            //DESCRIPTION BARANG
+            String DataBrg3 = $"SELECT description FROM m_barang WHERE id = '{cb_nmbarang.SelectedValue}'";
+            SqlCommand comm3 = new SqlCommand(DataBrg3, con);
+            String description = comm3.ExecuteScalar().ToString();
+
+            //UNIT BARANG
+            String DataBrg4 = $"SELECT unit FROM m_barang WHERE id = '{cb_nmbarang.SelectedValue}'";
+            SqlCommand comm4 = new SqlCommand(DataBrg4, con);
+            String unit = comm4.ExecuteScalar().ToString();
+
+            //UNIT PRICE BARANG
+            String DataBrg5 = $"SELECT unit_price FROM m_barang WHERE id = '{cb_nmbarang.SelectedValue}'";
+            SqlCommand comm5 = new SqlCommand(DataBrg5, con);
+            String unit_price = comm5.ExecuteScalar().ToString();
+
+            //MERK BARANG
+            String DataBrg6 = $"SELECT merk1 FROM m_barang WHERE id = '{cb_nmbarang.SelectedValue}'";
+            SqlCommand comm6 = new SqlCommand(DataBrg6, con);
+            String merk = comm6.ExecuteScalar().ToString();
+
+            //DELETE BARANG
+            String query = $"DELETE FROM t_penawaran_detail WHERE KODE = '{tb_Kode.Text}'";
+            comm = new SqlCommand(query, con);
+            comm.ExecuteNonQuery();
+
+            con.Close();
+            data_invoice();
+        }
+
+        private void bindingNavigatorMoveNextItem_Click(object sender, EventArgs e)
+        {
+            data_invoice();
+        }
+
+        private void bindingNavigatorMoveLastItem_Click(object sender, EventArgs e)
+        {
+            data_invoice();
+        }
+
+        private void bindingNavigatorMovePreviousItem_Click(object sender, EventArgs e)
+        {
+            data_invoice();
+        }
+
+        private void bindingNavigatorMoveFirstItem_Click(object sender, EventArgs e)
+        {
+            data_invoice();
         }
     }
 }

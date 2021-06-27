@@ -35,9 +35,9 @@ namespace Project_UAS_
             System.Windows.Forms.Label p_IDLabel;
             System.Windows.Forms.Label nAMA_NPWPLabel;
             System.Windows.Forms.Label kETERANGANLabel;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Invoice));
             System.Windows.Forms.Label dISCOUNTLabel;
             System.Windows.Forms.Label pPNLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Invoice));
             this.uASDataSet = new Project_UAS_.UASDataSet();
             this.t_invoice_headerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.t_invoice_headerTableAdapter = new Project_UAS_.UASDataSetTableAdapters.t_invoice_headerTableAdapter();
@@ -159,6 +159,32 @@ namespace Project_UAS_
             kETERANGANLabel.Size = new System.Drawing.Size(37, 13);
             kETERANGANLabel.TabIndex = 136;
             kETERANGANLabel.Text = "NOTE";
+            // 
+            // dISCOUNTLabel
+            // 
+            dISCOUNTLabel.AutoSize = true;
+            dISCOUNTLabel.BackColor = System.Drawing.Color.Transparent;
+            dISCOUNTLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dISCOUNTLabel.ForeColor = System.Drawing.Color.White;
+            dISCOUNTLabel.Location = new System.Drawing.Point(717, 549);
+            dISCOUNTLabel.Name = "dISCOUNTLabel";
+            dISCOUNTLabel.Size = new System.Drawing.Size(78, 16);
+            dISCOUNTLabel.TabIndex = 152;
+            dISCOUNTLabel.Text = "DISCOUNT";
+            dISCOUNTLabel.Click += new System.EventHandler(this.dISCOUNTLabel_Click);
+            // 
+            // pPNLabel
+            // 
+            pPNLabel.AutoSize = true;
+            pPNLabel.BackColor = System.Drawing.Color.Transparent;
+            pPNLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            pPNLabel.ForeColor = System.Drawing.Color.White;
+            pPNLabel.Location = new System.Drawing.Point(759, 575);
+            pPNLabel.Name = "pPNLabel";
+            pPNLabel.Size = new System.Drawing.Size(36, 16);
+            pPNLabel.TabIndex = 155;
+            pPNLabel.Text = "PPN";
+            pPNLabel.Click += new System.EventHandler(this.pPNLabel_Click);
             // 
             // uASDataSet
             // 
@@ -293,6 +319,7 @@ namespace Project_UAS_
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Position";
             this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -470,6 +497,7 @@ namespace Project_UAS_
             this.label4.Size = new System.Drawing.Size(87, 16);
             this.label4.TabIndex = 151;
             this.label4.Text = "Kode Barang";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // tb_Kode
             // 
@@ -478,6 +506,7 @@ namespace Project_UAS_
             this.tb_Kode.Name = "tb_Kode";
             this.tb_Kode.Size = new System.Drawing.Size(140, 20);
             this.tb_Kode.TabIndex = 150;
+            this.tb_Kode.TextChanged += new System.EventHandler(this.tb_Kode_TextChanged);
             // 
             // btn_hpsitem
             // 
@@ -517,6 +546,7 @@ namespace Project_UAS_
             this.label3.Size = new System.Drawing.Size(92, 16);
             this.label3.TabIndex = 147;
             this.label3.Text = "Nama Barang";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // cb_nmbarang
             // 
@@ -529,6 +559,7 @@ namespace Project_UAS_
             this.cb_nmbarang.Size = new System.Drawing.Size(140, 21);
             this.cb_nmbarang.TabIndex = 146;
             this.cb_nmbarang.ValueMember = "ID";
+            this.cb_nmbarang.SelectedIndexChanged += new System.EventHandler(this.cb_nmbarang_SelectedIndexChanged);
             // 
             // mbarangBindingSource
             // 
@@ -547,6 +578,7 @@ namespace Project_UAS_
             this.label2.Size = new System.Drawing.Size(28, 16);
             this.label2.TabIndex = 145;
             this.label2.Text = "Qty";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // tb_qty
             // 
@@ -555,6 +587,7 @@ namespace Project_UAS_
             this.tb_qty.Name = "tb_qty";
             this.tb_qty.Size = new System.Drawing.Size(140, 20);
             this.tb_qty.TabIndex = 144;
+            this.tb_qty.TextChanged += new System.EventHandler(this.tb_qty_TextChanged);
             // 
             // label6
             // 
@@ -567,6 +600,7 @@ namespace Project_UAS_
             this.label6.Size = new System.Drawing.Size(79, 16);
             this.label6.TabIndex = 154;
             this.label6.Text = "Grand Total";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label5
             // 
@@ -579,30 +613,7 @@ namespace Project_UAS_
             this.label5.Size = new System.Drawing.Size(107, 16);
             this.label5.TabIndex = 153;
             this.label5.Text = "Total Pembelian";
-            // 
-            // dISCOUNTLabel
-            // 
-            dISCOUNTLabel.AutoSize = true;
-            dISCOUNTLabel.BackColor = System.Drawing.Color.Transparent;
-            dISCOUNTLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dISCOUNTLabel.ForeColor = System.Drawing.Color.White;
-            dISCOUNTLabel.Location = new System.Drawing.Point(717, 549);
-            dISCOUNTLabel.Name = "dISCOUNTLabel";
-            dISCOUNTLabel.Size = new System.Drawing.Size(78, 16);
-            dISCOUNTLabel.TabIndex = 152;
-            dISCOUNTLabel.Text = "DISCOUNT";
-            // 
-            // pPNLabel
-            // 
-            pPNLabel.AutoSize = true;
-            pPNLabel.BackColor = System.Drawing.Color.Transparent;
-            pPNLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            pPNLabel.ForeColor = System.Drawing.Color.White;
-            pPNLabel.Location = new System.Drawing.Point(759, 575);
-            pPNLabel.Name = "pPNLabel";
-            pPNLabel.Size = new System.Drawing.Size(36, 16);
-            pPNLabel.TabIndex = 155;
-            pPNLabel.Text = "PPN";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // dISCOUNTTextBox
             // 
@@ -611,6 +622,7 @@ namespace Project_UAS_
             this.dISCOUNTTextBox.Name = "dISCOUNTTextBox";
             this.dISCOUNTTextBox.Size = new System.Drawing.Size(143, 20);
             this.dISCOUNTTextBox.TabIndex = 156;
+            this.dISCOUNTTextBox.TextChanged += new System.EventHandler(this.dISCOUNTTextBox_TextChanged);
             // 
             // pPNTextBox
             // 
@@ -619,6 +631,7 @@ namespace Project_UAS_
             this.pPNTextBox.Name = "pPNTextBox";
             this.pPNTextBox.Size = new System.Drawing.Size(143, 20);
             this.pPNTextBox.TabIndex = 157;
+            this.pPNTextBox.TextChanged += new System.EventHandler(this.pPNTextBox_TextChanged);
             // 
             // tb_totalBeli
             // 
@@ -626,6 +639,7 @@ namespace Project_UAS_
             this.tb_totalBeli.Name = "tb_totalBeli";
             this.tb_totalBeli.Size = new System.Drawing.Size(143, 20);
             this.tb_totalBeli.TabIndex = 159;
+            this.tb_totalBeli.TextChanged += new System.EventHandler(this.tb_totalBeli_TextChanged);
             // 
             // tb_grandTotal
             // 
@@ -633,6 +647,7 @@ namespace Project_UAS_
             this.tb_grandTotal.Name = "tb_grandTotal";
             this.tb_grandTotal.Size = new System.Drawing.Size(142, 20);
             this.tb_grandTotal.TabIndex = 158;
+            this.tb_grandTotal.TextChanged += new System.EventHandler(this.tb_grandTotal_TextChanged);
             // 
             // Invoice
             // 
