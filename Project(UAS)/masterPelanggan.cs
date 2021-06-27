@@ -77,5 +77,12 @@ namespace Project_UAS_
             mainHome form_Home = new mainHome();
             form_Home.Show();
         }
+
+        private void btn_Print_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Print_Master_Pelanggan form_PrintPelanggan = new Print_Master_Pelanggan();
+            form_PrintPelanggan.Show();
+        }
     }
 }

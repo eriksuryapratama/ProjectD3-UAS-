@@ -60,7 +60,9 @@ namespace Project_UAS_
 
         private void btn_Print_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            Print_Master_Barang form_PrintBarang = new Print_Master_Barang();
+            form_PrintBarang.Show();
         }
 
         private void btn_Exit_Click(object sender, EventArgs e)
