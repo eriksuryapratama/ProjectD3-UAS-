@@ -150,7 +150,9 @@ namespace Project_UAS_
 
         private void btn_Print_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            PrintMasterUsers form_printmasterusers = new PrintMasterUsers();
+            form_printmasterusers.Show();
         }
     }
 }

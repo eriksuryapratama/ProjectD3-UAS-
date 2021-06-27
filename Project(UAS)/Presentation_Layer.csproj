@@ -77,6 +77,12 @@
       <DependentUpon>CRSupplier.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="CRUser.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CRUser.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -167,6 +173,12 @@
     <Compile Include="PrintMasterMerk.Designer.cs">
       <DependentUpon>PrintMasterMerk.cs</DependentUpon>
     </Compile>
+    <Compile Include="PrintMasterUsers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrintMasterUsers.Designer.cs">
+      <DependentUpon>PrintMasterUsers.cs</DependentUpon>
+    </Compile>
     <Compile Include="PrintSupplier.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -244,6 +256,10 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CRSupplier.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="CRUser.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CRUser.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -288,6 +304,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PrintMasterMerk.resx">
       <DependentUpon>PrintMasterMerk.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrintMasterUsers.resx">
+      <DependentUpon>PrintMasterUsers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PrintSupplier.resx">
       <DependentUpon>PrintSupplier.cs</DependentUpon>
