@@ -225,7 +225,9 @@ namespace Project_UAS_
 
         private void btn_Print_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            Print_Pembelian form_PrintPembelian = new Print_Pembelian();
+            form_PrintPembelian.Show();
         }
     }
 }

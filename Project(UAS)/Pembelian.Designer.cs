@@ -727,10 +727,10 @@ namespace Project_UAS_
             this.btn_Exit.BackColor = System.Drawing.Color.Red;
             this.btn_Exit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Exit.ForeColor = System.Drawing.Color.White;
-            this.btn_Exit.Location = new System.Drawing.Point(872, 940);
+            this.btn_Exit.Location = new System.Drawing.Point(590, 896);
             this.btn_Exit.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_Exit.Name = "btn_Exit";
-            this.btn_Exit.Size = new System.Drawing.Size(212, 71);
+            this.btn_Exit.Size = new System.Drawing.Size(140, 46);
             this.btn_Exit.TabIndex = 152;
             this.btn_Exit.Text = "Exit";
             this.btn_Exit.UseVisualStyleBackColor = false;
@@ -741,10 +741,10 @@ namespace Project_UAS_
             this.btn_Print.BackColor = System.Drawing.Color.LimeGreen;
             this.btn_Print.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Print.ForeColor = System.Drawing.Color.White;
-            this.btn_Print.Location = new System.Drawing.Point(651, 940);
+            this.btn_Print.Location = new System.Drawing.Point(590, 835);
             this.btn_Print.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_Print.Name = "btn_Print";
-            this.btn_Print.Size = new System.Drawing.Size(212, 71);
+            this.btn_Print.Size = new System.Drawing.Size(140, 44);
             this.btn_Print.TabIndex = 151;
             this.btn_Print.Text = "Print";
             this.btn_Print.UseVisualStyleBackColor = false;

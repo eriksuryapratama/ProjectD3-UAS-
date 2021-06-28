@@ -77,6 +77,12 @@
       <DependentUpon>CRPelanggan.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="CRPembelian.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CRPembelian.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="CRPenawaran.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -221,6 +227,12 @@
     <Compile Include="Print_Master_Pelanggan.Designer.cs">
       <DependentUpon>Print_Master_Pelanggan.cs</DependentUpon>
     </Compile>
+    <Compile Include="Print_Pembelian.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Print_Pembelian.Designer.cs">
+      <DependentUpon>Print_Pembelian.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UASDataSet.Designer.cs">
@@ -279,6 +291,10 @@
     <EmbeddedResource Include="CRPelanggan.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CRPelanggan.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CRPembelian.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CRPembelian.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="CRPenawaran.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -354,6 +370,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Print_Master_Pelanggan.resx">
       <DependentUpon>Print_Master_Pelanggan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Print_Pembelian.resx">
+      <DependentUpon>Print_Pembelian.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
