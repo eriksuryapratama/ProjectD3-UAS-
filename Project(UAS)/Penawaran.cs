@@ -209,5 +209,12 @@ namespace Project_UAS_
             mainHome form_Home = new mainHome();
             form_Home.Show();
         }
+
+        private void btn_Print_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            PrintPenawaran form_printpenawaran = new PrintPenawaran();
+            form_printpenawaran.Show();
+        }
     }
 }
