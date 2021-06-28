@@ -59,6 +59,12 @@
       <DependentUpon>CRBarang.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="CRInvoice.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CRInvoice.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="CRMerk.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -185,6 +191,12 @@
     <Compile Include="PrintSupplier.Designer.cs">
       <DependentUpon>PrintSupplier.cs</DependentUpon>
     </Compile>
+    <Compile Include="Print_Invoice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Print_Invoice.Designer.cs">
+      <DependentUpon>Print_Invoice.cs</DependentUpon>
+    </Compile>
     <Compile Include="Print_Master_Barang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -243,6 +255,10 @@
     <EmbeddedResource Include="CRBarang.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CRBarang.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CRInvoice.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CRInvoice.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="CRMerk.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -310,6 +326,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PrintSupplier.resx">
       <DependentUpon>PrintSupplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Print_Invoice.resx">
+      <DependentUpon>Print_Invoice.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Print_Master_Barang.resx">
       <DependentUpon>Print_Master_Barang.cs</DependentUpon>
