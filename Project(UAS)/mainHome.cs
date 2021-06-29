@@ -107,5 +107,12 @@ namespace Project_UAS_
             Penawaran form_Group = new Penawaran();
             form_Group.Show();
         }
+
+        private void btn_stock_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            formStock form_Stock = new formStock();
+            form_Stock.Show();
+        }
     }
 }

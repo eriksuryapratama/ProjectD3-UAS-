@@ -57,6 +57,7 @@
     <Compile Include="PembelianHeaderFunction.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StockFunction.cs" />
     <Compile Include="SupplierFunction.cs" />
     <Compile Include="UserFunction.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
