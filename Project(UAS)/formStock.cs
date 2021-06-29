@@ -141,5 +141,12 @@ namespace Project_UAS_
             sda.Fill(dt);
             dgv_Stock.DataSource = dt;
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            mainHome form_Home = new mainHome();
+            form_Home.Show();
+        }
     }
 }

@@ -277,7 +277,7 @@ namespace Project_UAS_
 
         private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
         {
-
+            dgv_dataInvoice.Columns.Clear();
         }
 
         private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)

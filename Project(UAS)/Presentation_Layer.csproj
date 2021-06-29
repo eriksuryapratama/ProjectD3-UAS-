@@ -95,12 +95,6 @@
       <DependentUpon>CRSupplier.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="CRUser.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CRUser.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -252,12 +246,6 @@
     <Compile Include="viewBarang.Designer.cs">
       <DependentUpon>viewBarang.cs</DependentUpon>
     </Compile>
-    <Compile Include="viewMerk.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="viewMerk.Designer.cs">
-      <DependentUpon>viewMerk.cs</DependentUpon>
-    </Compile>
     <Compile Include="viewMerk2.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -309,10 +297,6 @@
     <EmbeddedResource Include="CRSupplier.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CRSupplier.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CRUser.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>CRUser.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
@@ -394,9 +378,6 @@
     </Compile>
     <EmbeddedResource Include="viewBarang.resx">
       <DependentUpon>viewBarang.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="viewMerk.resx">
-      <DependentUpon>viewMerk.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="viewMerk2.resx">
       <DependentUpon>viewMerk2.cs</DependentUpon>

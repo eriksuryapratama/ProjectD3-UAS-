@@ -35,7 +35,6 @@ namespace Project_UAS_
             this.tb_Username = new System.Windows.Forms.TextBox();
             this.dgv_User = new System.Windows.Forms.DataGridView();
             this.btn_Exit = new System.Windows.Forms.Button();
-            this.btn_Print = new System.Windows.Forms.Button();
             this.btn_Delete = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -96,7 +95,7 @@ namespace Project_UAS_
             // btn_Exit
             // 
             this.btn_Exit.BackColor = System.Drawing.Color.Red;
-            this.btn_Exit.Location = new System.Drawing.Point(280, 332);
+            this.btn_Exit.Location = new System.Drawing.Point(208, 333);
             this.btn_Exit.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_Exit.Name = "btn_Exit";
             this.btn_Exit.Size = new System.Drawing.Size(134, 35);
@@ -104,18 +103,6 @@ namespace Project_UAS_
             this.btn_Exit.Text = "Exit";
             this.btn_Exit.UseVisualStyleBackColor = false;
             this.btn_Exit.Click += new System.EventHandler(this.btn_Exit_Click);
-            // 
-            // btn_Print
-            // 
-            this.btn_Print.BackColor = System.Drawing.Color.SteelBlue;
-            this.btn_Print.Location = new System.Drawing.Point(128, 332);
-            this.btn_Print.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btn_Print.Name = "btn_Print";
-            this.btn_Print.Size = new System.Drawing.Size(134, 35);
-            this.btn_Print.TabIndex = 127;
-            this.btn_Print.Text = "Print";
-            this.btn_Print.UseVisualStyleBackColor = false;
-            this.btn_Print.Click += new System.EventHandler(this.btn_Print_Click);
             // 
             // btn_Delete
             // 
@@ -238,7 +225,6 @@ namespace Project_UAS_
             this.Controls.Add(this.tb_Username);
             this.Controls.Add(this.dgv_User);
             this.Controls.Add(this.btn_Exit);
-            this.Controls.Add(this.btn_Print);
             this.Controls.Add(this.btn_Delete);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -261,7 +247,6 @@ namespace Project_UAS_
         private System.Windows.Forms.TextBox tb_Username;
         private System.Windows.Forms.DataGridView dgv_User;
         public System.Windows.Forms.Button btn_Exit;
-        public System.Windows.Forms.Button btn_Print;
         public System.Windows.Forms.Button btn_Delete;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;

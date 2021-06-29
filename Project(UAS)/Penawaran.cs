@@ -49,7 +49,7 @@ namespace Project_UAS_
 
             //DATA GRID
             DataSet ds = new DataSet();
-            String query = $"SELECT mb.kode as KODE,mb.part_no AS 'PART NO',mb.description AS DESCRIPTION,mb.unit AS UNIT ,mb.merk1 AS MERK,td.qty AS QUANTITY ,FORMAT(mb.unit_price,'C', 'id-ID') AS PRICE,FORMAT((td.qty * mb.unit_price),'C', 'id-ID') as Amount " +
+            String query = $"SELECT mb.kode as KODE,mb.part_no AS 'PART NO',mb.description AS DESCRIPTION,mb.merk1 AS MERK,td.qty AS QUANTITY ,FORMAT(mb.unit_price,'C' , 'id-ID') AS 'BUY PRICE',FORMAT(td.unit_pric2,'C' , 'id-ID') AS 'SELL PRICE',FORMAT((td.qty*td.unit_pric2),'C', 'id-ID') as Amount " +
                            $"FROM m_barang mb,t_penawaran_detail td,t_penawaran_header th " +
                            $"where th.no_pnw = td.no_pnw " +
                            $"and mb.kode = td.kode " +
@@ -60,7 +60,7 @@ namespace Project_UAS_
             dgv_penawaran.DataSource = ds.Tables[0];
 
             //Hitung Total
-            String HitungTotal = $"SELECT format(sum(td.qty * mb.unit_price), 'C', 'id-ID') " +
+            String HitungTotal = $"SELECT format(sum(td.qty * td.unit_pric2), 'C', 'id-ID') " +
                                  $"FROM m_barang mb,t_penawaran_detail td,t_penawaran_header th " +
                                  $"where th.no_pnw = td.no_pnw " +
                                  $"and mb.kode = td.kode " +

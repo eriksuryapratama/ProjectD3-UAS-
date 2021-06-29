@@ -55,19 +55,22 @@ namespace Project_UAS_
             this.dgv_Stock.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_Stock.BackgroundColor = System.Drawing.Color.White;
             this.dgv_Stock.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_Stock.Location = new System.Drawing.Point(12, 342);
+            this.dgv_Stock.Location = new System.Drawing.Point(18, 526);
+            this.dgv_Stock.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dgv_Stock.Name = "dgv_Stock";
             this.dgv_Stock.ReadOnly = true;
-            this.dgv_Stock.Size = new System.Drawing.Size(340, 228);
+            this.dgv_Stock.RowHeadersWidth = 62;
+            this.dgv_Stock.Size = new System.Drawing.Size(510, 351);
             this.dgv_Stock.TabIndex = 119;
             this.dgv_Stock.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Stock_CellContentClick);
             // 
             // cb_IDBarang
             // 
             this.cb_IDBarang.FormattingEnabled = true;
-            this.cb_IDBarang.Location = new System.Drawing.Point(147, 104);
+            this.cb_IDBarang.Location = new System.Drawing.Point(220, 160);
+            this.cb_IDBarang.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cb_IDBarang.Name = "cb_IDBarang";
-            this.cb_IDBarang.Size = new System.Drawing.Size(153, 21);
+            this.cb_IDBarang.Size = new System.Drawing.Size(228, 28);
             this.cb_IDBarang.TabIndex = 150;
             // 
             // label5
@@ -76,17 +79,19 @@ namespace Project_UAS_
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(48, 158);
+            this.label5.Location = new System.Drawing.Point(72, 243);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(93, 16);
+            this.label5.Size = new System.Drawing.Size(138, 25);
             this.label5.TabIndex = 149;
             this.label5.Text = "Stock on hand";
             // 
             // tb_stockMin
             // 
-            this.tb_stockMin.Location = new System.Drawing.Point(147, 131);
+            this.tb_stockMin.Location = new System.Drawing.Point(220, 202);
+            this.tb_stockMin.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tb_stockMin.Name = "tb_stockMin";
-            this.tb_stockMin.Size = new System.Drawing.Size(153, 20);
+            this.tb_stockMin.Size = new System.Drawing.Size(228, 26);
             this.tb_stockMin.TabIndex = 148;
             // 
             // label4
@@ -95,9 +100,10 @@ namespace Project_UAS_
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(75, 132);
+            this.label4.Location = new System.Drawing.Point(112, 203);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(66, 16);
+            this.label4.Size = new System.Drawing.Size(99, 25);
             this.label4.TabIndex = 147;
             this.label4.Text = "Stock Min";
             // 
@@ -107,43 +113,49 @@ namespace Project_UAS_
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(41, 306);
+            this.label3.Location = new System.Drawing.Point(62, 471);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(51, 16);
+            this.label3.Size = new System.Drawing.Size(75, 25);
             this.label3.TabIndex = 146;
             this.label3.Text = "Search";
             // 
             // tb_Search
             // 
-            this.tb_Search.Location = new System.Drawing.Point(98, 303);
+            this.tb_Search.Location = new System.Drawing.Point(147, 466);
+            this.tb_Search.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tb_Search.Name = "tb_Search";
-            this.tb_Search.Size = new System.Drawing.Size(225, 20);
+            this.tb_Search.Size = new System.Drawing.Size(336, 26);
             this.tb_Search.TabIndex = 145;
             this.tb_Search.TextChanged += new System.EventHandler(this.tb_Search_TextChanged);
             // 
             // tb_stockOnHand
             // 
-            this.tb_stockOnHand.Location = new System.Drawing.Point(147, 158);
+            this.tb_stockOnHand.Location = new System.Drawing.Point(220, 243);
+            this.tb_stockOnHand.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tb_stockOnHand.Name = "tb_stockOnHand";
-            this.tb_stockOnHand.Size = new System.Drawing.Size(153, 20);
+            this.tb_stockOnHand.Size = new System.Drawing.Size(228, 26);
             this.tb_stockOnHand.TabIndex = 144;
             // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.Red;
-            this.button1.Location = new System.Drawing.Point(186, 243);
+            this.button1.Location = new System.Drawing.Point(279, 374);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(89, 23);
+            this.button1.Size = new System.Drawing.Size(134, 35);
             this.button1.TabIndex = 143;
             this.button1.Text = "Exit";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // btn_Print
             // 
             this.btn_Print.BackColor = System.Drawing.Color.SteelBlue;
-            this.btn_Print.Location = new System.Drawing.Point(84, 243);
+            this.btn_Print.Location = new System.Drawing.Point(126, 374);
+            this.btn_Print.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_Print.Name = "btn_Print";
-            this.btn_Print.Size = new System.Drawing.Size(89, 23);
+            this.btn_Print.Size = new System.Drawing.Size(134, 35);
             this.btn_Print.TabIndex = 142;
             this.btn_Print.Text = "Print";
             this.btn_Print.UseVisualStyleBackColor = false;
@@ -151,9 +163,10 @@ namespace Project_UAS_
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.Red;
-            this.button2.Location = new System.Drawing.Point(233, 214);
+            this.button2.Location = new System.Drawing.Point(350, 329);
+            this.button2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(89, 23);
+            this.button2.Size = new System.Drawing.Size(134, 35);
             this.button2.TabIndex = 141;
             this.button2.Text = "Delete";
             this.button2.UseVisualStyleBackColor = false;
@@ -165,9 +178,10 @@ namespace Project_UAS_
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(73, 104);
+            this.label2.Location = new System.Drawing.Point(110, 160);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(68, 16);
+            this.label2.Size = new System.Drawing.Size(99, 25);
             this.label2.TabIndex = 140;
             this.label2.Text = "ID Barang";
             // 
@@ -177,18 +191,20 @@ namespace Project_UAS_
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(112, 16);
+            this.label1.Location = new System.Drawing.Point(168, 25);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(150, 31);
+            this.label1.Size = new System.Drawing.Size(227, 47);
             this.label1.TabIndex = 139;
             this.label1.Text = "Input Stock";
             // 
             // btn_Edit
             // 
             this.btn_Edit.BackColor = System.Drawing.Color.Yellow;
-            this.btn_Edit.Location = new System.Drawing.Point(138, 214);
+            this.btn_Edit.Location = new System.Drawing.Point(207, 329);
+            this.btn_Edit.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_Edit.Name = "btn_Edit";
-            this.btn_Edit.Size = new System.Drawing.Size(89, 23);
+            this.btn_Edit.Size = new System.Drawing.Size(134, 35);
             this.btn_Edit.TabIndex = 138;
             this.btn_Edit.Text = "Update";
             this.btn_Edit.UseVisualStyleBackColor = false;
@@ -197,9 +213,10 @@ namespace Project_UAS_
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.LimeGreen;
-            this.button3.Location = new System.Drawing.Point(43, 214);
+            this.button3.Location = new System.Drawing.Point(64, 329);
+            this.button3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(89, 23);
+            this.button3.Size = new System.Drawing.Size(134, 35);
             this.button3.TabIndex = 137;
             this.button3.Text = "Add";
             this.button3.UseVisualStyleBackColor = false;
@@ -207,9 +224,10 @@ namespace Project_UAS_
             // 
             // tb_idStock
             // 
-            this.tb_idStock.Location = new System.Drawing.Point(147, 77);
+            this.tb_idStock.Location = new System.Drawing.Point(220, 118);
+            this.tb_idStock.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tb_idStock.Name = "tb_idStock";
-            this.tb_idStock.Size = new System.Drawing.Size(153, 20);
+            this.tb_idStock.Size = new System.Drawing.Size(228, 26);
             this.tb_idStock.TabIndex = 152;
             // 
             // label6
@@ -218,18 +236,19 @@ namespace Project_UAS_
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(83, 78);
+            this.label6.Location = new System.Drawing.Point(124, 120);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(58, 16);
+            this.label6.Size = new System.Drawing.Size(86, 25);
             this.label6.TabIndex = 151;
             this.label6.Text = "ID Stock";
             // 
             // formStock
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(364, 582);
+            this.ClientSize = new System.Drawing.Size(546, 895);
             this.Controls.Add(this.tb_idStock);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.cb_IDBarang);
@@ -248,6 +267,7 @@ namespace Project_UAS_
             this.Controls.Add(this.button3);
             this.Controls.Add(this.dgv_Stock);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "formStock";
             this.Text = "formStock";
             this.Load += new System.EventHandler(this.formStock_Load);
