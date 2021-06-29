@@ -69,7 +69,7 @@ namespace Project_UAS_
             String totalHarga = commSum1.ExecuteScalar().ToString();
 
             //Hitung Grand Total
-            String GrandTotal = $"SELECT format(sum(td.qty * mb.unit_price - th.discount - th.ppn), 'C', 'id-ID') " +
+            String GrandTotal = $"SELECT format(sum(td.qty * mb.unit_price - th.discount + th.ppn), 'C', 'id-ID') " +
                                 $"FROM m_barang mb,t_penawaran_detail td,t_penawaran_header th " +
                                  $"where th.no_pnw = td.no_pnw " +
                                  $"and mb.kode = td.kode " +
@@ -86,6 +86,10 @@ namespace Project_UAS_
         private void btn_tmbhitem_Click(object sender, EventArgs e)
         {
             con.Open();
+
+            this.Validate();
+            this.t_penawaran_headerBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.uASDataSet);
 
             //KODE BARANG
             String DataBrg = $"SELECT kode FROM m_barang WHERE id = '{cb_nmbarang.SelectedValue}'";
@@ -126,9 +130,46 @@ namespace Project_UAS_
             }
             else
             {
-                String query = $"Insert into t_penawaran_detail(no_pnw, kode, part_no, descriptio, qty, unit_price) values('{nO_PNWTextBox.Text}', '{kode}', '{part_no}', '{description}', '{Convert.ToInt32(tb_qty.Text)}', '{unit_price}')";
-                comm = new SqlCommand(query, con);
-                comm.ExecuteNonQuery();
+                //String query = $"Insert into t_penawaran_detail(no_pnw, kode, part_no, descriptio, qty, unit_price) values('{nO_PNWTextBox.Text}', '{kode}', '{part_no}', '{description}', '{Convert.ToInt32(tb_qty.Text)}', '{unit_price}')";
+                //comm = new SqlCommand(query, con);
+                //comm.ExecuteNonQuery();
+                String DataBrg7 = $"SELECT COUNT(*) FROM t_penawaran_detail WHERE kode = '{kode}' and no_pnw = '{nO_PNWTextBox.Text}'";
+                SqlCommand comm7 = new SqlCommand(DataBrg7, con);
+                String cekBarang = comm7.ExecuteScalar().ToString();
+
+                int qty = Convert.ToInt32(tb_qty.Text);
+                if (qty <= 0)
+                {
+                    MessageBox.Show("JUMLAH HARUS LEBIH DARI 0");
+                    con.Close();
+                }
+                else
+                {
+                    if (Convert.ToInt32(cekBarang) > 0)
+                    {
+                        String jmlhBarang = $"SELECT qty FROM t_penawaran_detail WHERE kode = '{kode}' and no_pnw = '{nO_PNWTextBox.Text}'";
+                        SqlCommand comm8 = new SqlCommand(jmlhBarang, con);
+                        String qtyAwal = comm8.ExecuteScalar().ToString();
+                        int tambahQTY = qty + Convert.ToInt32(qtyAwal);
+                        String query = $"UPDATE t_penawaran_detail SET qty = {tambahQTY} where kode = '{kode}' and no_pnw = '{nO_PNWTextBox.Text}'";
+                        comm = new SqlCommand(query, con);
+                        comm.ExecuteNonQuery();
+                        con.Close();
+                        MessageBox.Show("Berhasil ditambahkan");
+                        data_invoice();
+                    }
+                    else
+                    {
+                        String query = $"Insert into t_penawaran_detail(no_pnw, kode, part_no, descriptio, qty, unit_price, unit_pric2) values('{nO_PNWTextBox.Text}','{kode}','{part_no}','{description}','{qty}',{unit_price}, '{tb_hargaJual.Text}')";
+                        comm = new SqlCommand(query, con);
+                        comm.ExecuteNonQuery();
+
+                        con.Close();
+                        MessageBox.Show("Berhasil ditambahkan");
+                        data_invoice();
+                    }
+
+                }
             }
             con.Close();
             data_invoice();
@@ -215,6 +256,18 @@ namespace Project_UAS_
             this.Hide();
             PrintPenawaran form_printpenawaran = new PrintPenawaran();
             form_printpenawaran.Show();
+        }
+
+        private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.t_penawaran_headerBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.uASDataSet);
+        }
+
+        private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

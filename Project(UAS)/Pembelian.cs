@@ -22,6 +22,8 @@ namespace Project_UAS_
             con = new SqlConnection(@"Data Source=.\SQLExpress;Initial Catalog=UAS;Integrated Security=True");
         }
 
+        StockFunction sf = new StockFunction();
+
         private void t_pembelian_headerBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
             this.Validate();
@@ -89,7 +91,9 @@ namespace Project_UAS_
 
         private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
         {
-
+            this.Validate();
+            this.t_pembelian_headerBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.uASDataSet);
         }
 
         private void nO_NOTATextBox_TextChanged(object sender, EventArgs e)
@@ -120,6 +124,10 @@ namespace Project_UAS_
         private void btn_tmbhitem_Click(object sender, EventArgs e)
         {
             con.Open();
+
+            this.Validate();
+            this.t_pembelian_headerBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.uASDataSet);
 
             //KODE BARANG
             String DataBrg = $"SELECT kode FROM m_barang WHERE id = '{cb_nmbarang.SelectedValue}'";
@@ -160,9 +168,43 @@ namespace Project_UAS_
             }
             else
             {
-                String query = $"Insert into t_pembelian_detail(no_pnw, no_nota, kode, part_no, descriptio, unit, merk, qty, unit_price) values('{nO_PNWTextBox.Text}', '{nO_NOTATextBox.Text}', '{kode}', '{part_no}', '{description}', '{unit}', '{merk}', '{Convert.ToInt32(tb_qty.Text)}', '{unit_price}')";
-                comm = new SqlCommand(query, con);
-                comm.ExecuteNonQuery();
+                String DataBrg7 = $"SELECT COUNT(*) FROM t_pembelian_detail WHERE kode = '{kode}' and no_pnw = '{nO_PNWTextBox.Text}'";
+                SqlCommand comm7 = new SqlCommand(DataBrg7, con);
+                String cekBarang = comm7.ExecuteScalar().ToString();
+
+                int qty = Convert.ToInt32(tb_qty.Text);
+                if (qty <= 0)
+                {
+                    MessageBox.Show("JUMLAH HARUS LEBIH DARI 0");
+                    con.Close();
+                }
+                else
+                {
+                    if (Convert.ToInt32(cekBarang) > 0)
+                    {
+                        String jmlhBarang = $"SELECT qty FROM t_pembelian_detail WHERE kode = '{kode}' and no_pnw = '{nO_PNWTextBox.Text}'";
+                        SqlCommand comm8 = new SqlCommand(jmlhBarang, con);
+                        String qtyAwal = comm8.ExecuteScalar().ToString();
+                        int tambahQTY = qty + Convert.ToInt32(qtyAwal);
+                        String query = $"UPDATE t_pembelian_detail SET qty = {tambahQTY} where kode = '{kode}' and no_pnw = '{nO_PNWTextBox.Text}'";
+                        comm = new SqlCommand(query, con);
+                        comm.ExecuteNonQuery();
+                        con.Close();
+                        MessageBox.Show("Berhasil ditambahkan");
+                        data_beli();
+                    }
+                    else
+                    {
+                        String query = $"Insert into t_pembelian_detail(no_pnw,no_nota,kode,part_no,descriptio,unit,merk,qty,unit_price) values('{nO_PNWTextBox.Text}','{nO_NOTATextBox.Text}','{kode}','{part_no}','{description}','{unit}','{merk}','{qty}',{unit_price})";
+                        comm = new SqlCommand(query, con);
+                        comm.ExecuteNonQuery();
+
+                        con.Close();
+                        MessageBox.Show("Berhasil ditambahkan");
+                        data_beli();
+                    }
+
+                }
             }
             con.Close();
             data_beli();
@@ -228,6 +270,11 @@ namespace Project_UAS_
             this.Hide();
             Print_Pembelian form_PrintPembelian = new Print_Pembelian();
             form_PrintPembelian.Show();
+        }
+
+        private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
+        {
+            dgv_databeli.Columns.Clear();
         }
     }
 }

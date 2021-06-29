@@ -110,10 +110,9 @@ namespace Project_UAS_
             nO_PNWLabel.BackColor = System.Drawing.Color.Transparent;
             nO_PNWLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             nO_PNWLabel.ForeColor = System.Drawing.Color.White;
-            nO_PNWLabel.Location = new System.Drawing.Point(348, 58);
-            nO_PNWLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            nO_PNWLabel.Location = new System.Drawing.Point(232, 38);
             nO_PNWLabel.Name = "nO_PNWLabel";
-            nO_PNWLabel.Size = new System.Drawing.Size(67, 25);
+            nO_PNWLabel.Size = new System.Drawing.Size(44, 16);
             nO_PNWLabel.TabIndex = 3;
             nO_PNWLabel.Text = "Pnwrn";
             // 
@@ -122,10 +121,9 @@ namespace Project_UAS_
             tGL_INVLabel.AutoSize = true;
             tGL_INVLabel.BackColor = System.Drawing.Color.Transparent;
             tGL_INVLabel.ForeColor = System.Drawing.Color.White;
-            tGL_INVLabel.Location = new System.Drawing.Point(652, 63);
-            tGL_INVLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            tGL_INVLabel.Location = new System.Drawing.Point(435, 41);
             tGL_INVLabel.Name = "tGL_INVLabel";
-            tGL_INVLabel.Size = new System.Drawing.Size(75, 20);
+            tGL_INVLabel.Size = new System.Drawing.Size(52, 13);
             tGL_INVLabel.TabIndex = 5;
             tGL_INVLabel.Text = "TGL INV:";
             // 
@@ -135,10 +133,9 @@ namespace Project_UAS_
             p_IDLabel.BackColor = System.Drawing.Color.Transparent;
             p_IDLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             p_IDLabel.ForeColor = System.Drawing.Color.White;
-            p_IDLabel.Location = new System.Drawing.Point(12, 114);
-            p_IDLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            p_IDLabel.Location = new System.Drawing.Point(8, 74);
             p_IDLabel.Name = "p_IDLabel";
-            p_IDLabel.Size = new System.Drawing.Size(127, 25);
+            p_IDLabel.Size = new System.Drawing.Size(85, 16);
             p_IDLabel.TabIndex = 8;
             p_IDLabel.Text = "CUSTOMER";
             // 
@@ -148,10 +145,9 @@ namespace Project_UAS_
             nAMA_NPWPLabel.BackColor = System.Drawing.Color.Transparent;
             nAMA_NPWPLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             nAMA_NPWPLabel.ForeColor = System.Drawing.Color.White;
-            nAMA_NPWPLabel.Location = new System.Drawing.Point(12, 172);
-            nAMA_NPWPLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            nAMA_NPWPLabel.Location = new System.Drawing.Point(8, 112);
             nAMA_NPWPLabel.Name = "nAMA_NPWPLabel";
-            nAMA_NPWPLabel.Size = new System.Drawing.Size(136, 25);
+            nAMA_NPWPLabel.Size = new System.Drawing.Size(91, 16);
             nAMA_NPWPLabel.TabIndex = 13;
             nAMA_NPWPLabel.Text = "NAMA NPWP";
             // 
@@ -160,10 +156,9 @@ namespace Project_UAS_
             kETERANGANLabel.AutoSize = true;
             kETERANGANLabel.BackColor = System.Drawing.Color.Transparent;
             kETERANGANLabel.ForeColor = System.Drawing.Color.White;
-            kETERANGANLabel.Location = new System.Drawing.Point(1068, 175);
-            kETERANGANLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            kETERANGANLabel.Location = new System.Drawing.Point(712, 114);
             kETERANGANLabel.Name = "kETERANGANLabel";
-            kETERANGANLabel.Size = new System.Drawing.Size(52, 20);
+            kETERANGANLabel.Size = new System.Drawing.Size(37, 13);
             kETERANGANLabel.TabIndex = 136;
             kETERANGANLabel.Text = "NOTE";
             // 
@@ -173,10 +168,9 @@ namespace Project_UAS_
             dISCOUNTLabel.BackColor = System.Drawing.Color.Transparent;
             dISCOUNTLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dISCOUNTLabel.ForeColor = System.Drawing.Color.White;
-            dISCOUNTLabel.Location = new System.Drawing.Point(1076, 845);
-            dISCOUNTLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            dISCOUNTLabel.Location = new System.Drawing.Point(717, 549);
             dISCOUNTLabel.Name = "dISCOUNTLabel";
-            dISCOUNTLabel.Size = new System.Drawing.Size(117, 25);
+            dISCOUNTLabel.Size = new System.Drawing.Size(78, 16);
             dISCOUNTLabel.TabIndex = 152;
             dISCOUNTLabel.Text = "DISCOUNT";
             dISCOUNTLabel.Click += new System.EventHandler(this.dISCOUNTLabel_Click);
@@ -187,10 +181,9 @@ namespace Project_UAS_
             pPNLabel.BackColor = System.Drawing.Color.Transparent;
             pPNLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             pPNLabel.ForeColor = System.Drawing.Color.White;
-            pPNLabel.Location = new System.Drawing.Point(1138, 885);
-            pPNLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            pPNLabel.Location = new System.Drawing.Point(759, 575);
             pPNLabel.Name = "pPNLabel";
-            pPNLabel.Size = new System.Drawing.Size(52, 25);
+            pPNLabel.Size = new System.Drawing.Size(36, 16);
             pPNLabel.TabIndex = 155;
             pPNLabel.Text = "PPN";
             pPNLabel.Click += new System.EventHandler(this.pPNLabel_Click);
@@ -270,9 +263,9 @@ namespace Project_UAS_
             this.t_invoice_headerBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
             this.t_invoice_headerBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.t_invoice_headerBindingNavigator.Name = "t_invoice_headerBindingNavigator";
-            this.t_invoice_headerBindingNavigator.Padding = new System.Windows.Forms.Padding(0, 0, 3, 0);
+            this.t_invoice_headerBindingNavigator.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
             this.t_invoice_headerBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.t_invoice_headerBindingNavigator.Size = new System.Drawing.Size(1446, 33);
+            this.t_invoice_headerBindingNavigator.Size = new System.Drawing.Size(960, 31);
             this.t_invoice_headerBindingNavigator.TabIndex = 0;
             this.t_invoice_headerBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -282,13 +275,13 @@ namespace Project_UAS_
             this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
             this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(34, 28);
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(28, 28);
             this.bindingNavigatorAddNewItem.Text = "Add new";
             // 
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(54, 28);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 28);
             this.bindingNavigatorCountItem.Text = "of {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
             // 
@@ -298,7 +291,7 @@ namespace Project_UAS_
             this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
             this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(34, 28);
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(28, 28);
             this.bindingNavigatorDeleteItem.Text = "Delete";
             // 
             // bindingNavigatorMoveFirstItem
@@ -307,7 +300,7 @@ namespace Project_UAS_
             this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
             this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
             this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(34, 28);
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(28, 28);
             this.bindingNavigatorMoveFirstItem.Text = "Move first";
             this.bindingNavigatorMoveFirstItem.Click += new System.EventHandler(this.bindingNavigatorMoveFirstItem_Click);
             // 
@@ -317,28 +310,29 @@ namespace Project_UAS_
             this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
             this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
             this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(34, 28);
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(28, 28);
             this.bindingNavigatorMovePreviousItem.Text = "Move previous";
             this.bindingNavigatorMovePreviousItem.Click += new System.EventHandler(this.bindingNavigatorMovePreviousItem_Click);
             // 
             // bindingNavigatorSeparator
             // 
             this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 33);
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 31);
             // 
             // bindingNavigatorPositionItem
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Position";
             this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(73, 31);
+            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Current position";
             // 
             // bindingNavigatorSeparator1
             // 
             this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 33);
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 31);
             // 
             // bindingNavigatorMoveNextItem
             // 
@@ -346,7 +340,7 @@ namespace Project_UAS_
             this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
             this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
             this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(34, 28);
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(28, 28);
             this.bindingNavigatorMoveNextItem.Text = "Move next";
             this.bindingNavigatorMoveNextItem.Click += new System.EventHandler(this.bindingNavigatorMoveNextItem_Click);
             // 
@@ -356,31 +350,30 @@ namespace Project_UAS_
             this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
             this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
             this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(34, 28);
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(28, 28);
             this.bindingNavigatorMoveLastItem.Text = "Move last";
             this.bindingNavigatorMoveLastItem.Click += new System.EventHandler(this.bindingNavigatorMoveLastItem_Click);
             // 
             // bindingNavigatorSeparator2
             // 
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 33);
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 31);
             // 
             // t_invoice_headerBindingNavigatorSaveItem
             // 
             this.t_invoice_headerBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.t_invoice_headerBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("t_invoice_headerBindingNavigatorSaveItem.Image")));
             this.t_invoice_headerBindingNavigatorSaveItem.Name = "t_invoice_headerBindingNavigatorSaveItem";
-            this.t_invoice_headerBindingNavigatorSaveItem.Size = new System.Drawing.Size(34, 28);
+            this.t_invoice_headerBindingNavigatorSaveItem.Size = new System.Drawing.Size(28, 28);
             this.t_invoice_headerBindingNavigatorSaveItem.Text = "Save Data";
             this.t_invoice_headerBindingNavigatorSaveItem.Click += new System.EventHandler(this.t_invoice_headerBindingNavigatorSaveItem_Click);
             // 
             // tb_noINV
             // 
             this.tb_noINV.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.t_invoice_headerBindingSource, "NO_INV", true));
-            this.tb_noINV.Location = new System.Drawing.Point(168, 57);
-            this.tb_noINV.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tb_noINV.Location = new System.Drawing.Point(112, 37);
             this.tb_noINV.Name = "tb_noINV";
-            this.tb_noINV.Size = new System.Drawing.Size(148, 26);
+            this.tb_noINV.Size = new System.Drawing.Size(100, 20);
             this.tb_noINV.TabIndex = 2;
             // 
             // label1
@@ -389,38 +382,34 @@ namespace Project_UAS_
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(10, 51);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(7, 33);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(151, 36);
+            this.label1.Size = new System.Drawing.Size(99, 24);
             this.label1.TabIndex = 3;
             this.label1.Text = "INVOICE";
             // 
             // tb_noPNW
             // 
             this.tb_noPNW.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.t_invoice_headerBindingSource, "NO_PNW", true));
-            this.tb_noPNW.Location = new System.Drawing.Point(423, 57);
-            this.tb_noPNW.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tb_noPNW.Location = new System.Drawing.Point(282, 37);
             this.tb_noPNW.Name = "tb_noPNW";
-            this.tb_noPNW.Size = new System.Drawing.Size(190, 26);
+            this.tb_noPNW.Size = new System.Drawing.Size(128, 20);
             this.tb_noPNW.TabIndex = 4;
             // 
             // dt_tglINV
             // 
             this.dt_tglINV.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.t_invoice_headerBindingSource, "TGL_INV", true));
-            this.dt_tglINV.Location = new System.Drawing.Point(740, 57);
-            this.dt_tglINV.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dt_tglINV.Location = new System.Drawing.Point(493, 37);
             this.dt_tglINV.Name = "dt_tglINV";
-            this.dt_tglINV.Size = new System.Drawing.Size(229, 26);
+            this.dt_tglINV.Size = new System.Drawing.Size(154, 20);
             this.dt_tglINV.TabIndex = 6;
             // 
             // dt_tglTerima
             // 
             this.dt_tglTerima.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.t_invoice_headerBindingSource, "TGL_TERIMA", true));
-            this.dt_tglTerima.Location = new System.Drawing.Point(980, 58);
-            this.dt_tglTerima.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dt_tglTerima.Location = new System.Drawing.Point(653, 38);
             this.dt_tglTerima.Name = "dt_tglTerima";
-            this.dt_tglTerima.Size = new System.Drawing.Size(229, 26);
+            this.dt_tglTerima.Size = new System.Drawing.Size(154, 20);
             this.dt_tglTerima.TabIndex = 8;
             // 
             // cb_Customer
@@ -429,10 +418,9 @@ namespace Project_UAS_
             this.cb_Customer.DataSource = this.mpelangganBindingSource;
             this.cb_Customer.DisplayMember = "P_CODE";
             this.cb_Customer.FormattingEnabled = true;
-            this.cb_Customer.Location = new System.Drawing.Point(158, 112);
-            this.cb_Customer.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cb_Customer.Location = new System.Drawing.Point(105, 73);
             this.cb_Customer.Name = "cb_Customer";
-            this.cb_Customer.Size = new System.Drawing.Size(184, 28);
+            this.cb_Customer.Size = new System.Drawing.Size(124, 21);
             this.cb_Customer.TabIndex = 9;
             this.cb_Customer.ValueMember = "ID";
             // 
@@ -444,45 +432,40 @@ namespace Project_UAS_
             // tb_namaNPWP
             // 
             this.tb_namaNPWP.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.mpelangganBindingSource, "NAMA_NPWP", true));
-            this.tb_namaNPWP.Location = new System.Drawing.Point(352, 114);
-            this.tb_namaNPWP.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tb_namaNPWP.Location = new System.Drawing.Point(235, 74);
             this.tb_namaNPWP.Name = "tb_namaNPWP";
-            this.tb_namaNPWP.Size = new System.Drawing.Size(451, 26);
+            this.tb_namaNPWP.Size = new System.Drawing.Size(302, 20);
             this.tb_namaNPWP.TabIndex = 11;
             // 
             // tb_alamatNPWP
             // 
             this.tb_alamatNPWP.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.mpelangganBindingSource, "ALAMAT_NPWP", true));
-            this.tb_alamatNPWP.Location = new System.Drawing.Point(814, 114);
-            this.tb_alamatNPWP.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tb_alamatNPWP.Location = new System.Drawing.Point(543, 74);
             this.tb_alamatNPWP.Name = "tb_alamatNPWP";
-            this.tb_alamatNPWP.Size = new System.Drawing.Size(600, 26);
+            this.tb_alamatNPWP.Size = new System.Drawing.Size(401, 20);
             this.tb_alamatNPWP.TabIndex = 12;
             // 
             // tb_kotaCustomer
             // 
             this.tb_kotaCustomer.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.mpelangganBindingSource, "KOTA", true));
-            this.tb_kotaCustomer.Location = new System.Drawing.Point(1220, 57);
-            this.tb_kotaCustomer.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tb_kotaCustomer.Location = new System.Drawing.Point(813, 37);
             this.tb_kotaCustomer.Name = "tb_kotaCustomer";
-            this.tb_kotaCustomer.Size = new System.Drawing.Size(194, 26);
+            this.tb_kotaCustomer.Size = new System.Drawing.Size(131, 20);
             this.tb_kotaCustomer.TabIndex = 13;
             // 
             // tb_namaNPWP2
             // 
             this.tb_namaNPWP2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.mpelangganBindingSource, "NAMA_NPWP", true));
-            this.tb_namaNPWP2.Location = new System.Drawing.Point(158, 171);
-            this.tb_namaNPWP2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tb_namaNPWP2.Location = new System.Drawing.Point(105, 111);
             this.tb_namaNPWP2.Name = "tb_namaNPWP2";
-            this.tb_namaNPWP2.Size = new System.Drawing.Size(427, 26);
+            this.tb_namaNPWP2.Size = new System.Drawing.Size(286, 20);
             this.tb_namaNPWP2.TabIndex = 14;
             // 
             // tb_alamatLengkap
             // 
-            this.tb_alamatLengkap.Location = new System.Drawing.Point(596, 171);
-            this.tb_alamatLengkap.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tb_alamatLengkap.Location = new System.Drawing.Point(397, 111);
             this.tb_alamatLengkap.Name = "tb_alamatLengkap";
-            this.tb_alamatLengkap.Size = new System.Drawing.Size(462, 26);
+            this.tb_alamatLengkap.Size = new System.Drawing.Size(309, 20);
             this.tb_alamatLengkap.TabIndex = 15;
             // 
             // dgv_dataInvoice
@@ -490,23 +473,21 @@ namespace Project_UAS_
             this.dgv_dataInvoice.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_dataInvoice.BackgroundColor = System.Drawing.Color.White;
             this.dgv_dataInvoice.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_dataInvoice.Location = new System.Drawing.Point(16, 231);
-            this.dgv_dataInvoice.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dgv_dataInvoice.Location = new System.Drawing.Point(11, 150);
             this.dgv_dataInvoice.Name = "dgv_dataInvoice";
             this.dgv_dataInvoice.ReadOnly = true;
             this.dgv_dataInvoice.RowHeadersWidth = 62;
             this.dgv_dataInvoice.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_dataInvoice.Size = new System.Drawing.Size(1400, 526);
+            this.dgv_dataInvoice.Size = new System.Drawing.Size(933, 342);
             this.dgv_dataInvoice.TabIndex = 136;
             this.dgv_dataInvoice.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_dataInvoice_CellContentClick);
             // 
             // tb_noteCustomer
             // 
             this.tb_noteCustomer.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.mpelangganBindingSource, "KETERANGAN", true));
-            this.tb_noteCustomer.Location = new System.Drawing.Point(1132, 171);
-            this.tb_noteCustomer.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tb_noteCustomer.Location = new System.Drawing.Point(755, 111);
             this.tb_noteCustomer.Name = "tb_noteCustomer";
-            this.tb_noteCustomer.Size = new System.Drawing.Size(282, 26);
+            this.tb_noteCustomer.Size = new System.Drawing.Size(189, 20);
             this.tb_noteCustomer.TabIndex = 137;
             // 
             // label4
@@ -515,10 +496,9 @@ namespace Project_UAS_
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(32, 811);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(21, 527);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(127, 25);
+            this.label4.Size = new System.Drawing.Size(87, 16);
             this.label4.TabIndex = 151;
             this.label4.Text = "Kode Barang";
             this.label4.Click += new System.EventHandler(this.label4_Click);
@@ -526,10 +506,9 @@ namespace Project_UAS_
             // tb_Kode
             // 
             this.tb_Kode.Enabled = false;
-            this.tb_Kode.Location = new System.Drawing.Point(171, 809);
-            this.tb_Kode.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tb_Kode.Location = new System.Drawing.Point(114, 526);
             this.tb_Kode.Name = "tb_Kode";
-            this.tb_Kode.Size = new System.Drawing.Size(208, 26);
+            this.tb_Kode.Size = new System.Drawing.Size(140, 20);
             this.tb_Kode.TabIndex = 150;
             this.tb_Kode.TextChanged += new System.EventHandler(this.tb_Kode_TextChanged);
             // 
@@ -537,9 +516,10 @@ namespace Project_UAS_
             // 
             this.btn_hpsitem.BackColor = System.Drawing.Color.Red;
             this.btn_hpsitem.ForeColor = System.Drawing.Color.White;
-            this.btn_hpsitem.Location = new System.Drawing.Point(417, 872);
+            this.btn_hpsitem.Location = new System.Drawing.Point(278, 567);
+            this.btn_hpsitem.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_hpsitem.Name = "btn_hpsitem";
-            this.btn_hpsitem.Size = new System.Drawing.Size(140, 45);
+            this.btn_hpsitem.Size = new System.Drawing.Size(93, 29);
             this.btn_hpsitem.TabIndex = 149;
             this.btn_hpsitem.Text = "Hapus Item";
             this.btn_hpsitem.UseVisualStyleBackColor = false;
@@ -549,9 +529,10 @@ namespace Project_UAS_
             // 
             this.btn_tmbhitem.BackColor = System.Drawing.Color.LimeGreen;
             this.btn_tmbhitem.ForeColor = System.Drawing.Color.White;
-            this.btn_tmbhitem.Location = new System.Drawing.Point(417, 809);
+            this.btn_tmbhitem.Location = new System.Drawing.Point(278, 526);
+            this.btn_tmbhitem.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_tmbhitem.Name = "btn_tmbhitem";
-            this.btn_tmbhitem.Size = new System.Drawing.Size(140, 45);
+            this.btn_tmbhitem.Size = new System.Drawing.Size(93, 29);
             this.btn_tmbhitem.TabIndex = 148;
             this.btn_tmbhitem.Text = "Tambah Item";
             this.btn_tmbhitem.UseVisualStyleBackColor = false;
@@ -563,9 +544,10 @@ namespace Project_UAS_
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(27, 849);
+            this.label3.Location = new System.Drawing.Point(18, 552);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(132, 25);
+            this.label3.Size = new System.Drawing.Size(92, 16);
             this.label3.TabIndex = 147;
             this.label3.Text = "Nama Barang";
             this.label3.Click += new System.EventHandler(this.label3_Click);
@@ -575,9 +557,10 @@ namespace Project_UAS_
             this.cb_nmbarang.DataSource = this.mbarangBindingSource;
             this.cb_nmbarang.DisplayMember = "DESCRIPTION";
             this.cb_nmbarang.FormattingEnabled = true;
-            this.cb_nmbarang.Location = new System.Drawing.Point(171, 848);
+            this.cb_nmbarang.Location = new System.Drawing.Point(114, 551);
+            this.cb_nmbarang.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cb_nmbarang.Name = "cb_nmbarang";
-            this.cb_nmbarang.Size = new System.Drawing.Size(208, 28);
+            this.cb_nmbarang.Size = new System.Drawing.Size(140, 21);
             this.cb_nmbarang.TabIndex = 146;
             this.cb_nmbarang.ValueMember = "ID";
             this.cb_nmbarang.SelectedIndexChanged += new System.EventHandler(this.cb_nmbarang_SelectedIndexChanged);
@@ -593,18 +576,20 @@ namespace Project_UAS_
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(100, 888);
+            this.label2.Location = new System.Drawing.Point(67, 577);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(43, 25);
+            this.label2.Size = new System.Drawing.Size(28, 16);
             this.label2.TabIndex = 145;
             this.label2.Text = "Qty";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // tb_qty
             // 
-            this.tb_qty.Location = new System.Drawing.Point(171, 886);
+            this.tb_qty.Location = new System.Drawing.Point(114, 576);
+            this.tb_qty.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tb_qty.Name = "tb_qty";
-            this.tb_qty.Size = new System.Drawing.Size(208, 26);
+            this.tb_qty.Size = new System.Drawing.Size(140, 20);
             this.tb_qty.TabIndex = 144;
             this.tb_qty.TextChanged += new System.EventHandler(this.tb_qty_TextChanged);
             // 
@@ -614,10 +599,9 @@ namespace Project_UAS_
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(1076, 928);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Location = new System.Drawing.Point(717, 603);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(115, 25);
+            this.label6.Size = new System.Drawing.Size(79, 16);
             this.label6.TabIndex = 154;
             this.label6.Text = "Grand Total";
             this.label6.Click += new System.EventHandler(this.label6_Click);
@@ -628,10 +612,9 @@ namespace Project_UAS_
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(1032, 805);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(688, 523);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(153, 25);
+            this.label5.Size = new System.Drawing.Size(107, 16);
             this.label5.TabIndex = 153;
             this.label5.Text = "Total Pembelian";
             this.label5.Click += new System.EventHandler(this.label5_Click);
@@ -639,38 +622,34 @@ namespace Project_UAS_
             // dISCOUNTTextBox
             // 
             this.dISCOUNTTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.t_invoice_headerBindingSource, "DISCOUNT", true));
-            this.dISCOUNTTextBox.Location = new System.Drawing.Point(1202, 843);
-            this.dISCOUNTTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dISCOUNTTextBox.Location = new System.Drawing.Point(801, 548);
             this.dISCOUNTTextBox.Name = "dISCOUNTTextBox";
-            this.dISCOUNTTextBox.Size = new System.Drawing.Size(212, 26);
+            this.dISCOUNTTextBox.Size = new System.Drawing.Size(143, 20);
             this.dISCOUNTTextBox.TabIndex = 156;
             this.dISCOUNTTextBox.TextChanged += new System.EventHandler(this.dISCOUNTTextBox_TextChanged);
             // 
             // pPNTextBox
             // 
             this.pPNTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.t_invoice_headerBindingSource, "PPN", true));
-            this.pPNTextBox.Location = new System.Drawing.Point(1202, 883);
-            this.pPNTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pPNTextBox.Location = new System.Drawing.Point(801, 574);
             this.pPNTextBox.Name = "pPNTextBox";
-            this.pPNTextBox.Size = new System.Drawing.Size(212, 26);
+            this.pPNTextBox.Size = new System.Drawing.Size(143, 20);
             this.pPNTextBox.TabIndex = 157;
             this.pPNTextBox.TextChanged += new System.EventHandler(this.pPNTextBox_TextChanged);
             // 
             // tb_totalBeli
             // 
-            this.tb_totalBeli.Location = new System.Drawing.Point(1202, 803);
-            this.tb_totalBeli.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tb_totalBeli.Location = new System.Drawing.Point(801, 522);
             this.tb_totalBeli.Name = "tb_totalBeli";
-            this.tb_totalBeli.Size = new System.Drawing.Size(212, 26);
+            this.tb_totalBeli.Size = new System.Drawing.Size(143, 20);
             this.tb_totalBeli.TabIndex = 159;
             this.tb_totalBeli.TextChanged += new System.EventHandler(this.tb_totalBeli_TextChanged);
             // 
             // tb_grandTotal
             // 
-            this.tb_grandTotal.Location = new System.Drawing.Point(1203, 923);
-            this.tb_grandTotal.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tb_grandTotal.Location = new System.Drawing.Point(802, 600);
             this.tb_grandTotal.Name = "tb_grandTotal";
-            this.tb_grandTotal.Size = new System.Drawing.Size(211, 26);
+            this.tb_grandTotal.Size = new System.Drawing.Size(142, 20);
             this.tb_grandTotal.TabIndex = 158;
             this.tb_grandTotal.TextChanged += new System.EventHandler(this.tb_grandTotal_TextChanged);
             // 
@@ -679,10 +658,9 @@ namespace Project_UAS_
             this.btn_Exit.BackColor = System.Drawing.Color.Red;
             this.btn_Exit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Exit.ForeColor = System.Drawing.Color.White;
-            this.btn_Exit.Location = new System.Drawing.Point(564, 872);
-            this.btn_Exit.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btn_Exit.Location = new System.Drawing.Point(376, 567);
             this.btn_Exit.Name = "btn_Exit";
-            this.btn_Exit.Size = new System.Drawing.Size(163, 45);
+            this.btn_Exit.Size = new System.Drawing.Size(109, 29);
             this.btn_Exit.TabIndex = 161;
             this.btn_Exit.Text = "Exit";
             this.btn_Exit.UseVisualStyleBackColor = false;
@@ -693,10 +671,9 @@ namespace Project_UAS_
             this.btn_Print.BackColor = System.Drawing.Color.LimeGreen;
             this.btn_Print.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Print.ForeColor = System.Drawing.Color.White;
-            this.btn_Print.Location = new System.Drawing.Point(564, 809);
-            this.btn_Print.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btn_Print.Location = new System.Drawing.Point(376, 526);
             this.btn_Print.Name = "btn_Print";
-            this.btn_Print.Size = new System.Drawing.Size(163, 45);
+            this.btn_Print.Size = new System.Drawing.Size(109, 29);
             this.btn_Print.TabIndex = 160;
             this.btn_Print.Text = "Print";
             this.btn_Print.UseVisualStyleBackColor = false;
@@ -704,11 +681,11 @@ namespace Project_UAS_
             // 
             // Invoice
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(1446, 1050);
+            this.ClientSize = new System.Drawing.Size(960, 660);
             this.Controls.Add(this.btn_Exit);
             this.Controls.Add(this.btn_Print);
             this.Controls.Add(this.tb_totalBeli);
@@ -746,7 +723,6 @@ namespace Project_UAS_
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tb_noINV);
             this.Controls.Add(this.t_invoice_headerBindingNavigator);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Invoice";
             this.Text = "Invoice";
             this.Load += new System.EventHandler(this.Invoice_Load);
