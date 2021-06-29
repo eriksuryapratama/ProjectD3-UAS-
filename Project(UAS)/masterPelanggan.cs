@@ -19,10 +19,17 @@ namespace Project_UAS_
 
         private void m_pelangganBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
-            this.Validate();
-            this.m_pelangganBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.uASDataSet);
-
+            if (p_CODETextBox.TextLength == 0 || nAMATextBox.TextLength == 0 || aLAMATTextBox.TextLength == 0)
+            {
+                MessageBox.Show("Kode Pelanggan, Nama Pelanggan, Alamat Pelanggan Tidak boleh kosong !");
+            }
+            else
+            {
+                this.Validate();
+                this.m_pelangganBindingSource.EndEdit();
+                this.tableAdapterManager.UpdateAll(this.uASDataSet);
+                MessageBox.Show("Data pelanggan berhasil ditambahkan");
+            }
         }
 
         private void masterPelanggan_Load(object sender, EventArgs e)

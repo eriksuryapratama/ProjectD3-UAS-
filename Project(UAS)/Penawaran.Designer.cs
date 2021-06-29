@@ -602,7 +602,7 @@ namespace Project_UAS_
             this.btn_hpsitem.BackColor = System.Drawing.Color.Red;
             this.btn_hpsitem.ForeColor = System.Drawing.Color.White;
             this.btn_hpsitem.Location = new System.Drawing.Point(334, 487);
-            this.btn_hpsitem.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_hpsitem.Margin = new System.Windows.Forms.Padding(2);
             this.btn_hpsitem.Name = "btn_hpsitem";
             this.btn_hpsitem.Size = new System.Drawing.Size(93, 29);
             this.btn_hpsitem.TabIndex = 165;
@@ -615,7 +615,7 @@ namespace Project_UAS_
             this.btn_tmbhitem.BackColor = System.Drawing.Color.LimeGreen;
             this.btn_tmbhitem.ForeColor = System.Drawing.Color.White;
             this.btn_tmbhitem.Location = new System.Drawing.Point(334, 446);
-            this.btn_tmbhitem.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_tmbhitem.Margin = new System.Windows.Forms.Padding(2);
             this.btn_tmbhitem.Name = "btn_tmbhitem";
             this.btn_tmbhitem.Size = new System.Drawing.Size(93, 29);
             this.btn_tmbhitem.TabIndex = 164;
@@ -642,7 +642,7 @@ namespace Project_UAS_
             this.cb_nmbarang.DisplayMember = "DESCRIPTION";
             this.cb_nmbarang.FormattingEnabled = true;
             this.cb_nmbarang.Location = new System.Drawing.Point(113, 470);
-            this.cb_nmbarang.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cb_nmbarang.Margin = new System.Windows.Forms.Padding(2);
             this.cb_nmbarang.Name = "cb_nmbarang";
             this.cb_nmbarang.Size = new System.Drawing.Size(140, 21);
             this.cb_nmbarang.TabIndex = 162;
@@ -669,7 +669,7 @@ namespace Project_UAS_
             // tb_qty
             // 
             this.tb_qty.Location = new System.Drawing.Point(113, 497);
-            this.tb_qty.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tb_qty.Margin = new System.Windows.Forms.Padding(2);
             this.tb_qty.Name = "tb_qty";
             this.tb_qty.Size = new System.Drawing.Size(140, 20);
             this.tb_qty.TabIndex = 160;
@@ -690,18 +690,24 @@ namespace Project_UAS_
             // dISCOUNTTextBox
             // 
             this.dISCOUNTTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.t_penawaran_headerBindingSource, "DISCOUNT", true));
+            this.dISCOUNTTextBox.Enabled = false;
             this.dISCOUNTTextBox.Location = new System.Drawing.Point(782, 470);
             this.dISCOUNTTextBox.Name = "dISCOUNTTextBox";
             this.dISCOUNTTextBox.Size = new System.Drawing.Size(128, 20);
             this.dISCOUNTTextBox.TabIndex = 176;
+            this.dISCOUNTTextBox.Text = "0";
+            this.dISCOUNTTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // pPNTextBox
             // 
             this.pPNTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.t_penawaran_headerBindingSource, "PPN", true));
+            this.pPNTextBox.Enabled = false;
             this.pPNTextBox.Location = new System.Drawing.Point(782, 494);
             this.pPNTextBox.Name = "pPNTextBox";
             this.pPNTextBox.Size = new System.Drawing.Size(128, 20);
             this.pPNTextBox.TabIndex = 177;
+            this.pPNTextBox.Text = "0";
+            this.pPNTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // btn_Exit
             // 

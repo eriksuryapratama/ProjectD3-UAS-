@@ -69,16 +69,16 @@ namespace Project_UAS_
             String totalHarga = commSum1.ExecuteScalar().ToString();
 
             //Hitung Grand Total
-            String GrandTotal = $"SELECT format(sum(td.qty * mb.unit_price - th.discount + th.ppn), 'C', 'id-ID') " +
-                                $"FROM m_barang mb,t_penawaran_detail td,t_penawaran_header th " +
-                                 $"where th.no_pnw = td.no_pnw " +
-                                 $"and mb.kode = td.kode " +
-                                 $"and th.no_pnw = '{nO_PNWTextBox.Text}'";
-            SqlCommand commSum2 = new SqlCommand(GrandTotal, con);
-            String grandHarga = commSum2.ExecuteScalar().ToString();
+            //String GrandTotal = $"SELECT format(sum(td.qty * mb.unit_price - th.discount + th.ppn), 'C', 'id-ID') " +
+            //                    $"FROM m_barang mb,t_penawaran_detail td,t_penawaran_header th " +
+            //                     $"where th.no_pnw = td.no_pnw " +
+            //                     $"and mb.kode = td.kode " +
+            //                     $"and th.no_pnw = '{nO_PNWTextBox.Text}'";
+            //SqlCommand commSum2 = new SqlCommand(GrandTotal, con);
+            //String grandHarga = commSum2.ExecuteScalar().ToString();
 
             tb_totalBeli.Text = totalHarga;
-            tb_grandTotal.Text = grandHarga;
+            tb_grandTotal.Text = totalHarga;
 
             con.Close();
         }
@@ -130,9 +130,6 @@ namespace Project_UAS_
             }
             else
             {
-                //String query = $"Insert into t_penawaran_detail(no_pnw, kode, part_no, descriptio, qty, unit_price) values('{nO_PNWTextBox.Text}', '{kode}', '{part_no}', '{description}', '{Convert.ToInt32(tb_qty.Text)}', '{unit_price}')";
-                //comm = new SqlCommand(query, con);
-                //comm.ExecuteNonQuery();
                 String DataBrg7 = $"SELECT COUNT(*) FROM t_penawaran_detail WHERE kode = '{kode}' and no_pnw = '{nO_PNWTextBox.Text}'";
                 SqlCommand comm7 = new SqlCommand(DataBrg7, con);
                 String cekBarang = comm7.ExecuteScalar().ToString();
@@ -147,19 +144,25 @@ namespace Project_UAS_
                 {
                     if (Convert.ToInt32(cekBarang) > 0)
                     {
+                        //SELECT
                         String jmlhBarang = $"SELECT qty FROM t_penawaran_detail WHERE kode = '{kode}' and no_pnw = '{nO_PNWTextBox.Text}'";
                         SqlCommand comm8 = new SqlCommand(jmlhBarang, con);
+                        
                         String qtyAwal = comm8.ExecuteScalar().ToString();
                         int tambahQTY = qty + Convert.ToInt32(qtyAwal);
+                        
+                        //UPDATE
                         String query = $"UPDATE t_penawaran_detail SET qty = {tambahQTY} where kode = '{kode}' and no_pnw = '{nO_PNWTextBox.Text}'";
                         comm = new SqlCommand(query, con);
                         comm.ExecuteNonQuery();
+
                         con.Close();
                         MessageBox.Show("Berhasil ditambahkan");
                         data_invoice();
                     }
                     else
                     {
+                        //INSERT
                         String query = $"Insert into t_penawaran_detail(no_pnw, kode, part_no, descriptio, qty, unit_price, unit_pric2) values('{nO_PNWTextBox.Text}','{kode}','{part_no}','{description}','{qty}',{unit_price}, '{tb_hargaJual.Text}')";
                         comm = new SqlCommand(query, con);
                         comm.ExecuteNonQuery();

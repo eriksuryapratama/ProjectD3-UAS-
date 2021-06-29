@@ -74,17 +74,17 @@ namespace Project_UAS_
             String totalHarga = commSum1.ExecuteScalar().ToString();
 
             //Hitung Grand Total
-            String GrandTotal =  $"SELECT format(sum(td.qty * mb.unit_price - th.discount - th.ppn), 'C', 'id-ID') " +
-                                 $"FROM m_barang mb,t_pembelian_detail td,t_pembelian_header th " +
-                                 $"WHERE mb.kode = td.kode " +
-                                 $"and th.no_nota = td.no_nota " +
-                                 $"and th.p_id = '{p_IDComboBox.Text}' " +
-                                 $"and '{nO_NOTATextBox.Text}' = td.no_nota ";
-            SqlCommand commSum2 = new SqlCommand(GrandTotal, con);
-            String grandHarga = commSum2.ExecuteScalar().ToString();
+            //String GrandTotal =  $"SELECT format(sum(td.qty * mb.unit_price - th.discount + th.ppn), 'C', 'id-ID') " +
+            //                     $"FROM m_barang mb,t_pembelian_detail td,t_pembelian_header th " +
+            //                     $"WHERE mb.kode = td.kode " +
+            //                     $"and th.no_nota = td.no_nota " +
+            //                     $"and th.p_id = '{p_IDComboBox.Text}' " +
+            //                     $"and '{nO_NOTATextBox.Text}' = td.no_nota ";
+            //SqlCommand commSum2 = new SqlCommand(GrandTotal, con);
+            //String grandHarga = commSum2.ExecuteScalar().ToString();
 
             tb_totalBeli.Text = totalHarga;
-            tb_grandTotal.Text = grandHarga;
+            tb_grandTotal.Text = totalHarga;
 
             con.Close();
         }
@@ -182,20 +182,36 @@ namespace Project_UAS_
                 {
                     if (Convert.ToInt32(cekBarang) > 0)
                     {
+                        //SELECT PEMBELIAN DETAIL
                         String jmlhBarang = $"SELECT qty FROM t_pembelian_detail WHERE kode = '{kode}' and no_pnw = '{nO_PNWTextBox.Text}'";
                         SqlCommand comm8 = new SqlCommand(jmlhBarang, con);
+                        
                         String qtyAwal = comm8.ExecuteScalar().ToString();
                         int tambahQTY = qty + Convert.ToInt32(qtyAwal);
+
+                        //STOCK BARANG
+                        String DataStock = $"SELECT id_barang FROM stock WHERE id_barang = '{cb_nmbarang.SelectedValue}'";
+                        SqlCommand commStock = new SqlCommand(DataStock, con);
+                        String stockBarang = commStock.ExecuteScalar().ToString();
+
+                        //UPDATE BARANG
+                        String querytambah = $"UPDATE stock SET stock_on_hand = {tambahQTY} where id_barang = '{cb_nmbarang.SelectedValue}'";
+                        commStock = new SqlCommand(querytambah, con);
+                        commStock.ExecuteNonQuery();
+
+                        //UPDATE PEMBELIAN DETAIL
                         String query = $"UPDATE t_pembelian_detail SET qty = {tambahQTY} where kode = '{kode}' and no_pnw = '{nO_PNWTextBox.Text}'";
                         comm = new SqlCommand(query, con);
                         comm.ExecuteNonQuery();
                         con.Close();
+
                         MessageBox.Show("Berhasil ditambahkan");
                         data_beli();
                     }
                     else
                     {
-                        String query = $"Insert into t_pembelian_detail(no_pnw,no_nota,kode,part_no,descriptio,unit,merk,qty,unit_price) values('{nO_PNWTextBox.Text}','{nO_NOTATextBox.Text}','{kode}','{part_no}','{description}','{unit}','{merk}','{qty}',{unit_price})";
+                        //INSERT PEMBELIAN DETAIL
+                        String query = $"Insert into t_pembelian_detail(no_pnw, no_nota, kode, part_no, descriptio, unit, merk, qty, unit_price) values('{nO_PNWTextBox.Text}','{nO_NOTATextBox.Text}','{kode}','{part_no}','{description}','{unit}','{merk}','{qty}',{unit_price})";
                         comm = new SqlCommand(query, con);
                         comm.ExecuteNonQuery();
 

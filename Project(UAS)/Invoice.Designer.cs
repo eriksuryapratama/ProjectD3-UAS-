@@ -59,7 +59,6 @@ namespace Project_UAS_
             this.t_invoice_headerBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.tb_noINV = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.tb_noPNW = new System.Windows.Forms.TextBox();
             this.dt_tglINV = new System.Windows.Forms.DateTimePicker();
             this.dt_tglTerima = new System.Windows.Forms.DateTimePicker();
             this.cb_Customer = new System.Windows.Forms.ComboBox();
@@ -71,15 +70,9 @@ namespace Project_UAS_
             this.tb_alamatLengkap = new System.Windows.Forms.TextBox();
             this.dgv_dataInvoice = new System.Windows.Forms.DataGridView();
             this.tb_noteCustomer = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.tb_Kode = new System.Windows.Forms.TextBox();
             this.btn_hpsitem = new System.Windows.Forms.Button();
             this.btn_tmbhitem = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.cb_nmbarang = new System.Windows.Forms.ComboBox();
             this.mbarangBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.label2 = new System.Windows.Forms.Label();
-            this.tb_qty = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.dISCOUNTTextBox = new System.Windows.Forms.TextBox();
@@ -88,6 +81,9 @@ namespace Project_UAS_
             this.tb_grandTotal = new System.Windows.Forms.TextBox();
             this.btn_Exit = new System.Windows.Forms.Button();
             this.btn_Print = new System.Windows.Forms.Button();
+            this.nO_PNWComboBox = new System.Windows.Forms.ComboBox();
+            this.tpenawaranheaderBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.t_penawaran_headerTableAdapter = new Project_UAS_.UASDataSetTableAdapters.t_penawaran_headerTableAdapter();
             nO_PNWLabel = new System.Windows.Forms.Label();
             tGL_INVLabel = new System.Windows.Forms.Label();
             p_IDLabel = new System.Windows.Forms.Label();
@@ -102,6 +98,7 @@ namespace Project_UAS_
             ((System.ComponentModel.ISupportInitialize)(this.mpelangganBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_dataInvoice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mbarangBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tpenawaranheaderBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // nO_PNWLabel
@@ -265,7 +262,7 @@ namespace Project_UAS_
             this.t_invoice_headerBindingNavigator.Name = "t_invoice_headerBindingNavigator";
             this.t_invoice_headerBindingNavigator.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
             this.t_invoice_headerBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.t_invoice_headerBindingNavigator.Size = new System.Drawing.Size(960, 31);
+            this.t_invoice_headerBindingNavigator.Size = new System.Drawing.Size(964, 31);
             this.t_invoice_headerBindingNavigator.TabIndex = 0;
             this.t_invoice_headerBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -277,6 +274,7 @@ namespace Project_UAS_
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(28, 28);
             this.bindingNavigatorAddNewItem.Text = "Add new";
+            this.bindingNavigatorAddNewItem.Click += new System.EventHandler(this.bindingNavigatorAddNewItem_Click);
             // 
             // bindingNavigatorCountItem
             // 
@@ -293,6 +291,7 @@ namespace Project_UAS_
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(28, 28);
             this.bindingNavigatorDeleteItem.Text = "Delete";
+            this.bindingNavigatorDeleteItem.Click += new System.EventHandler(this.bindingNavigatorDeleteItem_Click);
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -323,7 +322,6 @@ namespace Project_UAS_
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Position";
             this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -373,7 +371,7 @@ namespace Project_UAS_
             this.tb_noINV.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.t_invoice_headerBindingSource, "NO_INV", true));
             this.tb_noINV.Location = new System.Drawing.Point(112, 37);
             this.tb_noINV.Name = "tb_noINV";
-            this.tb_noINV.Size = new System.Drawing.Size(100, 20);
+            this.tb_noINV.Size = new System.Drawing.Size(117, 20);
             this.tb_noINV.TabIndex = 2;
             // 
             // label1
@@ -387,14 +385,6 @@ namespace Project_UAS_
             this.label1.Size = new System.Drawing.Size(99, 24);
             this.label1.TabIndex = 3;
             this.label1.Text = "INVOICE";
-            // 
-            // tb_noPNW
-            // 
-            this.tb_noPNW.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.t_invoice_headerBindingSource, "NO_PNW", true));
-            this.tb_noPNW.Location = new System.Drawing.Point(282, 37);
-            this.tb_noPNW.Name = "tb_noPNW";
-            this.tb_noPNW.Size = new System.Drawing.Size(128, 20);
-            this.tb_noPNW.TabIndex = 4;
             // 
             // dt_tglINV
             // 
@@ -490,34 +480,12 @@ namespace Project_UAS_
             this.tb_noteCustomer.Size = new System.Drawing.Size(189, 20);
             this.tb_noteCustomer.TabIndex = 137;
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(21, 527);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(87, 16);
-            this.label4.TabIndex = 151;
-            this.label4.Text = "Kode Barang";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
-            // 
-            // tb_Kode
-            // 
-            this.tb_Kode.Enabled = false;
-            this.tb_Kode.Location = new System.Drawing.Point(114, 526);
-            this.tb_Kode.Name = "tb_Kode";
-            this.tb_Kode.Size = new System.Drawing.Size(140, 20);
-            this.tb_Kode.TabIndex = 150;
-            this.tb_Kode.TextChanged += new System.EventHandler(this.tb_Kode_TextChanged);
-            // 
             // btn_hpsitem
             // 
             this.btn_hpsitem.BackColor = System.Drawing.Color.Red;
             this.btn_hpsitem.ForeColor = System.Drawing.Color.White;
             this.btn_hpsitem.Location = new System.Drawing.Point(278, 567);
-            this.btn_hpsitem.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_hpsitem.Margin = new System.Windows.Forms.Padding(2);
             this.btn_hpsitem.Name = "btn_hpsitem";
             this.btn_hpsitem.Size = new System.Drawing.Size(93, 29);
             this.btn_hpsitem.TabIndex = 149;
@@ -530,7 +498,7 @@ namespace Project_UAS_
             this.btn_tmbhitem.BackColor = System.Drawing.Color.LimeGreen;
             this.btn_tmbhitem.ForeColor = System.Drawing.Color.White;
             this.btn_tmbhitem.Location = new System.Drawing.Point(278, 526);
-            this.btn_tmbhitem.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_tmbhitem.Margin = new System.Windows.Forms.Padding(2);
             this.btn_tmbhitem.Name = "btn_tmbhitem";
             this.btn_tmbhitem.Size = new System.Drawing.Size(93, 29);
             this.btn_tmbhitem.TabIndex = 148;
@@ -538,60 +506,10 @@ namespace Project_UAS_
             this.btn_tmbhitem.UseVisualStyleBackColor = false;
             this.btn_tmbhitem.Click += new System.EventHandler(this.btn_tmbhitem_Click);
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(18, 552);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(92, 16);
-            this.label3.TabIndex = 147;
-            this.label3.Text = "Nama Barang";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
-            // 
-            // cb_nmbarang
-            // 
-            this.cb_nmbarang.DataSource = this.mbarangBindingSource;
-            this.cb_nmbarang.DisplayMember = "DESCRIPTION";
-            this.cb_nmbarang.FormattingEnabled = true;
-            this.cb_nmbarang.Location = new System.Drawing.Point(114, 551);
-            this.cb_nmbarang.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.cb_nmbarang.Name = "cb_nmbarang";
-            this.cb_nmbarang.Size = new System.Drawing.Size(140, 21);
-            this.cb_nmbarang.TabIndex = 146;
-            this.cb_nmbarang.ValueMember = "ID";
-            this.cb_nmbarang.SelectedIndexChanged += new System.EventHandler(this.cb_nmbarang_SelectedIndexChanged);
-            // 
             // mbarangBindingSource
             // 
             this.mbarangBindingSource.DataMember = "m_barang";
             this.mbarangBindingSource.DataSource = this.uASDataSet;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(67, 577);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(28, 16);
-            this.label2.TabIndex = 145;
-            this.label2.Text = "Qty";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
-            // 
-            // tb_qty
-            // 
-            this.tb_qty.Location = new System.Drawing.Point(114, 576);
-            this.tb_qty.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tb_qty.Name = "tb_qty";
-            this.tb_qty.Size = new System.Drawing.Size(140, 20);
-            this.tb_qty.TabIndex = 144;
-            this.tb_qty.TextChanged += new System.EventHandler(this.tb_qty_TextChanged);
             // 
             // label6
             // 
@@ -622,19 +540,25 @@ namespace Project_UAS_
             // dISCOUNTTextBox
             // 
             this.dISCOUNTTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.t_invoice_headerBindingSource, "DISCOUNT", true));
+            this.dISCOUNTTextBox.Enabled = false;
             this.dISCOUNTTextBox.Location = new System.Drawing.Point(801, 548);
             this.dISCOUNTTextBox.Name = "dISCOUNTTextBox";
             this.dISCOUNTTextBox.Size = new System.Drawing.Size(143, 20);
             this.dISCOUNTTextBox.TabIndex = 156;
+            this.dISCOUNTTextBox.Text = "0";
+            this.dISCOUNTTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.dISCOUNTTextBox.TextChanged += new System.EventHandler(this.dISCOUNTTextBox_TextChanged);
             // 
             // pPNTextBox
             // 
             this.pPNTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.t_invoice_headerBindingSource, "PPN", true));
+            this.pPNTextBox.Enabled = false;
             this.pPNTextBox.Location = new System.Drawing.Point(801, 574);
             this.pPNTextBox.Name = "pPNTextBox";
             this.pPNTextBox.Size = new System.Drawing.Size(143, 20);
             this.pPNTextBox.TabIndex = 157;
+            this.pPNTextBox.Text = "0";
+            this.pPNTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.pPNTextBox.TextChanged += new System.EventHandler(this.pPNTextBox_TextChanged);
             // 
             // tb_totalBeli
@@ -679,13 +603,35 @@ namespace Project_UAS_
             this.btn_Print.UseVisualStyleBackColor = false;
             this.btn_Print.Click += new System.EventHandler(this.btn_Print_Click);
             // 
+            // nO_PNWComboBox
+            // 
+            this.nO_PNWComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.t_invoice_headerBindingSource, "NO_PNW", true));
+            this.nO_PNWComboBox.DataSource = this.tpenawaranheaderBindingSource;
+            this.nO_PNWComboBox.DisplayMember = "NO_PNW";
+            this.nO_PNWComboBox.FormattingEnabled = true;
+            this.nO_PNWComboBox.Location = new System.Drawing.Point(282, 38);
+            this.nO_PNWComboBox.Name = "nO_PNWComboBox";
+            this.nO_PNWComboBox.Size = new System.Drawing.Size(147, 21);
+            this.nO_PNWComboBox.TabIndex = 162;
+            this.nO_PNWComboBox.ValueMember = "NO_PNW";
+            // 
+            // tpenawaranheaderBindingSource
+            // 
+            this.tpenawaranheaderBindingSource.DataMember = "t_penawaran_header";
+            this.tpenawaranheaderBindingSource.DataSource = this.uASDataSet;
+            // 
+            // t_penawaran_headerTableAdapter
+            // 
+            this.t_penawaran_headerTableAdapter.ClearBeforeFill = true;
+            // 
             // Invoice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(960, 660);
+            this.ClientSize = new System.Drawing.Size(964, 660);
+            this.Controls.Add(this.nO_PNWComboBox);
             this.Controls.Add(this.btn_Exit);
             this.Controls.Add(this.btn_Print);
             this.Controls.Add(this.tb_totalBeli);
@@ -696,14 +642,8 @@ namespace Project_UAS_
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(dISCOUNTLabel);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.tb_Kode);
             this.Controls.Add(this.btn_hpsitem);
             this.Controls.Add(this.btn_tmbhitem);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.cb_nmbarang);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.tb_qty);
             this.Controls.Add(kETERANGANLabel);
             this.Controls.Add(this.tb_noteCustomer);
             this.Controls.Add(this.dgv_dataInvoice);
@@ -719,7 +659,6 @@ namespace Project_UAS_
             this.Controls.Add(tGL_INVLabel);
             this.Controls.Add(this.dt_tglINV);
             this.Controls.Add(nO_PNWLabel);
-            this.Controls.Add(this.tb_noPNW);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tb_noINV);
             this.Controls.Add(this.t_invoice_headerBindingNavigator);
@@ -734,6 +673,7 @@ namespace Project_UAS_
             ((System.ComponentModel.ISupportInitialize)(this.mpelangganBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_dataInvoice)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mbarangBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tpenawaranheaderBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -761,7 +701,6 @@ namespace Project_UAS_
         private UASDataSetTableAdapters.m_pelangganTableAdapter m_pelangganTableAdapter;
         private System.Windows.Forms.TextBox tb_noINV;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox tb_noPNW;
         private System.Windows.Forms.DateTimePicker dt_tglINV;
         private System.Windows.Forms.DateTimePicker dt_tglTerima;
         private System.Windows.Forms.ComboBox cb_Customer;
@@ -773,14 +712,8 @@ namespace Project_UAS_
         private System.Windows.Forms.TextBox tb_alamatLengkap;
         private System.Windows.Forms.DataGridView dgv_dataInvoice;
         private System.Windows.Forms.TextBox tb_noteCustomer;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox tb_Kode;
         private System.Windows.Forms.Button btn_hpsitem;
         private System.Windows.Forms.Button btn_tmbhitem;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox cb_nmbarang;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox tb_qty;
         private UASDataSetTableAdapters.m_barangTableAdapter m_barangTableAdapter;
         private System.Windows.Forms.BindingSource mbarangBindingSource;
         private System.Windows.Forms.Label label6;
@@ -791,5 +724,8 @@ namespace Project_UAS_
         private System.Windows.Forms.TextBox tb_grandTotal;
         public System.Windows.Forms.Button btn_Exit;
         private System.Windows.Forms.Button btn_Print;
+        private System.Windows.Forms.ComboBox nO_PNWComboBox;
+        private System.Windows.Forms.BindingSource tpenawaranheaderBindingSource;
+        private UASDataSetTableAdapters.t_penawaran_headerTableAdapter t_penawaran_headerTableAdapter;
     }
 }

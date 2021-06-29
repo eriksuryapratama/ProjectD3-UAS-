@@ -19,10 +19,17 @@ namespace Project_UAS_
 
         private void m_supplierBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
-            this.Validate();
-            this.m_supplierBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.uASDataSet);
-
+            if (p_IDTextBox.TextLength == 0 || nAMATextBox.TextLength == 0 || aLAMATTextBox.TextLength == 0 || tELP_HPTextBox.TextLength == 0)
+            {
+                MessageBox.Show("Data Supplier Tidak boleh kosong !");
+            }
+            else 
+            {
+                this.Validate();
+                this.m_supplierBindingSource.EndEdit();
+                this.tableAdapterManager.UpdateAll(this.uASDataSet);
+                MessageBox.Show("Data supplier berhasil ditambahkan");
+            }
         }
 
         private void masterSupplier_Load(object sender, EventArgs e)
