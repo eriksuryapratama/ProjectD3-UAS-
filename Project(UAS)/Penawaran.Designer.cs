@@ -44,6 +44,7 @@ namespace Project_UAS_
             System.Windows.Forms.Label pPNLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Penawaran));
             System.Windows.Forms.Label uNIT_PRICELabel;
+            System.Windows.Forms.Label mODELLabel;
             this.uASDataSet = new Project_UAS_.UASDataSet();
             this.t_penawaran_headerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.t_penawaran_headerTableAdapter = new Project_UAS_.UASDataSetTableAdapters.t_penawaran_headerTableAdapter();
@@ -99,6 +100,9 @@ namespace Project_UAS_
             this.tb_hargaJual = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.uNIT_PRICETextBox = new System.Windows.Forms.TextBox();
+            this.mODELComboBox = new System.Windows.Forms.ComboBox();
+            this.mmodelBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.m_modelTableAdapter = new Project_UAS_.UASDataSetTableAdapters.m_modelTableAdapter();
             nO_PNWLabel = new System.Windows.Forms.Label();
             p_IDLabel = new System.Windows.Forms.Label();
             tGL_PNWLabel = new System.Windows.Forms.Label();
@@ -112,6 +116,7 @@ namespace Project_UAS_
             dISCOUNTLabel = new System.Windows.Forms.Label();
             pPNLabel = new System.Windows.Forms.Label();
             uNIT_PRICELabel = new System.Windows.Forms.Label();
+            mODELLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.uASDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.t_penawaran_headerBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.t_penawaran_headerBindingNavigator)).BeginInit();
@@ -121,6 +126,7 @@ namespace Project_UAS_
             ((System.ComponentModel.ISupportInitialize)(this.mpelangganBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mbarangBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.t_pembelian_headerBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mmodelBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // nO_PNWLabel
@@ -384,7 +390,6 @@ namespace Project_UAS_
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Position";
             this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -474,10 +479,10 @@ namespace Project_UAS_
             // 
             this.dgv_penawaran.BackgroundColor = System.Drawing.Color.White;
             this.dgv_penawaran.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_penawaran.Location = new System.Drawing.Point(26, 141);
+            this.dgv_penawaran.Location = new System.Drawing.Point(26, 155);
             this.dgv_penawaran.Name = "dgv_penawaran";
             this.dgv_penawaran.RowHeadersWidth = 62;
-            this.dgv_penawaran.Size = new System.Drawing.Size(884, 248);
+            this.dgv_penawaran.Size = new System.Drawing.Size(884, 234);
             this.dgv_penawaran.TabIndex = 21;
             this.dgv_penawaran.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_penawaran_CellContentClick);
             // 
@@ -784,6 +789,38 @@ namespace Project_UAS_
             this.uNIT_PRICETextBox.Size = new System.Drawing.Size(140, 20);
             this.uNIT_PRICETextBox.TabIndex = 182;
             // 
+            // mODELLabel
+            // 
+            mODELLabel.AutoSize = true;
+            mODELLabel.BackColor = System.Drawing.Color.Transparent;
+            mODELLabel.ForeColor = System.Drawing.Color.White;
+            mODELLabel.Location = new System.Drawing.Point(59, 131);
+            mODELLabel.Name = "mODELLabel";
+            mODELLabel.Size = new System.Drawing.Size(48, 13);
+            mODELLabel.TabIndex = 182;
+            mODELLabel.Text = "MODEL:";
+            // 
+            // mODELComboBox
+            // 
+            this.mODELComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.t_penawaran_headerBindingSource, "MODEL", true));
+            this.mODELComboBox.DataSource = this.mmodelBindingSource;
+            this.mODELComboBox.DisplayMember = "DESCRIPTION";
+            this.mODELComboBox.FormattingEnabled = true;
+            this.mODELComboBox.Location = new System.Drawing.Point(113, 128);
+            this.mODELComboBox.Name = "mODELComboBox";
+            this.mODELComboBox.Size = new System.Drawing.Size(151, 21);
+            this.mODELComboBox.TabIndex = 183;
+            this.mODELComboBox.ValueMember = "MODEL_ID";
+            // 
+            // mmodelBindingSource
+            // 
+            this.mmodelBindingSource.DataMember = "m_model";
+            this.mmodelBindingSource.DataSource = this.uASDataSet;
+            // 
+            // m_modelTableAdapter
+            // 
+            this.m_modelTableAdapter.ClearBeforeFill = true;
+            // 
             // Penawaran
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -791,6 +828,8 @@ namespace Project_UAS_
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(938, 606);
+            this.Controls.Add(mODELLabel);
+            this.Controls.Add(this.mODELComboBox);
             this.Controls.Add(uNIT_PRICELabel);
             this.Controls.Add(this.uNIT_PRICETextBox);
             this.Controls.Add(this.label1);
@@ -848,6 +887,7 @@ namespace Project_UAS_
             ((System.ComponentModel.ISupportInitialize)(this.mpelangganBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mbarangBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.t_pembelian_headerBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mmodelBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -910,5 +950,8 @@ namespace Project_UAS_
         private System.Windows.Forms.TextBox tb_hargaJual;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox uNIT_PRICETextBox;
+        private System.Windows.Forms.ComboBox mODELComboBox;
+        private System.Windows.Forms.BindingSource mmodelBindingSource;
+        private UASDataSetTableAdapters.m_modelTableAdapter m_modelTableAdapter;
     }
 }

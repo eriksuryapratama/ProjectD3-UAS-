@@ -30,6 +30,8 @@ namespace Project_UAS_
 
         private void Penawaran_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'uASDataSet.m_model' table. You can move, or remove it, as needed.
+            this.m_modelTableAdapter.Fill(this.uASDataSet.m_model);
             // TODO: This line of code loads data into the 'uASDataSet.t_pembelian_header' table. You can move, or remove it, as needed.
             this.t_pembelian_headerTableAdapter.Fill(this.uASDataSet.t_pembelian_header);
             // TODO: This line of code loads data into the 'uASDataSet.m_barang' table. You can move, or remove it, as needed.
