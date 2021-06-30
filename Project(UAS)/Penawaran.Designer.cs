@@ -43,6 +43,7 @@ namespace Project_UAS_
             System.Windows.Forms.Label dISCOUNTLabel;
             System.Windows.Forms.Label pPNLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Penawaran));
+            System.Windows.Forms.Label uNIT_PRICELabel;
             this.uASDataSet = new Project_UAS_.UASDataSet();
             this.t_penawaran_headerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.t_penawaran_headerTableAdapter = new Project_UAS_.UASDataSetTableAdapters.t_penawaran_headerTableAdapter();
@@ -97,6 +98,7 @@ namespace Project_UAS_
             this.btn_Print = new System.Windows.Forms.Button();
             this.tb_hargaJual = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.uNIT_PRICETextBox = new System.Windows.Forms.TextBox();
             nO_PNWLabel = new System.Windows.Forms.Label();
             p_IDLabel = new System.Windows.Forms.Label();
             tGL_PNWLabel = new System.Windows.Forms.Label();
@@ -109,6 +111,7 @@ namespace Project_UAS_
             kOTALabel = new System.Windows.Forms.Label();
             dISCOUNTLabel = new System.Windows.Forms.Label();
             pPNLabel = new System.Windows.Forms.Label();
+            uNIT_PRICELabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.uASDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.t_penawaran_headerBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.t_penawaran_headerBindingNavigator)).BeginInit();
@@ -502,6 +505,7 @@ namespace Project_UAS_
             // nAMA_NPWPTextBox
             // 
             this.nAMA_NPWPTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.msupplierBindingSource, "NAMA_NPWP", true));
+            this.nAMA_NPWPTextBox.Enabled = false;
             this.nAMA_NPWPTextBox.Location = new System.Drawing.Point(113, 102);
             this.nAMA_NPWPTextBox.Name = "nAMA_NPWPTextBox";
             this.nAMA_NPWPTextBox.Size = new System.Drawing.Size(151, 20);
@@ -510,6 +514,7 @@ namespace Project_UAS_
             // eMAILTextBox
             // 
             this.eMAILTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.msupplierBindingSource, "EMAIL", true));
+            this.eMAILTextBox.Enabled = false;
             this.eMAILTextBox.Location = new System.Drawing.Point(450, 74);
             this.eMAILTextBox.Name = "eMAILTextBox";
             this.eMAILTextBox.Size = new System.Drawing.Size(176, 20);
@@ -518,6 +523,7 @@ namespace Project_UAS_
             // tELP_HPTextBox
             // 
             this.tELP_HPTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.msupplierBindingSource, "TELP_HP", true));
+            this.tELP_HPTextBox.Enabled = false;
             this.tELP_HPTextBox.Location = new System.Drawing.Point(735, 74);
             this.tELP_HPTextBox.Name = "tELP_HPTextBox";
             this.tELP_HPTextBox.Size = new System.Drawing.Size(175, 20);
@@ -526,6 +532,7 @@ namespace Project_UAS_
             // nOTETextBox
             // 
             this.nOTETextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.msupplierBindingSource, "NOTE", true));
+            this.nOTETextBox.Enabled = false;
             this.nOTETextBox.Location = new System.Drawing.Point(450, 102);
             this.nOTETextBox.Name = "nOTETextBox";
             this.nOTETextBox.Size = new System.Drawing.Size(176, 20);
@@ -534,6 +541,7 @@ namespace Project_UAS_
             // kOTATextBox
             // 
             this.kOTATextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.msupplierBindingSource, "KOTA", true));
+            this.kOTATextBox.Enabled = false;
             this.kOTATextBox.Location = new System.Drawing.Point(735, 102);
             this.kOTATextBox.Name = "kOTATextBox";
             this.kOTATextBox.Size = new System.Drawing.Size(175, 20);
@@ -659,7 +667,7 @@ namespace Project_UAS_
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(66, 498);
+            this.label2.Location = new System.Drawing.Point(79, 498);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(28, 16);
@@ -737,7 +745,7 @@ namespace Project_UAS_
             // 
             // tb_hargaJual
             // 
-            this.tb_hargaJual.Location = new System.Drawing.Point(113, 524);
+            this.tb_hargaJual.Location = new System.Drawing.Point(113, 548);
             this.tb_hargaJual.Name = "tb_hargaJual";
             this.tb_hargaJual.Size = new System.Drawing.Size(140, 20);
             this.tb_hargaJual.TabIndex = 180;
@@ -748,12 +756,33 @@ namespace Project_UAS_
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(34, 525);
+            this.label1.Location = new System.Drawing.Point(34, 549);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(74, 16);
             this.label1.TabIndex = 181;
             this.label1.Text = "Harga Jual";
+            // 
+            // uNIT_PRICELabel
+            // 
+            uNIT_PRICELabel.AutoSize = true;
+            uNIT_PRICELabel.BackColor = System.Drawing.Color.Transparent;
+            uNIT_PRICELabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            uNIT_PRICELabel.ForeColor = System.Drawing.Color.White;
+            uNIT_PRICELabel.Location = new System.Drawing.Point(36, 525);
+            uNIT_PRICELabel.Name = "uNIT_PRICELabel";
+            uNIT_PRICELabel.Size = new System.Drawing.Size(72, 16);
+            uNIT_PRICELabel.TabIndex = 181;
+            uNIT_PRICELabel.Text = "Harga Beli";
+            // 
+            // uNIT_PRICETextBox
+            // 
+            this.uNIT_PRICETextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.mbarangBindingSource, "UNIT_PRICE", true));
+            this.uNIT_PRICETextBox.Enabled = false;
+            this.uNIT_PRICETextBox.Location = new System.Drawing.Point(113, 522);
+            this.uNIT_PRICETextBox.Name = "uNIT_PRICETextBox";
+            this.uNIT_PRICETextBox.Size = new System.Drawing.Size(140, 20);
+            this.uNIT_PRICETextBox.TabIndex = 182;
             // 
             // Penawaran
             // 
@@ -761,7 +790,9 @@ namespace Project_UAS_
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(938, 578);
+            this.ClientSize = new System.Drawing.Size(938, 606);
+            this.Controls.Add(uNIT_PRICELabel);
+            this.Controls.Add(this.uNIT_PRICETextBox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tb_hargaJual);
             this.Controls.Add(this.btn_Exit);
@@ -878,5 +909,6 @@ namespace Project_UAS_
         private System.Windows.Forms.Button btn_Print;
         private System.Windows.Forms.TextBox tb_hargaJual;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox uNIT_PRICETextBox;
     }
 }

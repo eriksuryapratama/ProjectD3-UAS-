@@ -270,7 +270,7 @@ namespace Project_UAS_
 
         private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
         {
-            
+            dgv_penawaran.Columns.Clear();
         }
     }
 }

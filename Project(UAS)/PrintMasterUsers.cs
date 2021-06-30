@@ -19,8 +19,8 @@ namespace Project_UAS_
 
         private void crystalReportViewer1_Load(object sender, EventArgs e)
         {
-            CRUser printusers = new CRUser();
-            crystalReportViewer1.ReportSource = printusers;
+            //CRUser printusers = new CRUser();
+            //crystalReportViewer1.ReportSource = printusers;
         }
     }
 }
