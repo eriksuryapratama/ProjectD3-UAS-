@@ -43,7 +43,7 @@ namespace Project_UAS_
 
                 cb_IDBarang.DataSource = dtg;
                 cb_IDBarang.DisplayMember = "KODE";
-                cb_IDBarang.ValueMember = "ID";
+                cb_IDBarang.ValueMember = "KODE";
             }
             catch (SqlException ex)
             {

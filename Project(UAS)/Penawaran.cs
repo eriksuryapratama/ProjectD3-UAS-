@@ -119,20 +119,22 @@ namespace Project_UAS_
             SqlCommand comm3 = new SqlCommand(DataBrg3, con);
             String description = comm3.ExecuteScalar().ToString();
 
-            //UNIT BARANG
-            String DataBrg4 = $"SELECT unit FROM m_barang WHERE id = '{cb_nmbarang.SelectedValue}'";
-            SqlCommand comm4 = new SqlCommand(DataBrg4, con);
-            String unit = comm4.ExecuteScalar().ToString();
-
             //UNIT PRICE BARANG
             String DataBrg5 = $"SELECT unit_price FROM m_barang WHERE id = '{cb_nmbarang.SelectedValue}'";
             SqlCommand comm5 = new SqlCommand(DataBrg5, con);
             String unit_price = comm5.ExecuteScalar().ToString();
 
-            //MERK BARANG
-            String DataBrg6 = $"SELECT merk1 FROM m_barang WHERE id = '{cb_nmbarang.SelectedValue}'";
-            SqlCommand comm6 = new SqlCommand(DataBrg6, con);
-            String merk = comm6.ExecuteScalar().ToString();
+            //QTY
+            String Dataz = $"SELECT stock_on_hand FROM stock WHERE id_barang = '{kode}'";
+            SqlCommand commz = new SqlCommand(Dataz, con);
+            String qtz = commz.ExecuteScalar().ToString();
+
+            //Hitung Total Qty
+            String HitungQty = $"SELECT (s.stock_on_hand - {tb_qty.Text}) " +
+                                $"FROM stock s, t_penawaran_detail td " +
+                                $"where s.id_barang = '{kode}' ";
+            SqlCommand commQty = new SqlCommand(HitungQty, con);
+            String qtyAkhir = commQty.ExecuteScalar().ToString();
 
             //PENGECEKAN & INPUT DATA
             String cek = tb_qty.Text;
@@ -157,34 +159,56 @@ namespace Project_UAS_
                 {
                     if (Convert.ToInt32(cekBarang) > 0)
                     {
-                        //SELECT
-                        String jmlhBarang = $"SELECT qty FROM t_penawaran_detail WHERE kode = '{kode}' and no_pnw = '{nO_PNWTextBox.Text}'";
-                        SqlCommand comm8 = new SqlCommand(jmlhBarang, con);
-                        
-                        String qtyAwal = comm8.ExecuteScalar().ToString();
-                        int tambahQTY = qty + Convert.ToInt32(qtyAwal);
-                        
-                        //UPDATE
-                        String query = $"UPDATE t_penawaran_detail SET qty = {tambahQTY} where kode = '{kode}' and no_pnw = '{nO_PNWTextBox.Text}'";
-                        comm = new SqlCommand(query, con);
-                        comm.ExecuteNonQuery();
+                        if (Convert.ToInt32(tb_qty.Text) > Convert.ToInt32(qtz))
+                        {
+                            MessageBox.Show("Stock Barang Tidak Cukup !");
+                        }
+                        else
+                        {
+                            //SELECT
+                            String jmlhBarang = $"SELECT qty FROM t_penawaran_detail WHERE kode = '{kode}' and no_pnw = '{nO_PNWTextBox.Text}'";
+                            SqlCommand comm8 = new SqlCommand(jmlhBarang, con);
+                            String qtyAwal = comm8.ExecuteScalar().ToString();
+                            
+                            int tambahQTY = qty + Convert.ToInt32(qtyAwal);
 
+                            //UPDATE
+                            String queryQ = $"UPDATE stock SET stock_on_hand = {qtyAkhir} where id_barang = '{kode}'";
+                            commQty = new SqlCommand(queryQ, con);
+                            commQty.ExecuteNonQuery();
+
+                            //UPDATE
+                            String query = $"UPDATE t_penawaran_detail SET qty = {tambahQTY} where kode = '{kode}' and no_pnw = '{nO_PNWTextBox.Text}'";
+                            comm = new SqlCommand(query, con);
+                            comm.ExecuteNonQuery();
+
+                            MessageBox.Show("Berhasil ditambahkan");
+                        }
                         con.Close();
-                        MessageBox.Show("Berhasil ditambahkan");
                         data_invoice();
                     }
                     else
                     {
-                        //INSERT
-                        String query = $"Insert into t_penawaran_detail(no_pnw, kode, part_no, descriptio, qty, unit_price, unit_pric2) values('{nO_PNWTextBox.Text}','{kode}','{part_no}','{description}','{qty}',{unit_price}, '{tb_hargaJual.Text}')";
-                        comm = new SqlCommand(query, con);
-                        comm.ExecuteNonQuery();
+                        if (Convert.ToInt32(tb_qty.Text) > Convert.ToInt32(qtz))
+                        {
+                            MessageBox.Show("Stock Barang Tidak Cukup !");
+                        }
+                        else
+                        {
+                            //INSERT
+                            String query = $"Insert into t_penawaran_detail(no_pnw, kode, part_no, descriptio, qty, unit_price, unit_pric2) values('{nO_PNWTextBox.Text}','{kode}','{part_no}','{description}','{qty}',{unit_price}, '{tb_hargaJual.Text}')";
+                            comm = new SqlCommand(query, con);
+                            comm.ExecuteNonQuery();
 
+                            //UPDATE
+                            String queryQ = $"UPDATE stock SET stock_on_hand = {qtyAkhir} where id_barang = '{kode}'";
+                            commQty = new SqlCommand(queryQ, con);
+                            commQty.ExecuteNonQuery();
+                            MessageBox.Show("Berhasil ditambahkan");
+                        }
                         con.Close();
-                        MessageBox.Show("Berhasil ditambahkan");
                         data_invoice();
                     }
-
                 }
             }
             con.Close();
@@ -205,31 +229,6 @@ namespace Project_UAS_
             String DataBrg = $"SELECT kode FROM m_barang WHERE id = '{cb_nmbarang.SelectedValue}'";
             SqlCommand comm = new SqlCommand(DataBrg, con);
             String kode = comm.ExecuteScalar().ToString();
-
-            //PART NOMOR BARANG
-            String DataBrg2 = $"SELECT part_no FROM m_barang WHERE id = '{cb_nmbarang.SelectedValue}'";
-            SqlCommand comm2 = new SqlCommand(DataBrg2, con);
-            String part_no = comm2.ExecuteScalar().ToString();
-
-            //DESCRIPTION BARANG
-            String DataBrg3 = $"SELECT description FROM m_barang WHERE id = '{cb_nmbarang.SelectedValue}'";
-            SqlCommand comm3 = new SqlCommand(DataBrg3, con);
-            String description = comm3.ExecuteScalar().ToString();
-
-            //UNIT BARANG
-            String DataBrg4 = $"SELECT unit FROM m_barang WHERE id = '{cb_nmbarang.SelectedValue}'";
-            SqlCommand comm4 = new SqlCommand(DataBrg4, con);
-            String unit = comm4.ExecuteScalar().ToString();
-
-            //UNIT PRICE BARANG
-            String DataBrg5 = $"SELECT unit_price FROM m_barang WHERE id = '{cb_nmbarang.SelectedValue}'";
-            SqlCommand comm5 = new SqlCommand(DataBrg5, con);
-            String unit_price = comm5.ExecuteScalar().ToString();
-
-            //MERK BARANG
-            String DataBrg6 = $"SELECT merk1 FROM m_barang WHERE id = '{cb_nmbarang.SelectedValue}'";
-            SqlCommand comm6 = new SqlCommand(DataBrg6, con);
-            String merk = comm6.ExecuteScalar().ToString();
 
             //DELETE BARANG
             String query = $"DELETE FROM t_penawaran_detail WHERE KODE = '{tb_Kode.Text}'";
