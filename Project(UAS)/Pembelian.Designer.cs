@@ -83,8 +83,6 @@ namespace Project_UAS_
             this.btn_hpsitem = new System.Windows.Forms.Button();
             this.tb_Kode = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.dISCOUNTTextBox = new System.Windows.Forms.TextBox();
-            this.pPNTextBox = new System.Windows.Forms.TextBox();
             this.tb_grandTotal = new System.Windows.Forms.TextBox();
             this.tb_totalBeli = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -92,6 +90,8 @@ namespace Project_UAS_
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.btn_Exit = new System.Windows.Forms.Button();
             this.btn_Print = new System.Windows.Forms.Button();
+            this.tb_PPN = new System.Windows.Forms.TextBox();
+            this.tb_Discount = new System.Windows.Forms.TextBox();
             nO_PNWLabel = new System.Windows.Forms.Label();
             nO_NOTALabel = new System.Windows.Forms.Label();
             p_IDLabel = new System.Windows.Forms.Label();
@@ -635,34 +635,13 @@ namespace Project_UAS_
             this.label4.TabIndex = 143;
             this.label4.Text = "Kode Barang";
             // 
-            // dISCOUNTTextBox
-            // 
-            this.dISCOUNTTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.t_pembelian_headerBindingSource, "DISCOUNT", true));
-            this.dISCOUNTTextBox.Enabled = false;
-            this.dISCOUNTTextBox.Location = new System.Drawing.Point(873, 565);
-            this.dISCOUNTTextBox.Name = "dISCOUNTTextBox";
-            this.dISCOUNTTextBox.Size = new System.Drawing.Size(100, 20);
-            this.dISCOUNTTextBox.TabIndex = 144;
-            this.dISCOUNTTextBox.Text = "0";
-            this.dISCOUNTTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // pPNTextBox
-            // 
-            this.pPNTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.t_pembelian_headerBindingSource, "PPN", true));
-            this.pPNTextBox.Enabled = false;
-            this.pPNTextBox.Location = new System.Drawing.Point(873, 591);
-            this.pPNTextBox.Name = "pPNTextBox";
-            this.pPNTextBox.Size = new System.Drawing.Size(100, 20);
-            this.pPNTextBox.TabIndex = 145;
-            this.pPNTextBox.Text = "0";
-            this.pPNTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
             // tb_grandTotal
             // 
             this.tb_grandTotal.Location = new System.Drawing.Point(873, 617);
             this.tb_grandTotal.Name = "tb_grandTotal";
             this.tb_grandTotal.Size = new System.Drawing.Size(100, 20);
             this.tb_grandTotal.TabIndex = 146;
+            this.tb_grandTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // tb_totalBeli
             // 
@@ -670,6 +649,7 @@ namespace Project_UAS_
             this.tb_totalBeli.Name = "tb_totalBeli";
             this.tb_totalBeli.Size = new System.Drawing.Size(100, 20);
             this.tb_totalBeli.TabIndex = 147;
+            this.tb_totalBeli.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label5
             // 
@@ -730,6 +710,24 @@ namespace Project_UAS_
             this.btn_Print.UseVisualStyleBackColor = false;
             this.btn_Print.Click += new System.EventHandler(this.btn_Print_Click);
             // 
+            // tb_PPN
+            // 
+            this.tb_PPN.Enabled = false;
+            this.tb_PPN.Location = new System.Drawing.Point(873, 591);
+            this.tb_PPN.Name = "tb_PPN";
+            this.tb_PPN.Size = new System.Drawing.Size(100, 20);
+            this.tb_PPN.TabIndex = 166;
+            this.tb_PPN.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // tb_Discount
+            // 
+            this.tb_Discount.Enabled = false;
+            this.tb_Discount.Location = new System.Drawing.Point(873, 565);
+            this.tb_Discount.Name = "tb_Discount";
+            this.tb_Discount.Size = new System.Drawing.Size(100, 20);
+            this.tb_Discount.TabIndex = 165;
+            this.tb_Discount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
             // Pembelian
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -737,6 +735,8 @@ namespace Project_UAS_
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(994, 668);
+            this.Controls.Add(this.tb_PPN);
+            this.Controls.Add(this.tb_Discount);
             this.Controls.Add(this.btn_Exit);
             this.Controls.Add(this.btn_Print);
             this.Controls.Add(this.textBox3);
@@ -745,9 +745,7 @@ namespace Project_UAS_
             this.Controls.Add(this.tb_totalBeli);
             this.Controls.Add(this.tb_grandTotal);
             this.Controls.Add(pPNLabel);
-            this.Controls.Add(this.pPNTextBox);
             this.Controls.Add(dISCOUNTLabel);
-            this.Controls.Add(this.dISCOUNTTextBox);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.tb_Kode);
             this.Controls.Add(this.btn_hpsitem);
@@ -838,8 +836,6 @@ namespace Project_UAS_
         private System.Windows.Forms.Button btn_hpsitem;
         private System.Windows.Forms.TextBox tb_Kode;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox dISCOUNTTextBox;
-        private System.Windows.Forms.TextBox pPNTextBox;
         private System.Windows.Forms.TextBox tb_grandTotal;
         private System.Windows.Forms.TextBox tb_totalBeli;
         private System.Windows.Forms.Label label5;
@@ -847,5 +843,7 @@ namespace Project_UAS_
         private System.Windows.Forms.TextBox textBox3;
         public System.Windows.Forms.Button btn_Exit;
         private System.Windows.Forms.Button btn_Print;
+        private System.Windows.Forms.TextBox tb_PPN;
+        private System.Windows.Forms.TextBox tb_Discount;
     }
 }

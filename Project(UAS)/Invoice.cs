@@ -69,6 +69,26 @@ namespace Project_UAS_
             SqlCommand commSum1 = new SqlCommand(HitungTotal, con);
             String totalHarga = commSum1.ExecuteScalar().ToString();
 
+            //Hitung Discount
+            String Disc = $"SELECT format(sum(td.qty * td.unit_pric2 * 10 / 100), 'C', 'id-ID') " +
+                          $"FROM t_penawaran_detail pd, t_invoice_detail td, t_invoice_header th " +
+                          $"where th.no_inv = td.no_inv " +
+                          $"and pd.no_pnw = '{nO_PNWComboBox.SelectedValue}' " +
+                          $"and th.no_inv = '{tb_noINV.Text}' ";
+            SqlCommand commSum2 = new SqlCommand(Disc, con);
+            String discHarga = commSum2.ExecuteScalar().ToString();
+
+            //Hitung PPN
+            String ppN = $"SELECT format(sum(td.qty * td.unit_pric2 * 5 / 100), 'C', 'id-ID') " +
+                         $"FROM t_penawaran_detail pd, t_invoice_detail td, t_invoice_header th " +
+                         $"where th.no_inv = td.no_inv " +
+                         $"and pd.no_pnw = '{nO_PNWComboBox.SelectedValue}' " +
+                         $"and th.no_inv = '{tb_noINV.Text}' ";
+            SqlCommand commSum3 = new SqlCommand(ppN, con);
+            String ppnHarga = commSum3.ExecuteScalar().ToString();
+
+            tb_Discount.Text = discHarga;
+            tb_PPN.Text = ppnHarga;
             tb_totalBeli.Text = totalHarga;
             tb_grandTotal.Text = totalHarga;
 

@@ -42,9 +42,9 @@ namespace Project_UAS_
             System.Windows.Forms.Label kOTALabel;
             System.Windows.Forms.Label dISCOUNTLabel;
             System.Windows.Forms.Label pPNLabel;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Penawaran));
             System.Windows.Forms.Label uNIT_PRICELabel;
             System.Windows.Forms.Label mODELLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Penawaran));
             this.uASDataSet = new Project_UAS_.UASDataSet();
             this.t_penawaran_headerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.t_penawaran_headerTableAdapter = new Project_UAS_.UASDataSetTableAdapters.t_penawaran_headerTableAdapter();
@@ -93,8 +93,6 @@ namespace Project_UAS_
             this.m_barangTableAdapter = new Project_UAS_.UASDataSetTableAdapters.m_barangTableAdapter();
             this.t_pembelian_headerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.t_pembelian_headerTableAdapter = new Project_UAS_.UASDataSetTableAdapters.t_pembelian_headerTableAdapter();
-            this.dISCOUNTTextBox = new System.Windows.Forms.TextBox();
-            this.pPNTextBox = new System.Windows.Forms.TextBox();
             this.btn_Exit = new System.Windows.Forms.Button();
             this.btn_Print = new System.Windows.Forms.Button();
             this.tb_hargaJual = new System.Windows.Forms.TextBox();
@@ -103,6 +101,8 @@ namespace Project_UAS_
             this.mODELComboBox = new System.Windows.Forms.ComboBox();
             this.mmodelBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.m_modelTableAdapter = new Project_UAS_.UASDataSetTableAdapters.m_modelTableAdapter();
+            this.tb_PPN = new System.Windows.Forms.TextBox();
+            this.tb_Discount = new System.Windows.Forms.TextBox();
             nO_PNWLabel = new System.Windows.Forms.Label();
             p_IDLabel = new System.Windows.Forms.Label();
             tGL_PNWLabel = new System.Windows.Forms.Label();
@@ -261,6 +261,29 @@ namespace Project_UAS_
             pPNLabel.TabIndex = 176;
             pPNLabel.Text = "PPN:";
             // 
+            // uNIT_PRICELabel
+            // 
+            uNIT_PRICELabel.AutoSize = true;
+            uNIT_PRICELabel.BackColor = System.Drawing.Color.Transparent;
+            uNIT_PRICELabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            uNIT_PRICELabel.ForeColor = System.Drawing.Color.White;
+            uNIT_PRICELabel.Location = new System.Drawing.Point(36, 525);
+            uNIT_PRICELabel.Name = "uNIT_PRICELabel";
+            uNIT_PRICELabel.Size = new System.Drawing.Size(72, 16);
+            uNIT_PRICELabel.TabIndex = 181;
+            uNIT_PRICELabel.Text = "Harga Beli";
+            // 
+            // mODELLabel
+            // 
+            mODELLabel.AutoSize = true;
+            mODELLabel.BackColor = System.Drawing.Color.Transparent;
+            mODELLabel.ForeColor = System.Drawing.Color.White;
+            mODELLabel.Location = new System.Drawing.Point(59, 131);
+            mODELLabel.Name = "mODELLabel";
+            mODELLabel.Size = new System.Drawing.Size(48, 13);
+            mODELLabel.TabIndex = 182;
+            mODELLabel.Text = "MODEL:";
+            // 
             // uASDataSet
             // 
             this.uASDataSet.DataSetName = "UASDataSet";
@@ -390,6 +413,7 @@ namespace Project_UAS_
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Position";
             this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -558,6 +582,7 @@ namespace Project_UAS_
             this.tb_totalBeli.Name = "tb_totalBeli";
             this.tb_totalBeli.Size = new System.Drawing.Size(129, 20);
             this.tb_totalBeli.TabIndex = 175;
+            this.tb_totalBeli.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // tb_grandTotal
             // 
@@ -565,6 +590,7 @@ namespace Project_UAS_
             this.tb_grandTotal.Name = "tb_grandTotal";
             this.tb_grandTotal.Size = new System.Drawing.Size(128, 20);
             this.tb_grandTotal.TabIndex = 174;
+            this.tb_grandTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label6
             // 
@@ -700,28 +726,6 @@ namespace Project_UAS_
             // 
             this.t_pembelian_headerTableAdapter.ClearBeforeFill = true;
             // 
-            // dISCOUNTTextBox
-            // 
-            this.dISCOUNTTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.t_penawaran_headerBindingSource, "DISCOUNT", true));
-            this.dISCOUNTTextBox.Enabled = false;
-            this.dISCOUNTTextBox.Location = new System.Drawing.Point(782, 470);
-            this.dISCOUNTTextBox.Name = "dISCOUNTTextBox";
-            this.dISCOUNTTextBox.Size = new System.Drawing.Size(128, 20);
-            this.dISCOUNTTextBox.TabIndex = 176;
-            this.dISCOUNTTextBox.Text = "0";
-            this.dISCOUNTTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // pPNTextBox
-            // 
-            this.pPNTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.t_penawaran_headerBindingSource, "PPN", true));
-            this.pPNTextBox.Enabled = false;
-            this.pPNTextBox.Location = new System.Drawing.Point(782, 494);
-            this.pPNTextBox.Name = "pPNTextBox";
-            this.pPNTextBox.Size = new System.Drawing.Size(128, 20);
-            this.pPNTextBox.TabIndex = 177;
-            this.pPNTextBox.Text = "0";
-            this.pPNTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
             // btn_Exit
             // 
             this.btn_Exit.BackColor = System.Drawing.Color.Red;
@@ -768,18 +772,6 @@ namespace Project_UAS_
             this.label1.TabIndex = 181;
             this.label1.Text = "Harga Jual";
             // 
-            // uNIT_PRICELabel
-            // 
-            uNIT_PRICELabel.AutoSize = true;
-            uNIT_PRICELabel.BackColor = System.Drawing.Color.Transparent;
-            uNIT_PRICELabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            uNIT_PRICELabel.ForeColor = System.Drawing.Color.White;
-            uNIT_PRICELabel.Location = new System.Drawing.Point(36, 525);
-            uNIT_PRICELabel.Name = "uNIT_PRICELabel";
-            uNIT_PRICELabel.Size = new System.Drawing.Size(72, 16);
-            uNIT_PRICELabel.TabIndex = 181;
-            uNIT_PRICELabel.Text = "Harga Beli";
-            // 
             // uNIT_PRICETextBox
             // 
             this.uNIT_PRICETextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.mbarangBindingSource, "UNIT_PRICE", true));
@@ -788,17 +780,6 @@ namespace Project_UAS_
             this.uNIT_PRICETextBox.Name = "uNIT_PRICETextBox";
             this.uNIT_PRICETextBox.Size = new System.Drawing.Size(140, 20);
             this.uNIT_PRICETextBox.TabIndex = 182;
-            // 
-            // mODELLabel
-            // 
-            mODELLabel.AutoSize = true;
-            mODELLabel.BackColor = System.Drawing.Color.Transparent;
-            mODELLabel.ForeColor = System.Drawing.Color.White;
-            mODELLabel.Location = new System.Drawing.Point(59, 131);
-            mODELLabel.Name = "mODELLabel";
-            mODELLabel.Size = new System.Drawing.Size(48, 13);
-            mODELLabel.TabIndex = 182;
-            mODELLabel.Text = "MODEL:";
             // 
             // mODELComboBox
             // 
@@ -821,6 +802,24 @@ namespace Project_UAS_
             // 
             this.m_modelTableAdapter.ClearBeforeFill = true;
             // 
+            // tb_PPN
+            // 
+            this.tb_PPN.Enabled = false;
+            this.tb_PPN.Location = new System.Drawing.Point(781, 496);
+            this.tb_PPN.Name = "tb_PPN";
+            this.tb_PPN.Size = new System.Drawing.Size(129, 20);
+            this.tb_PPN.TabIndex = 185;
+            this.tb_PPN.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // tb_Discount
+            // 
+            this.tb_Discount.Enabled = false;
+            this.tb_Discount.Location = new System.Drawing.Point(781, 470);
+            this.tb_Discount.Name = "tb_Discount";
+            this.tb_Discount.Size = new System.Drawing.Size(129, 20);
+            this.tb_Discount.TabIndex = 184;
+            this.tb_Discount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
             // Penawaran
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -828,6 +827,8 @@ namespace Project_UAS_
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(938, 606);
+            this.Controls.Add(this.tb_PPN);
+            this.Controls.Add(this.tb_Discount);
             this.Controls.Add(mODELLabel);
             this.Controls.Add(this.mODELComboBox);
             this.Controls.Add(uNIT_PRICELabel);
@@ -837,9 +838,7 @@ namespace Project_UAS_
             this.Controls.Add(this.btn_Exit);
             this.Controls.Add(this.btn_Print);
             this.Controls.Add(pPNLabel);
-            this.Controls.Add(this.pPNTextBox);
             this.Controls.Add(dISCOUNTLabel);
-            this.Controls.Add(this.dISCOUNTTextBox);
             this.Controls.Add(this.tb_totalBeli);
             this.Controls.Add(this.tb_grandTotal);
             this.Controls.Add(this.label6);
@@ -943,8 +942,6 @@ namespace Project_UAS_
         private UASDataSetTableAdapters.m_barangTableAdapter m_barangTableAdapter;
         private System.Windows.Forms.BindingSource t_pembelian_headerBindingSource;
         private UASDataSetTableAdapters.t_pembelian_headerTableAdapter t_pembelian_headerTableAdapter;
-        private System.Windows.Forms.TextBox dISCOUNTTextBox;
-        private System.Windows.Forms.TextBox pPNTextBox;
         public System.Windows.Forms.Button btn_Exit;
         private System.Windows.Forms.Button btn_Print;
         private System.Windows.Forms.TextBox tb_hargaJual;
@@ -953,5 +950,7 @@ namespace Project_UAS_
         private System.Windows.Forms.ComboBox mODELComboBox;
         private System.Windows.Forms.BindingSource mmodelBindingSource;
         private UASDataSetTableAdapters.m_modelTableAdapter m_modelTableAdapter;
+        private System.Windows.Forms.TextBox tb_PPN;
+        private System.Windows.Forms.TextBox tb_Discount;
     }
 }
