@@ -87,10 +87,19 @@ namespace Project_UAS_
             SqlCommand commSum3 = new SqlCommand(ppN, con);
             String ppnHarga = commSum3.ExecuteScalar().ToString();
 
+            //Hitung GrandTotal
+            String GrandTotal = $"SELECT format(sum(pd.qty * pd.unit_pric2) - sum(td.qty * td.unit_pric2 * 10 / 100) + sum(td.qty * td.unit_pric2 * 5 / 100), 'C', 'id-ID') " +
+                                $"FROM t_penawaran_detail pd, t_invoice_detail td, t_invoice_header th " +
+                                $"where th.no_inv = td.no_inv " +
+                                $"and pd.no_pnw = '{nO_PNWComboBox.SelectedValue}' " +
+                                $"and th.no_inv = '{tb_noINV.Text}' ";
+            SqlCommand commSum4 = new SqlCommand(GrandTotal, con);
+            String grandHarga = commSum4.ExecuteScalar().ToString();
+
             tb_Discount.Text = discHarga;
             tb_PPN.Text = ppnHarga;
             tb_totalBeli.Text = totalHarga;
-            tb_grandTotal.Text = totalHarga;
+            tb_grandTotal.Text = grandHarga;
 
             con.Close();
         }

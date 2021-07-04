@@ -75,28 +75,38 @@ namespace Project_UAS_
 
             //Hitung Discount
             String Disc = $"SELECT format(sum(td.qty * td.unit_price * 10 / 100), 'C', 'id-ID') " +
-                                 $"FROM m_barang mb,t_pembelian_detail td,t_pembelian_header th " +
-                                 $"WHERE mb.kode = td.kode " +
-                                 $"and th.no_nota = td.no_nota " +
-                                 $"and th.p_id = '{p_IDComboBox.Text}' " +
-                                 $"and '{nO_NOTATextBox.Text}' = td.no_nota ";
+                          $"FROM m_barang mb,t_pembelian_detail td,t_pembelian_header th " +
+                          $"WHERE mb.kode = td.kode " +
+                          $"and th.no_nota = td.no_nota " +
+                          $"and th.p_id = '{p_IDComboBox.Text}' " +
+                          $"and '{nO_NOTATextBox.Text}' = td.no_nota ";
             SqlCommand commSum2 = new SqlCommand(Disc, con);
             String discHarga = commSum2.ExecuteScalar().ToString();
 
             //Hitung PPN
             String ppN = $"SELECT format(sum(td.qty * td.unit_price * 5 / 100), 'C', 'id-ID') " +
+                         $"FROM m_barang mb,t_pembelian_detail td,t_pembelian_header th " +
+                         $"WHERE mb.kode = td.kode " +
+                         $"and th.no_nota = td.no_nota " +
+                         $"and th.p_id = '{p_IDComboBox.Text}' " +
+                         $"and '{nO_NOTATextBox.Text}' = td.no_nota ";
+            SqlCommand commSum3 = new SqlCommand(ppN, con);
+            String ppnHarga = commSum3.ExecuteScalar().ToString();
+
+            //Hitung GrandTotal
+            String GrandTotal = $"SELECT format(sum(td.qty * mb.unit_price) - sum(td.qty * td.unit_price * 10 / 100) + sum(td.qty * td.unit_price * 5 / 100), 'C', 'id-ID') " +
                                 $"FROM m_barang mb,t_pembelian_detail td,t_pembelian_header th " +
                                 $"WHERE mb.kode = td.kode " +
                                 $"and th.no_nota = td.no_nota " +
                                 $"and th.p_id = '{p_IDComboBox.Text}' " +
                                 $"and '{nO_NOTATextBox.Text}' = td.no_nota ";
-            SqlCommand commSum3 = new SqlCommand(ppN, con);
-            String ppnHarga = commSum3.ExecuteScalar().ToString();
+            SqlCommand commSum4 = new SqlCommand(GrandTotal, con);
+            String grandHarga = commSum4.ExecuteScalar().ToString();
 
             tb_Discount.Text = discHarga;
             tb_PPN.Text = ppnHarga;
             tb_totalBeli.Text = totalHarga;
-            tb_grandTotal.Text = totalHarga;
+            tb_grandTotal.Text = grandHarga;
 
             con.Close();
         }

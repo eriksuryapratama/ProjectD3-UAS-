@@ -322,6 +322,7 @@ namespace Project_UAS_
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Position";
             this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -422,6 +423,7 @@ namespace Project_UAS_
             // tb_namaNPWP
             // 
             this.tb_namaNPWP.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.mpelangganBindingSource, "NAMA_NPWP", true));
+            this.tb_namaNPWP.Enabled = false;
             this.tb_namaNPWP.Location = new System.Drawing.Point(235, 74);
             this.tb_namaNPWP.Name = "tb_namaNPWP";
             this.tb_namaNPWP.Size = new System.Drawing.Size(302, 20);
@@ -430,6 +432,7 @@ namespace Project_UAS_
             // tb_alamatNPWP
             // 
             this.tb_alamatNPWP.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.mpelangganBindingSource, "ALAMAT_NPWP", true));
+            this.tb_alamatNPWP.Enabled = false;
             this.tb_alamatNPWP.Location = new System.Drawing.Point(543, 74);
             this.tb_alamatNPWP.Name = "tb_alamatNPWP";
             this.tb_alamatNPWP.Size = new System.Drawing.Size(401, 20);
@@ -438,6 +441,7 @@ namespace Project_UAS_
             // tb_kotaCustomer
             // 
             this.tb_kotaCustomer.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.mpelangganBindingSource, "KOTA", true));
+            this.tb_kotaCustomer.Enabled = false;
             this.tb_kotaCustomer.Location = new System.Drawing.Point(813, 37);
             this.tb_kotaCustomer.Name = "tb_kotaCustomer";
             this.tb_kotaCustomer.Size = new System.Drawing.Size(131, 20);
@@ -446,6 +450,7 @@ namespace Project_UAS_
             // tb_namaNPWP2
             // 
             this.tb_namaNPWP2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.mpelangganBindingSource, "NAMA_NPWP", true));
+            this.tb_namaNPWP2.Enabled = false;
             this.tb_namaNPWP2.Location = new System.Drawing.Point(105, 111);
             this.tb_namaNPWP2.Name = "tb_namaNPWP2";
             this.tb_namaNPWP2.Size = new System.Drawing.Size(286, 20);
@@ -453,6 +458,7 @@ namespace Project_UAS_
             // 
             // tb_alamatLengkap
             // 
+            this.tb_alamatLengkap.Enabled = false;
             this.tb_alamatLengkap.Location = new System.Drawing.Point(397, 111);
             this.tb_alamatLengkap.Name = "tb_alamatLengkap";
             this.tb_alamatLengkap.Size = new System.Drawing.Size(309, 20);
@@ -475,6 +481,7 @@ namespace Project_UAS_
             // tb_noteCustomer
             // 
             this.tb_noteCustomer.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.mpelangganBindingSource, "KETERANGAN", true));
+            this.tb_noteCustomer.Enabled = false;
             this.tb_noteCustomer.Location = new System.Drawing.Point(755, 111);
             this.tb_noteCustomer.Name = "tb_noteCustomer";
             this.tb_noteCustomer.Size = new System.Drawing.Size(189, 20);
@@ -558,7 +565,7 @@ namespace Project_UAS_
             // btn_Exit
             // 
             this.btn_Exit.BackColor = System.Drawing.Color.Red;
-            this.btn_Exit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Exit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Exit.ForeColor = System.Drawing.Color.White;
             this.btn_Exit.Location = new System.Drawing.Point(112, 562);
             this.btn_Exit.Name = "btn_Exit";
@@ -571,7 +578,7 @@ namespace Project_UAS_
             // btn_Print
             // 
             this.btn_Print.BackColor = System.Drawing.Color.LimeGreen;
-            this.btn_Print.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Print.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Print.ForeColor = System.Drawing.Color.White;
             this.btn_Print.Location = new System.Drawing.Point(11, 562);
             this.btn_Print.Name = "btn_Print";
@@ -614,6 +621,7 @@ namespace Project_UAS_
             // tb_PPN
             // 
             this.tb_PPN.Enabled = false;
+            this.tb_PPN.ForeColor = System.Drawing.Color.Red;
             this.tb_PPN.Location = new System.Drawing.Point(801, 574);
             this.tb_PPN.Name = "tb_PPN";
             this.tb_PPN.Size = new System.Drawing.Size(143, 20);

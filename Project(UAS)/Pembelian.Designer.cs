@@ -364,7 +364,6 @@ namespace Project_UAS_
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Position";
             this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -687,7 +686,7 @@ namespace Project_UAS_
             // btn_Exit
             // 
             this.btn_Exit.BackColor = System.Drawing.Color.Red;
-            this.btn_Exit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Exit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Exit.ForeColor = System.Drawing.Color.White;
             this.btn_Exit.Location = new System.Drawing.Point(393, 582);
             this.btn_Exit.Name = "btn_Exit";
@@ -700,7 +699,7 @@ namespace Project_UAS_
             // btn_Print
             // 
             this.btn_Print.BackColor = System.Drawing.Color.LimeGreen;
-            this.btn_Print.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Print.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Print.ForeColor = System.Drawing.Color.White;
             this.btn_Print.Location = new System.Drawing.Point(393, 543);
             this.btn_Print.Name = "btn_Print";
